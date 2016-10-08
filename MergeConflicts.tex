@@ -90,7 +90,7 @@ Software development requires collaboration. The most popular way to collaborate
 
 
 \section{Introduction}
-\textbf{***distributed development process***}\textbf{***Conflicts occur and often****}Version control systems like Git offer easier collaboration via an automated merging process. This process enables large-scale distributed development, but as sophisticated as these tools are, they still require manual merging in ambiguous cases called merge conflicts. Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict [Cassandra]. 
+\textbf{***distributed development process***}\textbf{***Conflicts occur and often****}Version control systems like Git offer easier collaboration via an automated merging process. This process enables large-scale distributed development, but as sophisticated as these tools are, they still require manual merging in ambiguous cases called merge conflicts. As a conference presenter by the name of Corey Quinn has stated in one of his recurring talks, "A group of whales is a pod, a group of ravens is called a murder, and a group of programmers is called a merge conflict" [Terrible Ideas in Git]. Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict [Cassandra]. 
 \textbf{***current work on proactive detection***}
 Many studies have suggested ways of proactively detecting and avoiding conflict [Brun, Palantir, (more like this)] \textbf{***WRITE MORE about the stuff that exists there***}
 \textbf{***we need to know more about conflicts because...***}
@@ -98,7 +98,7 @@ Software development requires collaboration. The most popular way to collaborate
 However, few have actually talked to developers to understand their perceptions about merge conflicts. Talking directly to developers is important for understanding their problems from their perspectives. 
 \textbf{***This going to make the paper or break it ? refer to Danny/Mihai paper (lenses)***}
 Our research questions are as follows:
-\begin{itemize}\item\textbf{RQ1:} What kind of factors cause a merge conflict to be perceived as difficult?\\\item\textbf{RQ2:} What kind of process do developers follow when resolving a merge conflict?\\\item\textbf{RQ3:} What kinds of difficulties do developers face when trying to resolve a merge conflict?\\
+\begin{itemize}\item\textbf{RQ1:} What kind of factors cause a merge conflict to be perceived as difficult?\\\item\textbf{RQ2:} What kinds of difficulties do developers face when trying to resolve a merge conflict?\\\item\textbf{RQ3:} What kinds of tool difficulties do developers face when trying to resolve a merge conflict?\\
 \end{itemize}
 
 \section{Background}
@@ -142,22 +142,22 @@ Factors of Merge Conflict Difficulty are attributes of a merge conflict that par
 
 \subsubsection{Resolution Process}
 
-Resolution Process is a category for anything that describes a participant?s process for resolving a merge conflict. This category contained a total of 52 cards.\textbf{*** People depend on tools, write scripts to fill tool gaps ***}
-The biggest theme to come out of this category, 31\% of resolution process cards, was that many people mention a dependency on tools during their resolution process. For instance, participants mention using Git?s rebase, rerere, and git-am utilities often in their processes. They also explain that they like to see the versions of the conflict side-by-side in a GUI window in order to better understand the conflict. Perhaps most interesting is the tendency of some to start writing their own scripts because no other tools seem to accomplish what they need. For example, when dealing with complex projects with many branches that involve cherry picking, labels, and good metadata utilization, Git and the tools to work with Git seem too simple to accomplish an accurate diff between branches. As a result, one project created its own tool that allows them to customize their branch diffs. Other developers found themselves using tools to locate what they need to fix before opening up a text editor and manually resolving the conflict rather than using a tool to resolve the conflict.\textbf{*** Negotiating conflicts. Ownership/expertise for social merge conflict resolution tactics ***}
-Another important theme was a collaborative merging process between those involved in a merge conflict. This accounts for 23\% of the resolution process cards sorted. These cases were typically split into two situations: One where there was a negotiation between two parties, and another where there was a person with ownership or expertise on one side of the conflict. In the latter case, the owner/expert would either have more weight in the argument or have to resolve the conflict themselves. In the case of pull requests with merge conflicts, one participant even uses the following process: ?If it?s not an easy thing to land, there?s no shame in saying ?You, community member who wants to see this: put in the work to see it happen.?? we?re not really stressing on backporting things that people aren?t willing to put time into.? This shows that a maintainer will refrain from solving conflicts because they do not view themselves as being responsible for getting the changes in. The same participant clarifies this by saying:?I was thinking when I started working on a project, ?Oh maybe I'll take this over.? And so I started to try and rebase it, and it was really tough. That's particularly risky mostly in the sense that you start touching code that you don't necessarily know exactly what it does and making concessions on stuff that aren't decisions you originally made.?The participant?s point highlights exactly why someone might defer the task to someone who knows the context of the changes better. The risk of misinterpreting the purpose of the change is very real, and if the feature is not critical for the next version of the project, it is usually not worth risking the stability of the project.\textbf{*** Nuclear option ***}
-For individual mergers, one process that stood out was what we call ?The Nuclear Option?. Essentially, this just means that after a developer gets a conflict, the developer will pull their local changes off to the side, checkout a fresh copy from the remote branch, then simply redo their changes. This method seems to be used only in the case where a merge conflict is nontrivial to resolve and the developer perceives the local code changes as relatively small. Though it only accounted for 11\% of the cards sorted in this category, it was also a very specific process. Factors of Resolution DifficultyThese are steps or attributes of the resolution process that affect the difficulty of a conflict resolution. This category contained a total of 60 cards.
+Resolution Process is a category for anything that describes a participant's process for resolving a merge conflict. This category contained a total of 52 cards.\textbf{*** People depend on tools, write scripts to fill tool gaps ***}
+The biggest theme to come out of this category, 31\% of resolution process cards, was that many people mention a dependency on tools during their resolution process. For instance, participants mention using Git's rebase, rerere, and git-am utilities often in their processes. They also explain that they like to see the versions of the conflict side-by-side in a GUI window in order to better understand the conflict. Perhaps most interesting is the tendency of some to start writing their own scripts because no other tools seem to accomplish what they need. For example, when dealing with complex projects with many branches that involve cherry picking, labels, and good metadata utilization, Git and the tools to work with Git seem too simple to accomplish an accurate diff between branches. As a result, one project created its own tool that allows them to customize their branch diffs. Other developers found themselves using tools to locate what they need to fix before opening up a text editor and manually resolving the conflict rather than using a tool to resolve the conflict.\textbf{*** Negotiating conflicts. Ownership/expertise for social merge conflict resolution tactics ***}
+Another important theme was a collaborative merging process between those involved in a merge conflict. This accounts for 23\% of the resolution process cards sorted. These cases were typically split into two situations: One where there was a negotiation between two parties, and another where there was a person with ownership or expertise on one side of the conflict. In the latter case, the owner/expert would either have more weight in the argument or have to resolve the conflict themselves. In the case of pull requests with merge conflicts, one participant even uses the following process: "If it's not an easy thing to land, there's no shame in saying ?You, community member who wants to see this: put in the work to see it happen.'? we're not really stressing on backporting things that people aren't willing to put time into." This shows that a maintainer will refrain from solving conflicts because they do not view themselves as being responsible for getting the changes in. The same participant clarifies this by saying:"I was thinking when I started working on a project, ?Oh maybe I'll take this over.' And so I started to try and rebase it, and it was really tough. That's particularly risky mostly in the sense that you start touching code that you don't necessarily know exactly what it does and making concessions on stuff that aren't decisions you originally made."The participant's point highlights exactly why someone might defer the task to someone who knows the context of the changes better. The risk of misinterpreting the purpose of the change is very real, and if the feature is not critical for the next version of the project, it is usually not worth risking the stability of the project.\textbf{*** Nuclear option ***}
+For individual mergers, one process that stood out was what we call "The Nuclear Option". Essentially, this just means that after a developer gets a conflict, the developer will pull their local changes off to the side, checkout a fresh copy from the remote branch, then simply redo their changes. This method seems to be used only in the case where a merge conflict is nontrivial to resolve and the developer perceives the local code changes as relatively small. Though it only accounted for 11\% of the cards sorted in this category, it was also a very specific process. Factors of Resolution DifficultyThese are steps or attributes of the resolution process that affect the difficulty of a conflict resolution. This category contained a total of 60 cards.
 
 \textbf{*** tool problems: functional deficiency, info presentation, tool fragmentation,  mistrust ***}
 The most common difficulties mentioned by participants were problems with tools, accounting for 30\% of cards in this category. We found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. \textbf{*** Git blame issues***}
-When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that during backporting in a large system, it is extremely hard to understand when code was deleted. ?You can?t git blame it. You can?t git blame something that doesn?t exist, right?? The git blame tool allows developers to find when a certain line was added or changed. It also offers a git blame --reverse option in the command line. When asked why the --reverse option did not satisfy this need, the participant said, ?It still requires thorough background knowledge of the code base. Also I work on large changes in time in hot paths. This could mean many additions and deletions that would lead to further confusion.? In other words, trying to use this tool in an area of high activity over a long period of time is just not feasible. Furthermore, it does not appear that git blame --reverse has made the jump into graphical Git tools, making this scenario more difficult for those using graphical tools. [Add another functional deficiency?]
+When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that during backporting in a large system, it is extremely hard to understand when code was deleted. "You can't git blame it. You can't git blame something that doesn't exist, right?" The git blame tool allows developers to find when a certain line was added or changed. It also offers a git blame --reverse option in the command line. When asked why the --reverse option did not satisfy this need, the participant said, "It still requires thorough background knowledge of the code base. Also I work on large changes in time in hot paths. This could mean many additions and deletions that would lead to further confusion." In other words, trying to use this tool in an area of high activity over a long period of time is just not feasible. Furthermore, it does not appear that git blame --reverse has made the jump into graphical Git tools, making this scenario more difficult for those using graphical tools. [Add another functional deficiency?]
 \textbf{*** Git Blame problems with refactorings ***}
 
 http://jfire.io/blog/2012/03/07/code-archaeology-with-git/\textbf{***Information Presentation is bad ***}
 Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool whenever switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned.
 \textbf{*** Toolset is too fragmented ***}
-Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, ?I had to jump around between tools and copy and paste version numbers from one to? See, this is why [toolset] integration matters.? This frustration is understandable, as a developer whose workflow is frequently interrupted by needless, inefficient operations.
+Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, "I had to jump around between tools and copy and paste version numbers from one to? See, this is why [toolset] integration matters." This frustration is understandable, as a developer whose workflow is frequently interrupted by needless, inefficient operations.
 \textbf{*** Tools are not trusted ***}
-Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the necessary steps have been taken. ?I?ve never trusted the merge tools, in a way? Or the diff tools. It would always just make me skittish? So my overall perception is that I?m scared of them? Sometimes I?ll even manually go and do the merge myself rather than use a tool. Just because I?ve had several times where it?s a bad merge, and I broke some code.? This quote comes from Participant 4, a professional software developer with 10 years of experience. It is worth noting that many tool-related complaints came from within the context of the archeology lens [Mihai paper], meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, ?Give me a way to explore this. Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.? The reality for developers using Git for more advanced use cases is that tool support is incredibly thin, if not nonexistent. Problems with this archeology process accounted for 13\% of the cards in this category.
+Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the necessary steps have been taken. "I've never trusted the merge tools, in a way? Or the diff tools. It would always just make me skittish? So my overall perception is that I'm scared of them? Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code." This quote comes from Participant 4, a professional software developer with 10 years of experience. It is worth noting that many tool-related complaints came from within the context of the archeology lens [Mihai paper], meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, "Give me a way to explore this. Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened." The reality for developers using Git for more advanced use cases is that tool support is incredibly thin, if not nonexistent. Problems with this archeology process accounted for 13\% of the cards in this category.
 
 \subsection{Survey}
 
@@ -276,7 +276,7 @@ This factor starts out ranked as the factor that least affects the difficulty of
 
 \textbf{***Time to Resolve the conflict increased with Experience***}
 
-\textbf{*** Non-functional changes don?t matter to anybody ***}
+\textbf{*** Non-functional changes don't matter to anybody ***}
 
 \textbf{***How each demographic differs from the whole***}
 
@@ -292,9 +292,9 @@ When 121 participants of no particular role were asked how much they trust their
 \end{figure}
 \subsubsection{Tool Needs}Survey participants were asked what kind of improvements they would like to see in their tools. Of the options extracted from interviews, Figure \ref{tool_needs_rank} shows the rankings of each factor based on its median value rated by developers at different experience levels.
 \textbf{***Many of the results show a certain level of agreement across most experience levels. ***}
-Though there is some variation, several of these factors are consistent across experience levels. For instance, every experience level considers ?Better Usability? to be either 1st or 2nd priority, developers with more than 5 years of development experience rank ?Better ways of exploring project history? as the 3rd priority, and 4 of 5 experience levels rank ?Better transparency in tool functionality/operations? as 5th most important of 6 factors. 5 of 6 groups also showed little concern about improving terminology and its consistency across different tools.Notably, more experienced developers agree that better ways of filtering out less relevant data is important
+Though there is some variation, several of these factors are consistent across experience levels. For instance, every experience level considers "Better Usability" to be either 1st or 2nd priority, developers with more than 5 years of development experience rank "Better ways of exploring project history" as the 3rd priority, and 4 of 5 experience levels rank "Better transparency in tool functionality/operations" as 5th most important of 6 factors. 5 of 6 groups also showed little concern about improving terminology and its consistency across different tools.Notably, more experienced developers agree that better ways of filtering out less relevant data is important
 \textbf{***Usability is important***}
-\textbf{***Most don?t seem to care about terminology***}
+\textbf{***Most don't seem to care about terminology***}
 
 \textbf{***Better graphical presentation  of information seems to mattter more for less experienced devs***}
 
@@ -313,118 +313,21 @@ When 121 participants of no particular role were asked how much they trust their
 \hlineHow easy it is to understand the code involved in the merge conflict & 26.2 & 46.1 & 17.7 & 9.9 & 0\\Your expertise in the area of code with the merge conflict & 25.5 & 34.8 & 27 & 12.1 & 0.7\\How well tools present information in an understandable way & 24.1 & 22.7 & 33.3 & 17 & 2.8\\The amount of information you have about the conflicting code & 22.7 & 34 & 27 & 14.9 & 1.4\\Changing assumptions within the code & 17.7 & 25.5 & 31.9 & 19.1 & 5.7\\Trustworthiness of tools & 17 & 22.7 & 27.7 & 20.6 & 12.1\\Tool support for examining development history & 15.6 & 22.7 & 22 & 28.4 & 11.3\\Project culture & 14.9 & 19.1 & 30.5 & 26.2 & 9.2\\Complexity of the project structure & 12.1 & 29.1 & 27.7 & 27 & 4.3\\Informativeness of commit messages & 12.1 & 31.2 & 21.3 & 22.7 & 12.8\\
 \hline
 \end{tabular}
-\end{table}
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
+\end{table}
 
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
-
-
+\section{Discussion}
+\subsection{Implications}
+\subsubsection{For Researchers}
+\subsubsection{For Tool Builders}
+\subsubsection{For Developers}
 
 
 \section{Conclusion}
 The conclusion goes here.
 
-
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgment
 \section*{Acknowledgment}
 
-
-The authors would like to thank Alex Hoffer, Iftekhar Ahmed, Michael Hilton, Sruti Ragavan
+The authors would like to thank Alex Hoffer, Iftekhar Ahmed, Michael Hilton, Sruti Ragavan, and all of our interview and survey participants, especially those who helped distribute interview requests and survey links.
 
 \begin{thebibliography}{1}
 
