@@ -1,170 +1,53 @@
-\section{Methodology}
+\section{Methodology}\label{methodology}
 \textbf{***We did a 2-step approach, because?.***}
 
-Our approach consists of two steps: interview then survey. With this approach, interviews explore developers' difficulties with merge conflicts and their resolution process, which allowed us to construct the survey based on the survey findings.
+Our approach consists of two phases. First, an exploratory interview phase with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings. 
 
 \subsection{Interviews}
-\textbf{***interview protocol***}
-
-10 semi-structured interviews were conducted at a place and time of the participant's choosing. Participants were selected through professional relationships or by emailing top contributors to top open-source projects and had an average of 7.4 years of experience [update with 10th participant]. Before the interview, participants were given a description informing them that the study's focus was on understanding how developers understand merge conflicts. The interviewer kept participants on topic during the questions, but also allowed time at the end of the interview to talk about subjects relating to merge conflicts. 
-
-\textbf{***transcription/analysis process steps***}
-
-Interviews were then transcribed by the first author or an undergraduate research assistant and unitized [Sruti's recommended paper on unitization] by the first author. Unitization was done by identifying consecutive lines in the interview that seemed logically consistent and grouping them together as one card. This was done in a conservative manner to ensure that context was well preserved within each card. Some further unitization was done during card sorting when both sorters agreed that the card needed to be split.
-
-\textbf{***why card sorting and process***}
-
-Card sorting was performed by the first and second author, both graduate students very familiar with the Git workflow. Cards were initially sorted into three categories that corresponded to the research questions before following the typical card sorting workflow [blog cited by Zimmerman in 145 Q's paper]. This workflow requires two people to go through each card and group them by themes. The themes can then be divided into sub-groups or generalized into larger groups.
-
-\subsection{Survey}
-
-\textbf{***We created these questions because?***}
-
-Survey questions were derived from interview results. 
-
-\textbf{***how survey was deployed***}
-
-Survey participants were found by mining email addresses from open-source repositories on GitHub, posting to social media sites such as Facebook and Reddit, and by contacting software developers through email.
-
-\section{Results}
-\subsection{Interview}
-\subsubsection{Contributing factors to merge conflicts}
-
-Contributing Factors are things that people perceive as affecting the frequency of conflicts. Though this does not directly relate to our research questions, many participants mentioned factors that they believed to cause or minimize merge conflicts. Of 69 total cards in this category, 19\% blamed code reformatting or project restructuring for past conflicts, though some did mention that restructuring can help to avoid conflicts in the future. 16\% blamed project rules and processes for their conflicts, while another 14\% confirms findings in Bird et al [cite], showing that large deltas between branches causes more frequent merge conflicts. Another 12\% showed a belief that increased team awareness decreases merge conflicts, as addressed in previous studies \cite{Brun2011} \cite{palantir} 
-
-\subsubsection{Factors of Merge Conflict Difficulty}
-
-\textbf{***we did not find many factors here, likely because?.***}
-
-Factors of Merge Conflict Difficulty are attributes of a merge conflict that participants believe affect the difficulty of the conflict. This section of interview results was too small to draw any conclusions about developer perceptions.
-
-\subsubsection{Resolution Process}
-
-Resolution Process is a category for anything that describes a participant's process for resolving a merge conflict. This category contained a total of 52 cards.
-
-\textbf{*** People depend on tools, write scripts to fill tool gaps ***}
-
-The biggest theme to come out of this category, 31\% of resolution process cards, was that many people mention a dependency on tools during their resolution process. For instance, participants mention using Git's rebase, rerere, and git-am utilities often in their processes. They also explain that they like to see the versions of the conflict side-by-side in a GUI window in order to better understand the conflict. Perhaps most interesting is the tendency of some to start writing their own scripts because no other tools seem to accomplish what they need. For example, when dealing with complex projects with many branches that involve cherry picking, labels, and good metadata utilization, Git and the tools to work with Git seem too simple to accomplish an accurate diff between branches. As a result, one project created its own tool that allows them to customize their branch diffs. Other developers found themselves using tools to locate what they need to fix before opening up a text editor and manually resolving the conflict rather than using a tool to resolve the conflict.
-
-\textbf{*** Negotiating conflicts. Ownership/expertise for social merge conflict resolution tactics ***}
-
-Another important theme was a collaborative merging process between those involved in a merge conflict. This accounts for 23\% of the resolution process cards sorted. These cases were typically split into two situations: One where there was a negotiation between two parties, and another where there was a person with ownership or expertise on one side of the conflict. In the latter case, the owner/expert would either have more weight in the argument or have to resolve the conflict themselves. In the case of pull requests with merge conflicts, one participant even uses the following process: 
-"If it's not an easy thing to land, there's no shame in saying ?You, community member who wants to see this: put in the work to see it happen.'? we're not really stressing on backporting things that people aren't willing to put time into." 
-This shows that a maintainer will refrain from solving conflicts because they do not view themselves as being responsible for getting the changes in. The same participant clarifies this by saying:
-"I was thinking when I started working on a project, ?Oh maybe I'll take this over.' And so I started to try and rebase it, and it was really tough. That's particularly risky mostly in the sense that you start touching code that you don't necessarily know exactly what it does and making concessions on stuff that aren't decisions you originally made."
-The participant's point highlights exactly why someone might defer the task to someone who knows the context of the changes better. The risk of misinterpreting the purpose of the change is very real, and if the feature is not critical for the next version of the project, it is usually not worth risking the stability of the project.
-
-\textbf{*** Nuclear option ***}
-
-For individual mergers, one process that stood out was what we call "The Nuclear Option". Essentially, this just means that after a developer gets a conflict, the developer will pull their local changes off to the side, checkout a fresh copy from the remote branch, then simply redo their changes. This method seems to be used only in the case where a merge conflict is nontrivial to resolve and the developer perceives the local code changes as relatively small. Though it only accounted for 11\% of the cards sorted in this category, it was also a very specific process. 
-
-Factors of Resolution Difficulty
-These are steps or attributes of the resolution process that affect the difficulty of a conflict resolution. This category contained a total of 60 cards.
-
-\textbf{*** tool problems: functional deficiency, info presentation, tool fragmentation,  mistrust ***}
-
-The most common difficulties mentioned by participants were problems with tools, accounting for 30\% of cards in this category. We found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. 
-
-\textbf{*** Git blame issues***}
-
-When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that during backporting in a large system, it is extremely hard to understand when code was deleted. "You can't git blame it. You can't git blame something that doesn't exist, right?" 
-The git blame tool allows developers to find when a certain line was added or changed. It also offers a git blame --reverse option in the command line. When asked why the --reverse option did not satisfy this need, the participant said, "It still requires thorough background knowledge of the code base. Also I work on large changes in time in hot paths. This could mean many additions and deletions that would lead to further confusion." In other words, trying to use this tool in an area of high activity over a long period of time is just not feasible. Furthermore, it does not appear that git blame --reverse has made the jump into graphical Git tools, making this scenario more difficult for those using graphical tools. [Add another functional deficiency?]
-
-\textbf{*** Git Blame problems with refactorings ***}
-
-http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
-
-\textbf{***Information Presentation is bad ***}
-
-Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool whenever switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned.
-
-\textbf{*** Toolset is too fragmented ***}
-
-Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, "I had to jump around between tools and copy and paste version numbers from one to? See, this is why [toolset] integration matters." This frustration is understandable, as a developer whose workflow is frequently interrupted by needless, inefficient operations.
-
-\textbf{*** Tools are not trusted ***}
-
-Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the necessary steps have been taken. "I've never trusted the merge tools, in a way? Or the diff tools. It would always just make me skittish? So my overall perception is that I'm scared of them? Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code." This quote comes from Participant 4, a professional software developer with 10 years of experience. 
-It is worth noting that many tool-related complaints came from within the context of the archeology lens [Mihai paper], meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, "Give me a way to explore this. Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened." The reality for developers using Git for more advanced use cases is that tool support is incredibly thin, if not nonexistent. Problems with this archeology process accounted for 13\% of the cards in this category.
-
-\subsection{Survey}
-
-The survey was distributed within several top software companies, several smaller software companies, and in the open-source community.
-
-\textbf{*** Survey Demographics***}
-
-The participants were broken down into the following categories:
-
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Participant Project Types}
 \label{project_type}
 \centering
-\begin{tabular}{|c||c|}
-\hline
-Project Type & \% Respondents\\
-\hline
-Open-Source Projects & 13.3\%\\
-Closed-Source Projects & 62.8\%\\
-I split my time evenly & 23.9\%\\
-\hline
+\begin{tabular}{|c|l|c|l|}
+	\hline
+	Partic. & Role & Exp. & Industry \\
+	\hline
+	P1 & Sr. Software Developer & 18 yrs. & Semiconductor Manuf.\\
+	P2 & Software Engineer & 6 yrs. & Semiconductor Manuf.\\
+	P3 & Software Engineer & 3 yrs. & Semiconductor Manuf.\\
+	P4 & Software Developer & 10 yrs. & Academia\\
+	P5 & Infrastructure Engineer & 3 yrs. & Healthcare Software\\
+	P6 & Software Developer & 5 yrs. & Healthcare Software\\
+	P7 & Software Engineer & 5 yrs. & Business Software\\
+	P8 & Director & 25 yrs. & Academia\\
+	P9 & Collaborator Developer & 8 yrs. & IT Services\\
+	P10 & COllaborator Developer & 2 yrs. & Sports \& Wellness Tech.\\
+	\hline
 \end{tabular}
 \end{table}
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Participant Experience Levels}
-\label{exp_levels}
-\centering
-\begin{tabular}{|c||c|}
-\hline
-Years Experience & \% Respondents\\
-\hline
-1-5 & 30.5\%\\
-6-10 & 33.6\%\\
-11-15 & 13.7\%\\
-16-20 & 10.2\%\\
-21-25 & 4.4\%\\
-26 or more & 7.5\%\\
-\hline
-\end{tabular}
-\end{table}
+\textbf{***interview protocol***}
+\comment{AS: need following information to be updated: 1) a demographics table for the interview participants. 2) how many P were from Industry and how many from OSS?}
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Participant Project Size}
-\label{project_size}
-\centering
-\begin{tabular}{|c||c|}
-\hline
-Project Size (\# developers) & \% Respondents\\
-\hline
-1 & 7.1\%\\
-2-5 & 49.1\%\\
-6-10 & 22.6\%\\
-11-50 & 12.4\%\\
-51 or more & 8.9\%\\
-\hline
-\end{tabular}
-\end{table}
+We conducted 10 semi-structured interviews with software practitioners. Participants were selected from industry contacts or by emailing contributors of top open-source projects. We recruited 6 participants from industry and 4 from open source; participants had a median experience of 5 years (see Table XX). Participants were offered \$50 for their participation.  
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Participant Roles}
-\label{roles_table}
-\centering
-\begin{tabular}{|c||c|}
-\hline
-Developer Role & \% Respondents\\
-\hline
-Software Engineer/Developer & 94.3\%\\
-System Architect & 30.5\%\\
-DevOps & 30.1\%\\
-Project Manager & 23.9\%\\
-Project Maintainer & 22.1\%\\
-Systems Engineer & 18.6\%\\
-Systems Administrator & 13.7\%\\
-Other & 4.9\%\\
-\hline
-\end{tabular}
-\end{table}
+Interviews lasted between 30-60 minutes, and were conducted by the first author. Interviews were audio-taped and later transcribed for analysis. At the beginning of the interview we gave participants a short explanation of the research goals and collected demographics data. Participants were then asked about the roles they play in their project, their experience working in team settings, and questions about merge conflicts, the process of conflict resolution, and the difficulties that they faced in conflict resolution. The semi-structured interview format allowed us participants to provide us with unanticipated information. Further, we allowed open ended discussion about merge conflicts in general at the end of the interview, which allowed participants to share ideas that they found particularly important or about topics that we had missed. 
+
+\comment{***analysis process steps***}
+
+Interviews were unitized \cite{unitization} by the first author. Unitization was done by identifying consecutive lines in the interview that seemed logically consistent and grouping them together as one card. This was done in a conservative manner to ensure that context was well preserved within each card. Some further unitization was done during card sorting stage, when both sorters believed that the card needed to be split.
+
+\comment{***why card sorting and process***}
+
+The first two authors individually coded emerging themes in the cards (interview transcripts), and discussed the emerging taxonomies until consensus was reached \comment{[blog cited by Zimmerman in 145 Q's paper]}. We then performed two iterations of card sorting at the end of which we arrived at: the factors that lead to merge conflicts (Section X), the different phases of conflict resolution (Section 3-stages), and the difficulties faced by developers (Section XX4.2).
+
+%Cards were initially sorted into three categories that corresponded to our research questions before following the typical card sorting workflow [blog cited by Zimmerman in 145 Q's paper]. This workflow requires two people to go through each card and group them by themes. The themes can then be divided into sub-groups or generalized into larger groups.
+
+\subsection{Survey}
+\todo{cite and discuss \cite{hidden_dependencies} for hidden dependencies option, if needed}
+\todo{cite companion site \cite{companion_site} properly}
+The interview results formed the basis of the survey questions. The survey was divided into four categories. First, elicited background information about demographics, roles, and experience. The following categories reflected the three main interview findings. Each category included about 5-7 questions (see XXX for questions). Most questions included an optional open-ended text form to get additional insights into the questions. 
+
+\comment{***how survey was deployed***}
+Survey participants were recruited by mining email addresses from open-source repositories on GitHub, posting to social media sites such as Facebook and Reddit, and by contacting software developers through email. We received XX survey responses.
