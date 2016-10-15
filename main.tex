@@ -1,0 +1,52 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{dblfloatfix}
+\usepackage{url}
+\usepackage{color}
+\usepackage{varwidth}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\graphicspath{{./imgs/}{../jpeg/}}
+\DeclareGraphicsExtensions{.pdf}
+
+%\newcommand\comment[1]{}
+\newcommand{\comment}[1]{{\noindent\bfseries #1}}
+\newcommand\todo[1]{{\noindent\color{red}\\\textbf{TODO:~}#1}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+\title{Two Software Developers Walk Into a Merge Conflict... Now What?}
+
+\author{\IEEEauthorblockN{Shane McKee,
+Nicholas Nelson,
+Danny Dig and 
+Anita Sarma}
+\IEEEauthorblockA{School of Electrical Engineering and Computer Science\\
+Oregon State University,
+Corvallis, OR\\ \{mckeesh, nelsonni, digd, anita.sarma\}@oregonstate.edu}}
+
+\maketitle
+
+\input{Abstract}
+\IEEEpeerreviewmaketitle
+\input{Introduction}
+\input{Background}
+\input{Methodology}
+\section{Results}\label{results}
+\input{RQ1}
+\input{RQ2}
+\input{RQ3}
+\input{Implications}
+\input{Threats}
+\input{Related_Work}
+\input{Conclusions}
+%\input{miscellaneous} %% DELETE THIS SECTION BEFORE PUBLISHING
+\input{Acknowledgements}
+
+\bibliographystyle{IEEEtran}
+\bibliography{Bibliography}{}
+
+\end{document}
+
+
