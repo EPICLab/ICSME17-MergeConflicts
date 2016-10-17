@@ -1,22 +1,31 @@
 \subsection{RQ2: What factors impact the difficulty of a conflict resolution?}
-\textbf{***Q36 - Please rate how much each of these factor into the difficulty of resolving merge conflicts***}
 
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{ExpVsRankResDiff.pdf}
-%\caption{The rank of factors of difficulty during merge conflict resolutions by experience level}
-%\label{res_diff_rank}
-%\end{figure}
+\todo{talk about resolution difficulties in interviews and how survey answer options were formed}
 
-These individual factors emerged through the interview processing via the method of card sorting previously described. Of 141 responses, Figure \ref{res_diff_rank} shows the rank of each factor where the rank 1 factors into the difficulty of resolving a merge conflict the most, and the rank 10 affects the difficulty of merge conflict resolution the least.
-
-Some key factors to consider in Figure \ref{res_diff_rank}:
+Our survey suggests that regardless of gender, developer role, experience level, project size, and source distribution model, software practitioners say that the following factors affect the difficulty of resolving merge conflicts: 
 \begin{itemize}
-\item \textbf{Tool support for examining development history}\\
-This factor starts out ranked as the factor that least affects the difficulty of a merge conflict resolution in the group of least experienced respondants.
-\item \textbf{Another key point}\\
-***Explanation*** 
+\item \textit{The amount of information you have about the conflicting code}\\
+\item \textit{Your expertise in the area of code with the merge conflict}\\
+\item \textit{How easy it is to understand the code involved in the merge conflict}\\
+\item \textit{How well tools present information in an understandable way}
+\item \textit{Complexity of the project structure}
 \end{itemize}
+
+Nothing is considered to have no effect on merge conflict resolution difficulty
+
+21-25 stands out, but it could be due to low sample sizes
+
+Tool support history and informativeness of commit messages are both controversial across project sizes.
+
+Trustworthiness of tools is controversial across experience levels
+
+Project culture, Tool support history, Informativeness of commit messages are controversial across all demographics
+
+Trustworthiness of tools is controversial across different roles.
+
+Project culture becomes more impactful as project size increases.
+
+Trustworthiness of tools: Sys Architects, Sys Admins, and Project Managers say it has an effect. Sys Engineers and Project Maintainers say it has no effect. This could be because people who are closer to the code have found their tools and have settled into their processes. They know the workarounds, and they have done this before.
 
 \textbf{***Tool support for examining development history from 10th to 1st***}\\
 \textbf{***Expertise in the area of code becomes less important (1-4) ***}\\
