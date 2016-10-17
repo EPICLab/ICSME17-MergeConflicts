@@ -6,7 +6,7 @@ library(extrafont)
 
 if (!exists("survey")) {
   print("Reading csv data into 'survey' dataframe...")
-  survey <- read.csv("/home/nelsonni/Documents/Research/Merge Conflicts Project/R data/survey.csv", 
+  survey <- read.csv("/home/nelsonni/Documents/Research/Merge Conflicts Project/SANERPaper/R_data/survey.csv", 
                      header=TRUE, sep=",", na.strings=c("", "NA"))
 }
 
@@ -37,6 +37,12 @@ devops      <- survey[grep("DevOps", survey$Roles), ]
 maintainers <- survey[grep("Project Maintainer", survey$Roles), ]
 managers    <- survey[grep("Project Manager", survey$Roles), ]
 other       <- survey[grep("Other", survey$Roles), ]
+
+experienced     <- survey[grep("26", survey$Experience), ]
+mid_experience  <- survey[grep("16", survey$Experience), ]
+exp_maintainers <- merge(experienced, maintainers)
+dev_sysEng      <- merge(developers, engineers)
+females         <- survey[grep("Female", survey$Gender), ]
 
 # determine combinations of roles
 #devops_developers <- merge(devops, developers)

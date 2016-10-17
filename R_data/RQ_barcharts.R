@@ -1,58 +1,77 @@
 library(ggplot2)
 
-plot.Likert <- function(values, scale, title) {
-  if (length(scale) != length(values)) stop("scales be the same length as values")
+plot.Likert <- function(values, scales, title, GROUPING = "none") {
+  vmean         <- sum(values * seq_along(values))/sum(values)
+  veffect       <- if (vmean<2.9) {"No Effect"} else if (vmean>3.1) {"Effect"} else {"50/50"}
+  if (length(scales) != length(values)) stop("scales must be the same length as values")
+  if (GROUPING == "aggressive") {
+    if (length(values) != 5) stop("values must be length 5 for GROUPING=aggressive")
+    lower_grp   <- sum(sapply(values[1:2], function(x) (x/sum(values)*100)))
+    higher_grp  <- sum(sapply(values[3:5], function(x) (x/sum(values)*100)))
+    values      <- c(lower_grp, higher_grp)
+    scales      <- c(scales[1], scales[5])
+  } else if (GROUPING == "conservative") {
+    if (length(values) != 5) stop("values must be length 5 for GROUPING=conservative")
+    lower_grp   <- sum(sapply(values[1:3], function(x) (x/sum(values)*100)))
+    higher_grp  <- sum(sapply(values[4:5], function(x) (x/sum(values)*100)))
+    values      <- c(lower_grp, higher_grp)
+    scales      <- c(scales[1], scales[5])
+  } else if (GROUPING == "donut") {
+    if (length(values) != 5) stop("values must be length 5 for GROUPING=donut")
+    lower_grp   <- sum(sapply(values[1:2], function(x) (x/sum(values)*100)))
+    higher_grp  <- sum(sapply(values[4:5], function(x) (x/sum(values)*100)))
+    values      <- c(lower_grp, higher_grp)
+    scales      <- c(scales[1], scales[5])
+  }
   percents <- sapply(values, function(x) (x/sum(values)*100))
-  bplot <- barplot(percents, main=title, ylim=c(0,100), names.arg=scale)
-  text(x = bplot, y = percents, label = round(percents, 2), pos = 3, cex = 0.8)
+  bplot <- barplot(percents, main=title, ylim=c(0,100), names.arg=scales)
+  text(x = bplot, y = percents, label = paste0(round(percents, 2),"%"), pos = 3, cex = 0.8)
+  mtext(text= paste0("mean: ",round(vmean, 2)," (",veffect,")"), side=1, line=3)
 }
-
-## TODO: Write another function that plots with groups of two -> categories 1-3 are lower, categories 4-5 are higher
 
 plotter <- list()
 # GENDER
-plotter.Gender <- function(target) {
-  plot.Likert(target$everybody, target$scale, "Full Population")
-  plot.Likert(target$male, target$scale, "Male")
-  plot.Likert(target$female, target$scale, "Female")
+plotter.Gender <- function(target, GROUP = "none") {
+  plot.Likert(target$female, target$scale, "Female", GROUPING=GROUP)
+  plot.Likert(target$male, target$scale, "Male", GROUPING=GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
 }
 # SOURCE DISTRIBUTION MODEL
-plotter.Source_Model <- function(target) {
-  plot.Likert(target$everybody, target$scale, "Full Population")
-  plot.Likert(target$open, target$scale, "Open-Source")
-  plot.Likert(target$closed, target$scale, "Closed-Source")
-  plot.Likert(target$both, target$scale, "Split Evenly")
+plotter.Source_Model <- function(target, GROUP = "none") {
+  plot.Likert(target$both, target$scale, "Split Evenly", GROUPING=GROUP)
+  plot.Likert(target$closed, target$scale, "Closed-Source", GROUPING=GROUP)
+  plot.Likert(target$open, target$scale, "Open-Source", GROUPING=GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
 }
 # ROLES
-plotter.Roles <- function(target) {
-  plot.Likert(target$everybody, target$scale, "Full Population")
-  plot.Likert(target$open, target$scale, "Open-Source")
-  plot.Likert(target$soft_eng, target$scale, "Software Engineers")
-  plot.Likert(target$sys_eng, target$scale, "System Engineers")
-  plot.Likert(target$sys_arc, target$scale, "System Architects")
-  plot.Likert(target$sys_admin, target$scale, "Systems Administrators")
-  plot.Likert(target$devops, target$scale, "DevOps")
-  plot.Likert(target$proj_maint, target$scale, "Project Maintainers")
-  plot.Likert(target$proj_manag, target$scale, "Project Managers")  
+plotter.Roles <- function(target, GROUP = "none") {
+  plot.Likert(target$proj_manag, target$scale, "Project Managers", GROUPING=GROUP)
+  plot.Likert(target$proj_maint, target$scale, "Project Maintainers", GROUPING=GROUP)
+  plot.Likert(target$devops, target$scale, "DevOps", GROUPING=GROUP)
+  plot.Likert(target$sys_admin, target$scale, "Systems Administrators", GROUPING=GROUP)
+  plot.Likert(target$sys_arc, target$scale, "System Architects", GROUPING=GROUP)
+  plot.Likert(target$sys_eng, target$scale, "System Engineers", GROUPING=GROUP)
+  plot.Likert(target$soft_eng, target$scale, "Software Engineers", GROUPING=GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
 }
 # EXPERIENCE
-plotter.Experience <- function(target) {
-  plot.Likert(target$everybody, target$scale, "Full Population")
-  plot.Likert(target$exp_1, target$scale, "1-5 Years")
-  plot.Likert(target$exp_2, target$scale, "6-10 Years")
-  plot.Likert(target$exp_3, target$scale, "11-15 Years")
-  plot.Likert(target$exp_4, target$scale, "16-20 Years")
-  plot.Likert(target$exp_5, target$scale, "21-25 Years")
-  plot.Likert(target$exp_6, target$scale, "26+ Years")
+plotter.Experience <- function(target, GROUP = "none") {
+  plot.Likert(target$exp_6, target$scale, "26+ Years", GROUPING=GROUP)
+  plot.Likert(target$exp_5, target$scale, "21-25 Years", GROUPING=GROUP)
+  plot.Likert(target$exp_4, target$scale, "16-20 Years", GROUPING=GROUP)
+  plot.Likert(target$exp_3, target$scale, "11-15 Years", GROUPING=GROUP)
+  plot.Likert(target$exp_2, target$scale, "6-10 Years", GROUPING=GROUP)
+  plot.Likert(target$exp_1, target$scale, "1-5 Years", GROUPING=GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
 }
 # PROJECT SIZE
-plotter.Project_Size <- function(target) {
-  plot.Likert(target$everybody, target$scale, "Full Population")
-  plot.Likert(target$psize_1, target$scale, "1 Developer")
-  plot.Likert(target$psize_2, target$scale, "2-5 Developers")
-  plot.Likert(target$psize_3, target$scale, "6-10 Developers")
-  plot.Likert(target$psize_4, target$scale, "11-50 Developers")
-  plot.Likert(target$psize_5, target$scale, "51+ Developers")
+plotter.Project_Size <- function(target, GROUP = "none") {
+  plot.Likert(target$psize_5, target$scale, "51+ Developers", GROUPING=GROUP)
+  plot.Likert(target$psize_4, target$scale, "11-50 Developers", GROUPING=GROUP)
+  plot.Likert(target$psize_3, target$scale, "6-10 Developers", GROUPING=GROUP)
+  plot.Likert(target$psize_2, target$scale, "2-5 Developers", GROUPING=GROUP)
+  plot.Likert(target$psize_1, target$scale, "1 Developer", GROUPING=GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
 }
 
 #############################################################################################
