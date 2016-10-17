@@ -4,28 +4,28 @@
 Our approach consists of two phases. First, an exploratory interview phase with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings. 
 
 \subsection{Interviews}
-\begin{table}[!t]
+\begin{table*}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Participant Project Types}
 \label{project_type}
 \centering
-\begin{tabular}{|c|l|c|l|}
+\begin{tabular}{|c|l|c|l|c|}
 	\hline
-	Partic. & Role & Exp. & Industry \\
+	Partic. & Role & Exp. & Industry & Source Distribution Model\\
 	\hline
-	P1 & Sr. Software Developer & 18 yrs. & Semiconductor Manuf.\\
-	P2 & Software Engineer & 6 yrs. & Semiconductor Manuf.\\
-	P3 & Software Engineer & 3 yrs. & Semiconductor Manuf.\\
-	P4 & Software Developer & 10 yrs. & Academia\\
-	P5 & Infrastructure Engineer & 3 yrs. & Healthcare Software\\
-	P6 & Software Developer & 5 yrs. & Healthcare Software\\
-	P7 & Software Engineer & 5 yrs. & Business Software\\
-	P8 & Director & 25 yrs. & Academia\\
-	P9 & Collaborator Developer & 8 yrs. & IT Services\\
-	P10 & COllaborator Developer & 2 yrs. & Sports \& Wellness Tech.\\
+	P1 & Sr. Software Developer & 18 yrs. & Semiconductor Manuf. & Open-Source\\
+	P2 & Software Engineer & 6 yrs. & Semiconductor Manuf. & Open-Source\\
+	P3 & Software Engineer & 3 yrs. & Semiconductor Manuf. & Open-Source\\
+	P4 & Software Developer & 10 yrs. & Academia & Open-Source\\
+	P5 & Infrastructure Engineer & 3 yrs. & Healthcare Software & Closed-Source\\
+	P6 & Software Developer & 5 yrs. & Healthcare Software & Closed-Source\\
+	P7 & Software Engineer & 5 yrs. & Business Software & Open-Source\\
+	P8 & Director & 25 yrs. & Academia & Open-Source\\
+	P9 & Collaborator Developer & 8 yrs. & IT Services & Open-Source\\
+	P10 & Collaborator Developer & 2 yrs. & Sports \& Wellness Tech. & Open-Source\\
 	\hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 \textbf{***interview protocol***}
 \comment{AS: need following information to be updated: 1) a demographics table for the interview participants. 2) how many P were from Industry and how many from OSS?}
@@ -47,7 +47,10 @@ The first two authors individually coded emerging themes in the cards (interview
 \subsection{Survey}
 \todo{cite and discuss \cite{hidden_dependencies} for hidden dependencies option, if needed}
 
-The interview results formed the basis of the survey questions. The survey was divided into four categories. First, elicited background information about demographics, roles, and experience. The following categories reflected the three main interview findings. Each category included about 5-7 questions (see \cite{companion_site} for questions). Most questions included an optional open-ended text form to get additional insights into the questions. 
+The interview results formed the basis of the survey questions. The survey was divided into four categories. First, elicited background information about demographics, roles, and experience. The following categories reflected the three main interview findings. Each category included about 5-7 questions (see \cite{companion_site} for questions). Most questions used a 5-point Likert scale and included an optional open-ended text form to get additional insights into the questions. 
 
 \comment{***how survey was deployed***}
 Survey participants were recruited by mining email addresses from open-source repositories on GitHub, posting to social media sites such as Facebook and Reddit, and by contacting software developers through email. We received 226 survey responses.
+
+\comment{***Analysis***}
+For each question, 

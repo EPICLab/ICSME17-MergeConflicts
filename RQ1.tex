@@ -1,16 +1,33 @@
-\subsubsection{RQ1}
-Survey participants were asked...
+\subsection{RQ1: How do developers approach merge conflicts?}
 
-\textbf{*** Complexity of conflicting lines of code is important***}
+\todo{Need to add a transition to merge conflict difficulties. Find something in the interview about trying to understand the difficulty?}
 
-\textbf{***Knowledge or expertise in the area of conflicting code is important***}
+The interview results suggest that developers approach merge conflicts...
 
-\textbf{***Time to Resolve the conflict increased with Experience***}
+Our survey suggests that regardless of gender, developer role, experience level, project size, and source distribution model, software practitioners say that the following factors affect the difficulty of a merge conflict most: 
+\begin{itemize}
+\item \textit{Complexity of conflicting lines of code}
+\item \textit{Your knowledge/expertise in area of conflicting code}
+\end{itemize}
 
-\textbf{*** Non-functional changes don't matter to anybody ***}
+Similarly, software practitioners across every measured demographic perceived the following factors to be less important when deciding the difficulty of a merge conflict:
+\begin{itemize}
+\item \textit{Non-functional changes (whitespace, renaming, etc)}
+\item \textit{Number of files in the conflict}
+\end{itemize}
 
-\textbf{***How each demographic differs from the whole***}
+While survey participants did not agree that non-functional changes strongly factor into the difficulty of a merge conflict, it is still worth noting that several interview participants named non-functional changes, such as large refactor or reformatting changes, as a cause for merge conflicts. This suggests that non-functional changes may increase the likelihood of a merge conflict happening, but they do not contribute to the conflict's difficulty.
 
-\textbf{***Tool Trust. 42.1\% Trust their tools less than A Lot***}
+However, some demographics do view certain difficulties. For instance, open-source developers think that \textit{Atomicity of change sets in the conflict} impacts the difficulty, while closed-source developers and people who split their time evenly think that atomic change sets have no effect on the difficulty. This may be explained by the findings in Rigby et al\cite{OSS_smaller_commits}, which shows that open-source projects tend to review smaller changes than closed-source projects because "The small size lets reviewers focus on the entire change, and the incrementality reduces reviewers’ preparation time and lets them maintain an overall picture of how the change fits into the system." It is possible that our result reflects this difference of culture.
 
-When 121 participants of no particular role were asked how much they trust their merging, history exploration, and/or conflict resolution tools, 57.9\% of participants reported that they trusted these tools either A Lot or Completely. While this is a majority of developers, this still leaves a significant number of people (42.1\%) who trust their tools A Moderate Amount or A Little. While we found no previous work discussing the threshold for how much trust a user must have in a tool, it seems reasonable to postulate that users who cannot trust their tools A Lot or Completely will avoid relying on such tools or thoroughly check that the tools correctly performed their tasks. 
+We also found that Project Maintainers say that \textit{Time to resolve a conflict} has an effect, while no other role agrees. This suggests that those in a maintainer role may be more subject to time-related constraints such as maintenance or release schedules. 
+
+\comment{Project Managers say no effect because they focus on project schedules, not conflict resolutions, i.e. they are higher level/abstraction?}
+
+Support and infrastructure roles (System Engineer, Sys Admin, System Architect, DevOps) emphasized that \textit{Dependencies of conflicting code on other components} have more of an effect than other roles did. This might be due to infrastructure systems being maintained in a live environment, or systems that are currently in production use and at risk of real-time dependency failures. 
+
+Developers on projects of size 1 say that \textit{Dependencies of conflicting code on other components}. Because no other project sizes agree with this idea, we hypothesize that this could be due to their high dependence on external code because of the software production limitations of a 1-developer team.
+
+We also found that the group of developers with 21-25 years of experience frequently contradicted general consensus, but it seems more likely that these differences were simply due to the group's small sample size (4).
+
+%We asked participants how much they trust their merging, history exploration, and/or conflict resolution tools, and 57.9\% of participants reported that they trusted these tools either \textit{A Lot} or \textit{Completely}. While this is a majority of developers, this still leaves a significant number of people (42.1\%) who trust their tools \textit{A moderate amount} or \textit{A little}. Though we had the option for \textit{Not at all}, no participants selected this option, presumably because users stop using tools that they do not trust at all. While we found no previous work discussing the threshold for how much users must trust tools for a good tool experience, we postulate that users who cannot trust their tools \textit{A Lot} or \textit{Completely} will avoid relying on such tools too much.
