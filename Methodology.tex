@@ -10,10 +10,10 @@ Our approach consists of two phases. First, an exploratory interview phase with 
 \caption{Interview Participant Demographics}
 \label{interview_demographics}
 \centering
-\begin{tabular}{|c|l|c|c|l|c|c|}
-	\hline
+\begin{tabularx}{\textwidth}{@{}cl*{2}{C}l*{2}{C}}
+\toprule
 	\textbf{Partic.} & \textbf{Role} & \textbf{Exp.} & \textbf{Gender} & \textbf{Industry} & \textbf{Project Model} & \textbf{Project Size}\\
-	\hline
+\midrule
 	P1 & Sr. Software Developer & 18 yrs. & Male & Semiconductor Manuf. & Open-Source & Large\\
 	P2 & Software Engineer & 6 yrs. & Male & Semiconductor Manuf. & Open-Source & Large\\
 	P3 & Software Engineer & 3 yrs. & Male & Semiconductor Manuf. & Open-Source & Large\\
@@ -24,8 +24,8 @@ Our approach consists of two phases. First, an exploratory interview phase with 
 	P8 & Director & 25 yrs. & Male & Academia & Open-Source & Large\\
 	P9 & Collaborator Developer & 8 yrs. & Male & IT Services & Open-Source & Large\\
 	P10 & Collaborator Developer & 2 yrs. & Male & Sports \& Wellness Tech. & Open-Source & Small\\
-	\hline
-\end{tabular}
+\bottomrule
+\end{tabularx}
 \end{table*}
 
 We conducted semi-structured interviews with software practitioners to discover which factors and concerns they care about when working with merge conflicts.
@@ -52,36 +52,34 @@ The first two authors individually coded emerging themes in the cards (interview
 
 \subsection{Survey}
 
-\begin{table*}[!t]
+%\begin{table*}[!t]
+\begin{table}
 \renewcommand{\arraystretch}{1.3}
 \caption{Survey Participant Roles}
 \label{survey_roles}
 \centering
-\begin{tabular}{|r|c|c|c|c|c|c|c|}
-	& \begin{rotate}{45} Software Developers \end{rotate} 
-	& \begin{rotate}{45} System Architects \end{rotate} 
+\begin{tabularx}{0.45\textwidth}{@{}r*{10}{C}c@{}}
+\toprule
+\addlinespace[5.4em]
+	& \begin{rotate}{45} Soft. Developers \end{rotate} 
+	& \begin{rotate}{45} Sys. Architects \end{rotate} 
 	& \begin{rotate}{45} DevOps \end{rotate} 
 	& \begin{rotate}{45} Project Managers \end{rotate}
 	& \begin{rotate}{45} Project Maintainers \end{rotate}
-	& \begin{rotate}{45} Systems Administrators \end{rotate}
+	& \begin{rotate}{45} Sys. Admins \end{rotate}
 	& \begin{rotate}{45} Other \end{rotate}\\
-	\hline
+\midrule
 	Software Developers & 213 & & & & & & \\
-	\hline
 	System Architects & 68 & 69 & & & & & \\
-	\hline
 	DevOps & 64 & 39 & 68 & & & & \\
-	\hline
 	Project Managers & 53 & 32 & 21 & 54 & & & \\
-	\hline
 	Project Maintainers & 49 & 27 & 27 & 25 & 50 & & \\
-	\hline
 	Systems Administrators & 29 & 22 & 21 & 16 & 15 & 31 & \\
-	\hline
 	Other & 9 & 5 & 4 & 4 & 1 & 2 & 11 \\
-	\hline
-\end{tabular}
-\end{table*}
+\bottomrule
+\end{tabularx}
+\end{table}
+%\end{table*}
 
 \todo{Survey participant demographics}
 \todo{Find a flower venn diagram for 6}
