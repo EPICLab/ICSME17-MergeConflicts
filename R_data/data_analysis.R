@@ -10,50 +10,56 @@ if (!exists("survey")) {
                      header=TRUE, sep=",", na.strings=c("", "NA"))
 }
 
-# Q19: How effectively does your current toolset support each of the following scenarios?
-toolEffect <- list(EffectiveTags = c("Extremely Effective", "Very effective", "Moderately effective"), 
-                    IneffectiveTags = c("Slightly effective", "Not effective at all"))
+# GENDER
+gender.male        <- survey[grep("Male", survey$Gender), ]
+gender.female      <- survey[grep("Female", survey$Gender), ]
 
-# complexity-based evaluation
-toolEffect$SimpleEffective    <- sum(is.element(survey$Q19_1, tool_effect$Effective_Tags)) + sum(is.element(survey$Q19_2, tool_effect$Effective_Tags))
-toolEffect$SimpleIneffective  <- sum(is.element(survey$Q19_1, tool_effect$Ineffective_Tags)) + sum(is.element(survey$Q19_2, tool_effect$Ineffective_Tags))
-toolEffect$ComplexEffective   <- sum(is.element(survey$Q19_3, tool_effect$Effective_Tags)) + sum(is.element(survey$Q19_4, tool_effect$Effective_Tags))
-toolEffect$ComplexIneffective <- sum(is.element(survey$Q19_3, tool_effect$Ineffective_Tags)) + sum(is.element(survey$Q19_4, tool_effect$Ineffective_Tags))
+# ROLES
+roles.developers  <- survey[grep("Software Engineer/Developer", survey$Roles), ]
+roles.engineers   <- survey[grep("Systems Engineer", survey$Roles), ]
+roles.architects  <- survey[grep("System Architect", survey$Roles), ]
+roles.sysadmins   <- survey[grep("Systems Administrator", survey$Roles), ]
+roles.devops      <- survey[grep("DevOps", survey$Roles), ]
+roles.maintainers <- survey[grep("Project Maintainer", survey$Roles), ]
+roles.managers    <- survey[grep("Project Manager", survey$Roles), ]
+roles.other       <- survey[grep("Other", survey$Roles), ]
 
-# size-based evaluation
-toolEffect$SmallEffective     <- sum(is.element(survey$Q19_1, tool_effect$Effective_Tags)) + sum(is.element(survey$Q19_3, tool_effect$Effective_Tags))
-toolEffect$SmallIneffective   <- sum(is.element(survey$Q19_1, tool_effect$Ineffective_Tags)) + sum(is.element(survey$Q19_3, tool_effect$Ineffective_Tags))
-toolEffect$LargeEffective     <- sum(is.element(survey$Q19_2, tool_effect$Effective_Tags)) + sum(is.element(survey$Q19_4, tool_effect$Effective_Tags))
-toolEffect$LargeIneffective   <- sum(is.element(survey$Q19_2, tool_effect$Ineffective_Tags)) + sum(is.element(survey$Q19_4, tool_effect$Ineffective_Tags))
+# EXPERIENCE
+exp.1_5           <- survey[grep("1-5", survey$Experience), ]
+exp.6_10          <- survey[grep("6-10", survey$Experience), ]
+exp.11_15         <- survey[grep("11-15", survey$Experience), ]
+exp.16_20         <- survey[grep("16-20", survey$Experience), ]
+exp.21_25         <- survey[grep("21-25", survey$Experience), ]
+exp.26_u          <- survey[grep("25", survey$Experience), ]
 
-toolEffect$ComplexityTable <- matrix(c())
+# SOURCE DISTRIBUTION MODEL
+source.open       <- survey[grep("Open-Source Projects", survey$DevType), ]
+source.closed     <- survey[grep("Closed-Source Projects", survey$DevType), ]
+source.split      <- survey[grep("I split my time evenly", survey$DevType), ]
 
-# filter on specific roles
-developers  <- survey[grep("Software Engineer/Developer", survey$Roles), ]
-engineers   <- survey[grep("Systems Engineer", survey$Roles), ]
-architects  <- survey[grep("System Architect", survey$Roles), ]
-sysadmins   <- survey[grep("Systems Administrator", survey$Roles), ]
-devops      <- survey[grep("DevOps", survey$Roles), ]
-maintainers <- survey[grep("Project Maintainer", survey$Roles), ]
-managers    <- survey[grep("Project Manager", survey$Roles), ]
-other       <- survey[grep("Other", survey$Roles), ]
-
-experienced     <- survey[grep("26", survey$Experience), ]
-mid_experience  <- survey[grep("16", survey$Experience), ]
-exp_maintainers <- merge(experienced, maintainers)
-dev_sysEng      <- merge(developers, engineers)
-females         <- survey[grep("Female", survey$Gender), ]
-
-# determine combinations of roles
-#devops_developers <- merge(devops, developers)
-
-# generate plots for each combination of merge conflict size/complexity
+# PROJECT SIZE
+proj_size.1       <- survey[grep("1 developer", survey$TeamSize), ]
+proj_size.2_5     <- survey[grep("2-5 developers", survey$TeamSize), ]
+proj_size.6_10    <- survey[grep("6-10 developers", survey$TeamSize), ]
+proj_size.11_50   <- survey[grep("11-50 developers", survey$TeamSize), ]
+proj_size.50_u    <- survey[grep("51", survey$TeamSize), ]
 
 
-subdata <- survey[!(is.na(survey$Q19_1) | is.na(survey$Q19_2) | is.na(survey$Q19_3) | is.na(survey$Q19_4)), ]
-subdata <- data.frame(survey$Q19_1, survey$Q19_2, survey$Q19_3, survey$Q19_4)
-names(subdata) <- c("simple_small", "simple_large", "complex_small", "complex_large")
-# Pearson's correlation test
-cor.ss_sl <- cor.test(as.vector(subdata$simple_small), as.vector(subdata$simple_large), method="pearson", alternative="two.sided")
-# Wilcoxon signed rank test with continuity correction
-wil.ss_sl <- wilcox.test(subdata$simple_small, subdata$simple_large, paired = TRUE)
+
+# prop.test(table(survey$Experience, survey$Q36_1), correct=FALSE)
+# 
+# #Experience group analysis
+# #Gender difference
+# #prop.test()
+# 
+# 
+# # generate plots for each combination of merge conflict size/complexity
+# 
+# 
+# subdata <- survey[!(is.na(survey$Q19_1) | is.na(survey$Q19_2) | is.na(survey$Q19_3) | is.na(survey$Q19_4)), ]
+# subdata <- data.frame(survey$Q19_1, survey$Q19_2, survey$Q19_3, survey$Q19_4)
+# names(subdata) <- c("simple_small", "simple_large", "complex_small", "complex_large")
+# # Pearson's correlation test
+# cor.ss_sl <- cor.test(as.vector(subdata$simple_small), as.vector(subdata$simple_large), method="pearson", alternative="two.sided")
+# # Wilcoxon signed rank test with continuity correction
+# wil.ss_sl <- wilcox.test(subdata$simple_small, subdata$simple_large, paired = TRUE)
