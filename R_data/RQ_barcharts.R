@@ -1,11 +1,14 @@
 library(ggplot2)
 
+
+
 plot.Likert <- function(values, scales, title, GROUPING = "none") {
   midpoint      <- sum(seq_along(scales))/length(scales)
 #  std.dist      <- 0.4*sd(rep(seq_along(values), values))
   per.mean      <- sum(values * seq_along(values))/sum(values)
-  conclusion    <- if (midpoint<(per.mean-0.5)) {"Effect"} 
-                   else if (midpoint>(per.mean+0.5)) {"No Effect"} 
+  per.median    <- median(rep(values * seq_along(values)))
+  conclusion    <- if (midpoint<=(per.mean-0.5)) {"Effect"} 
+                   else if (midpoint>=(per.mean+0.5)) {"No Effect"} 
                    else {"Neutral"}
   if (length(scales) != length(values)) stop("scales must be the same length as values")
   if (GROUPING == "aggressive") {
@@ -30,9 +33,7 @@ plot.Likert <- function(values, scales, title, GROUPING = "none") {
   percents <- sapply(values, function(x) (x/sum(values)*100))
   bplot <- barplot(percents, main=title, ylim=c(0,100), names.arg=scales)
   text(x = bplot, y = percents, label = paste0(round(percents, 2),"%"), pos = 3, cex = 0.8)
-  lower <- round(per.mean-0.5, 2)
-  upper <- round(per.mean+0.5, 2)
-  mtext(text= paste0("mean range: [",lower,", ",round(per.mean, 2),", ",upper,"] (",conclusion,")"), side=1, line=3)
+  mtext(text= paste0("mean: ",round(per.mean, 2), ", median: ", round.(per.median, 2)," (",conclusion,")"), side=1, line=3)
 }
 
 plotter <- list()
