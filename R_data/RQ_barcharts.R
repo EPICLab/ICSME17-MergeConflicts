@@ -90,7 +90,6 @@ plotter.Project_Size <- function(target, GROUP = "none") {
 # (5) exploring_history                                                                     #
 # (6) consistent_terminology                                                                #
 #############################################################################################
-
 better_transparency <- list()
 better_transparency$scale <- c("Not useful", "Slightly useful", "Moderately useful", "Very useful", "Essential")
 better_transparency$everybody  <- c(16, 36, 24, 40, 3)
