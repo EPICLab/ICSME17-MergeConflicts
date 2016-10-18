@@ -4,6 +4,7 @@
 Our approach consists of two phases. First, an exploratory interview phase with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings. 
 
 \subsection{Interviews}
+
 \begin{table*}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Interview Participant Demographics}
@@ -26,7 +27,6 @@ Our approach consists of two phases. First, an exploratory interview phase with 
 	\hline
 \end{tabular}
 \end{table*}
-
 
 We conducted semi-structured interviews with software practitioners to discover which factors and concerns they care about when working with merge conflicts.
 Interview participants were selected from top contributors to open-source projects and from industry contacts using \textit{snowball sampling}~\cite{goodman1961snowball}.
@@ -51,6 +51,38 @@ The first two authors individually coded emerging themes in the cards (interview
 %Cards were initially sorted into three categories that corresponded to our research questions before following the typical card sorting workflow [blog cited by Zimmerman in 145 Q's paper]. This workflow requires two people to go through each card and group them by themes. The themes can then be divided into sub-groups or generalized into larger groups.
 
 \subsection{Survey}
+
+\begin{table*}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Survey Participant Roles}
+\label{survey_roles}
+\centering
+\begin{tabular}{|r|c|c|c|c|c|c|c|}
+	& \begin{rotate}{45} Software Developers \end{rotate} 
+	& \begin{rotate}{45} System Architects \end{rotate} 
+	& \begin{rotate}{45} DevOps \end{rotate} 
+	& \begin{rotate}{45} Project Managers \end{rotate}
+	& \begin{rotate}{45} Project Maintainers \end{rotate}
+	& \begin{rotate}{45} Systems Administrators \end{rotate}
+	& \begin{rotate}{45} Other \end{rotate}\\
+	\hline
+	Software Developers & 213 & & & & & & \\
+	\hline
+	System Architects & 68 & 69 & & & & & \\
+	\hline
+	DevOps & 64 & 39 & 68 & & & & \\
+	\hline
+	Project Managers & 53 & 32 & 21 & 54 & & & \\
+	\hline
+	Project Maintainers & 49 & 27 & 27 & 25 & 50 & & \\
+	\hline
+	Systems Administrators & 29 & 22 & 21 & 16 & 15 & 31 & \\
+	\hline
+	Other & 9 & 5 & 4 & 4 & 1 & 2 & 11 \\
+	\hline
+\end{tabular}
+\end{table*}
+
 \todo{Survey participant demographics}
 \todo{Find a flower venn diagram for 6}
 \todo{cite and discuss \cite{hidden_dependencies} for hidden dependencies option, if needed}
