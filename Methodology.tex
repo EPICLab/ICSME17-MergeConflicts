@@ -1,9 +1,4 @@
 \section{Methodology}\label{methodology}
-\textbf{***We did a 2-step approach, because?.***}
-
-Our approach consists of two phases. First, an exploratory interview phase with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings. 
-
-\subsection{Interviews}
 
 \begin{table*}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -28,6 +23,11 @@ Our approach consists of two phases. First, an exploratory interview phase with 
 \end{tabularx}
 \end{table*}
 
+Our approach consists of two phases. First, an exploratory interview phase with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings.
+This two phase approach allowed us to explore the topic of merge conflicts from an individual developer perspective, and to analyze the broader impact of these perspectives on the larger developer population.
+
+\subsection{Interviews}
+
 We conducted semi-structured interviews with software practitioners to discover which factors and concerns they care about when working with merge conflicts.
 Interview participants were selected from top contributors to open-source projects and from industry contacts using \textit{snowball sampling}~\cite{goodman1961snowball}.
 
@@ -36,24 +36,28 @@ Interviews were audio-taped and later transcribed for analysis.
 At the beginning of the interview we gave participants a short explanation of the research goals and collected demographics data. 
 Participants were then asked about the roles they play in their project, their experience working in team settings, and questions about merge conflicts, the process of conflict resolution, and the difficulties that they faced in conflict resolution. 
 
-The semi-structured interview format allowed us participants to provide us with unanticipated information~\cite{seaman2008qualitative}. Further, we allowed open ended discussion about merge conflicts in general at the end of the interview, which allowed participants to share ideas and topics that they found particularly important. 
+The semi-structured interview format allowed participants to provide us with unanticipated information~\cite{seaman2008qualitative}. Further, we allowed open ended discussion about merge conflicts in general at the end of the interview, which allowed participants to share ideas and topics that they found particularly important. 
 
 In total, we interviewed 10 participants (see Table~\ref{interview_demographics}) from six different industries: \textit{Semiconductor Manufacturing} (3 participants), \textit{Healthcare Software} (2), \textit{Academia} (2), \textit{Business Software} (1), \textit{IT Services} (1), and \textit{Sports \& Wellness Technology} (1). The median software development experience was 5 years, and participants work on a variety of software project sizes; 5 work primarily on large projects, 3 on medium projects, and 2 on small projects. Participants were offered \$50 for their participation in the interviews.\\
 
-\comment{***analysis process steps***}
+\subsection{Interview Analysis}
 
-Interviews were unitized \cite{unitization} by the first author. Unitization was done by identifying consecutive lines in the interview that seemed logically consistent and grouping them together as one card. This was done in a conservative manner to ensure that context was well preserved within each card. Some further unitization was done during card sorting stage, when both sorters believed that the card needed to be split.
+Interviews were unitized into cards that each contain a single logically consistent statement. This standardized coding scheme was created by the first and second author, and improved to an acceptable point by measure of intercoder agreement~\cite{unitization}. The coding scheme dictated that lines must be consecutive and topically related to be grouped into a single card. Logically connected statements that were separated by other lines were considered to be separate cards, as a conservative measure to preserve context within each card.
 
-\comment{***why card sorting and process***}
+Card sorting is used as a collaborative technique of exploring how people think about a certain topic~\cite{spencer2009card}\cite{card_sort}.
+Card sorting allows key concepts and associations to be identified either through open sorting methods (categories are created during the card sorting process) or closed sorting methods (a set of categories is predefined before beginning to card sort).
+The card sorting process consists of: deciding upon the topic space, selecting the method (open or closed), gathering the cards, sorting the cards and recording the data, and analyzing the outcomes.
+The card sorting process is meant to be collaborative, but argumentative, in order to explore the details of a selected topic.
+The process can be repeated several times in order to reach consensus among coders.
 
-The first two authors individually coded emerging themes in the cards (interview transcripts) and discussed the emerging taxonomies until consensus was reached \cite{card_sort}. We then performed two iterations of card sorting at the end of which we arrived at: the factors that lead to merge conflicts (Section X), the different phases of conflict resolution (Section 3-stages), and the difficulties faced by developers (Section XX4.2).
+The first two authors individually coded emerging themes in the cards and discussed the emerging taxonomies until consensus was reached~\cite{card_sort}.
+We performed two iterations of the open card sorting process, and found three themes within our resulting categories: the factors that impact how developers approach merge conflicts (Section~\ref{RQ1}), the difficulties that developers face when resolving conflicts (Section~\ref{RQ2}), and the impact of developer tools on the resolution process (Section~\ref{RQ3}).
 
 %Cards were initially sorted into three categories that corresponded to our research questions before following the typical card sorting workflow [blog cited by Zimmerman in 145 Q's paper]. This workflow requires two people to go through each card and group them by themes. The themes can then be divided into sub-groups or generalized into larger groups.
 
 \subsection{Survey}
 
-%\begin{table*}[!t]
-\begin{table}
+\begin{table}[!]
 \renewcommand{\arraystretch}{1.3}
 \caption{Survey Participant Roles}
 \label{survey_roles}
@@ -79,18 +83,26 @@ The first two authors individually coded emerging themes in the cards (interview
 \bottomrule
 \end{tabularx}
 \end{table}
-%\end{table*}
 
-\todo{Survey participant demographics}
-\todo{Find a flower venn diagram for 6}
-\todo{cite and discuss \cite{hidden_dependencies} for hidden dependencies option, if needed}
+We conducted a 50-question survey of software development practictioners in order to examine the themes and categories found in the interviews.
+The survey was conducted online and anonymity was guaranteed in order to illicit honest responses from participants.
+Questions were developed to confirm, extend, and broaden the results from the interviews.
+We wanted to understand which factors impact developers the most when encountering and working to resolve merge conflicts.
 
-The interview results formed the basis of the survey questions. The survey was divided into four categories. First, elicited background information about demographics, roles, and experience. The following categories reflected the three main interview findings. Each category included about 5-7 questions (see \cite{companion_site} for questions). Most questions used a 5-point Likert scale and included an optional open-ended text form to get additional insights into the questions. 
+Survey participants were recruited from contributor lists on open-source repositories on GitHub\footnote{https://github.com/}, advertised on social networking sites (Facebook\footnote{https://www.facebook.com/} and Reddit\footnote{https://www.reddit.com/}), and by directly contacting software developers via email.
+We received 226 survey responses, but individual questions have varying response rates and are reported where appropriate in Section~\ref{results}.
 
-\comment{***how survey was deployed***}
-Survey participants were recruited by mining email addresses from open-source repositories on GitHub, posting to social media sites such as Facebook and Reddit, and by contacting software developers through email. We received 226 survey responses.
+\todo{Provide a brief overview of survey respondent demographics.}
 
-\subsubsection{Survey Analysis}
+The survey was divided into four categories, with each category containing 5-7 questions (see \cite{companion_site} for questions).
+First, we elicited background information about demographics, roles, and experience.
+Second, we asked questions related to difficulties that developers experience when encountering merge conflicts.
+Third, we asked questions related to conflict resolutions and the factors that affect developers.
+Finally we asked questions about the tools and tool features that developers use when working with merge conflicts.
+Most questions used a 5-point Likert scale and included an optional open-ended text form to gather additional insights into the questions. 
+
+\subsection{Survey Analysis}
 We evaluated the distribution of survey answers for each Likert scale question by analyzing across demographic categories. 
 We used the mean score for each demographic to determine the positive, negative, or neutral response of the population. 
-We consider the third option (on a 5-option Likert scale) to be neutral, and round scores in the range 2.50 to 3.50 to be equivalent to this neutral response.
+We consider the third option (on a 5-point Likert scale) to be neutral, and round scores in the range 2.50 to 3.50 to be equivalent to this neutral response.
+\todo{Describe the process of analyzing the survey in light of how we are now coming to our results.}
