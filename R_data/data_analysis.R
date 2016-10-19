@@ -39,13 +39,16 @@ cor.test(lines, local_expertise, test='pearson')
 
 
 # boxplot chart for means on the 'Complexity of conflicting lines of code' question
-mydata <- data.frame(exp_labels = c("1-5 years", "6-10 years", "11-15 years", "16-20 years", "21-25 years", "26+ years"),
-                     means = c(3.31, 3.37, 3.83, 3.75, 3.20, 4.06))
+mydata <- data.frame(exp_labels = c("1 developer", "2-5 developers", "6-10 developers", "11-50 developers", "51+ developers"),
+                     means = c(3.12, 3.38, 3.47, 4.0, 3.69))
 
-bplot <- barplot(mydata$means-1, main="Mean of Likert Score", axes=F, ylim=c(0,5), names.arg=mydata$exp_labels)
+bplot <- barplot(mydata$means-1, main="", axes=F, ylim=c(0,4), 
+                 names.arg=mydata$exp_labels, cex.names=1.1)
 axis(side = 2, at=(1:5)-1, labels=(1:5))
 abline(h=0)
-text(x = bplot, y = mydata$means-1, label = round(mydata$means, 2), pos = 3, cex = 0.8)
+text(x = bplot, y = mydata$means-1, label = round(mydata$means, 2), pos = 3, cex = 1.2)
+text(x = -0.38, y = 2.0, labels = "Likert Score", srt = 90, xpd=T, cex = 1.2)
+
 
 # GENDER
 gender.male        <- survey[grep("Male", survey$Gender), ]
