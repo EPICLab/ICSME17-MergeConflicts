@@ -1,15 +1,21 @@
 \subsection{RQ2: What factors impact the difficulty of a conflict resolution?}\label{RQ2}
 
 \todo{talk about resolution difficulties in interviews and how survey answer options were formed}
+\todo{get std deviations}
 
-Our survey results show that three of the factors we investigated have an effect on the difficulty of the process of resolving merge conflicts: \textit{The amount of information you have about the conflicting code}, \textit{Your expertise in the area of code with the merge conflict}, and \textit{How easy it is to understand the code involved in the merge conflict}. 
-Participants also rated the following factors, but were more controversial:
+Our survey results show that three of the factors we investigated have an effect on the difficulty of the process of resolving merge conflicts: \textit{The amount of information you have about the conflicting code}(mean: 3.62) \textit{Your expertise in the area of code with the merge conflict} (mean: 3.72), and \textit{How easy it is to understand the code involved in the merge conflict} (mean: 3.89). 
+
+Participants also rated the following factors, but their mean response values place them in the neutral category:
 \begin{enumerate}
-	\item \textit{How well tools present information in an understandable way}
-	\item \textit{Trustworthiness of tools}
-	\item \textit{Tool support for examining development history}
-	\item \textit{Complexity of the project structure}
-	\item \textit{Informativeness of commit messages}
-	\item \textit{Changing assumptions within the code}
-	\item \textit{Project culture}
+	\item \textit{How well tools present information in an understandable way} (mean: 3.48)
+	\item \textit{Changing assumptions within the code} (3.30)
+	\item \textit{Complexity of the project structure} (3.18)
+	\item \textit{Trustworthiness of tools} (3.12)
+	\item \textit{Informativeness of commit messages} (3.07)
+	\item \textit{Project culture} (3.04)
+	\item \textit{Tool support for examining development history} (3.03)
 \end{enumerate}
+
+No factor in this category had an average below 3.03, so there were no factors tested that have little to no effect on the difficulty of a merge conflict resolution.
+
+Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected \textit{Informativeness of commit messages} to have a larger impact on the difficulty of a merge conflict resolution. One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short to provide much insight to a software practitioner in need of information.
