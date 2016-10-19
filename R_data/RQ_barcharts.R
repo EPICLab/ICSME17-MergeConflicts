@@ -1,29 +1,32 @@
 library(ggplot2)
-
-
-
-plot.Likert <- function(values, scales, title, GROUPING = "none") {
-  midpoint      <- sum(seq_along(scales))/length(scales)
-#  std.dist      <- 0.4*sd(rep(seq_along(values), values))
-  per.mean      <- sum(values * seq_along(values))/sum(values)
-  per.median    <- median(rep(values * seq_along(values)))
-  conclusion    <- if (midpoint<=(per.mean-0.5)) {"Effect"} 
-                   else if (midpoint>=(per.mean+0.5)) {"No Effect"} 
-                   else {"Neutral"}
+  
+plot.Likert <- function(values, scales, title, STAT = "mean", AGGREGATE = "none") {
   if (length(scales) != length(values)) stop("scales must be the same length as values")
-  if (GROUPING == "aggressive") {
+
+  std.dev       <- sd(rep(seq_along(values), values))
+  midpoint      <- sum(seq_along(scales))/length(scales)
+  statis        <- list()
+  statis.value  <- if (STAT == "median")    { median(rep(seq_along(values), values)) } 
+                   else if (STAT == "mean") { sum(values * seq_along(values))/sum(values) }
+                   else                     { stop(paste0("STAT: '", STAT, "' value not supported")) }
+  statis.name   <- STAT
+  conclusion    <- if (midpoint<=(statis.value-0.5)) {"Effect"} 
+                   else if (midpoint>=(statis.value+0.5)) {"No Effect"} 
+                   else {"Neutral"}
+
+  if (AGGREGATE == "aggressive") {
     if (length(values) != 5) stop("values must be length 5 for GROUPING=aggressive")
     lower_grp   <- sum(sapply(values[1:2], function(x) (x/sum(values)*100)))
     higher_grp  <- sum(sapply(values[3:5], function(x) (x/sum(values)*100)))
     values      <- c(lower_grp, higher_grp)
     scales      <- c(scales[1], scales[5])
-  } else if (GROUPING == "conservative") {
+  } else if (AGGREGATE == "conservative") {
     if (length(values) != 5) stop("values must be length 5 for GROUPING=conservative")
     lower_grp   <- sum(sapply(values[1:3], function(x) (x/sum(values)*100)))
     higher_grp  <- sum(sapply(values[4:5], function(x) (x/sum(values)*100)))
     values      <- c(lower_grp, higher_grp)
     scales      <- c(scales[1], scales[5])
-  } else if (GROUPING == "donut") {
+  } else if (AGGREGATE == "donut") {
     if (length(values) != 5) stop("values must be length 5 for GROUPING=donut")
     lower_grp   <- sum(sapply(values[1:2], function(x) (x/sum(values)*100)))
     higher_grp  <- sum(sapply(values[4:5], function(x) (x/sum(values)*100)))
@@ -33,52 +36,57 @@ plot.Likert <- function(values, scales, title, GROUPING = "none") {
   percents <- sapply(values, function(x) (x/sum(values)*100))
   bplot <- barplot(percents, main=title, ylim=c(0,100), names.arg=scales)
   text(x = bplot, y = percents, label = paste0(round(percents, 2),"%"), pos = 3, cex = 0.8)
-  mtext(text= paste0("mean: ",round(per.mean, 2), ", median: ", round.(per.median, 2)," (",conclusion,")"), side=1, line=3)
+  mtext(text= paste0(toupper(substr(statis.name, 1, 1)),substr(statis.name, 2, nchar(statis.name)),": ",
+                     round(statis.value, 2),", SD: ",round(std.dev, 2),", (",conclusion,")"), side=1, line=3)
 }
 
 plotter <- list()
+plotter.All <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plotter.Project_Size(target, STATISTIC = STATISTIC, GROUP = GROUP)
+  plotter.Source_Model(target, STATISTIC = STATISTIC, GROUP = GROUP)
+  plotter.Experience(target, STATISTIC = STATISTIC, GROUP = GROUP)
+  plotter.Roles(target, STATISTIC = STATISTIC, GROUP = GROUP)
+  plotter.Gender(target, STATISTIC = STATISTIC, GROUP = GROUP)
+  plot.Likert(target$everybody, target$scale, "Full Population", STAT=STATISTIC, AGGREGATE=GROUP)
+}
+
 # GENDER
-plotter.Gender <- function(target, GROUP = "none") {
-  plot.Likert(target$female, target$scale, "Female", GROUPING=GROUP)
-  plot.Likert(target$male, target$scale, "Male", GROUPING=GROUP)
-  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
+plotter.Gender <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plot.Likert(target$female, target$scale, "Female", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$male, target$scale, "Male", STAT=STATISTIC, AGGREGATE=GROUP)
 }
 # SOURCE DISTRIBUTION MODEL
-plotter.Source_Model <- function(target, GROUP = "none") {
-  plot.Likert(target$both, target$scale, "Split Evenly", GROUPING=GROUP)
-  plot.Likert(target$closed, target$scale, "Closed-Source", GROUPING=GROUP)
-  plot.Likert(target$open, target$scale, "Open-Source", GROUPING=GROUP)
-  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
+plotter.Source_Model <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plot.Likert(target$both, target$scale, "Split Evenly", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$closed, target$scale, "Closed-Source", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$open, target$scale, "Open-Source", STAT=STATISTIC, AGGREGATE=GROUP)
 }
 # ROLES
-plotter.Roles <- function(target, GROUP = "none") {
-  plot.Likert(target$proj_manag, target$scale, "Project Managers", GROUPING=GROUP)
-  plot.Likert(target$proj_maint, target$scale, "Project Maintainers", GROUPING=GROUP)
-  plot.Likert(target$devops, target$scale, "DevOps", GROUPING=GROUP)
-  plot.Likert(target$sys_admin, target$scale, "Systems Administrators", GROUPING=GROUP)
-  plot.Likert(target$sys_arc, target$scale, "System Architects", GROUPING=GROUP)
-  plot.Likert(target$sys_eng, target$scale, "System Engineers", GROUPING=GROUP)
-  plot.Likert(target$soft_eng, target$scale, "Software Engineers", GROUPING=GROUP)
-  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
+plotter.Roles <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plot.Likert(target$proj_manag, target$scale, "Project Managers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$proj_maint, target$scale, "Project Maintainers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$devops, target$scale, "DevOps", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$sys_admin, target$scale, "Systems Administrators", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$sys_arc, target$scale, "System Architects", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$sys_eng, target$scale, "System Engineers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$soft_eng, target$scale, "Software Engineers", STAT=STATISTIC, AGGREGATE=GROUP)
 }
 # EXPERIENCE
-plotter.Experience <- function(target, GROUP = "none") {
-  plot.Likert(target$exp_6, target$scale, "26+ Years", GROUPING=GROUP)
-  plot.Likert(target$exp_5, target$scale, "21-25 Years", GROUPING=GROUP)
-  plot.Likert(target$exp_4, target$scale, "16-20 Years", GROUPING=GROUP)
-  plot.Likert(target$exp_3, target$scale, "11-15 Years", GROUPING=GROUP)
-  plot.Likert(target$exp_2, target$scale, "6-10 Years", GROUPING=GROUP)
-  plot.Likert(target$exp_1, target$scale, "1-5 Years", GROUPING=GROUP)
-  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
+plotter.Experience <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plot.Likert(target$exp_6, target$scale, "26+ Years", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$exp_5, target$scale, "21-25 Years", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$exp_4, target$scale, "16-20 Years", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$exp_3, target$scale, "11-15 Years", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$exp_2, target$scale, "6-10 Years", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$exp_1, target$scale, "1-5 Years", STAT=STATISTIC, AGGREGATE=GROUP)
 }
 # PROJECT SIZE
-plotter.Project_Size <- function(target, GROUP = "none") {
-  plot.Likert(target$psize_5, target$scale, "51+ Developers", GROUPING=GROUP)
-  plot.Likert(target$psize_4, target$scale, "11-50 Developers", GROUPING=GROUP)
-  plot.Likert(target$psize_3, target$scale, "6-10 Developers", GROUPING=GROUP)
-  plot.Likert(target$psize_2, target$scale, "2-5 Developers", GROUPING=GROUP)
-  plot.Likert(target$psize_1, target$scale, "1 Developer", GROUPING=GROUP)
-  plot.Likert(target$everybody, target$scale, "Full Population", GROUPING=GROUP)
+plotter.Project_Size <- function(target, STATISTIC = "mean", GROUP = "none") {
+  plot.Likert(target$psize_5, target$scale, "51+ Developers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$psize_4, target$scale, "11-50 Developers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$psize_3, target$scale, "6-10 Developers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$psize_2, target$scale, "2-5 Developers", STAT=STATISTIC, AGGREGATE=GROUP)
+  plot.Likert(target$psize_1, target$scale, "1 Developer", STAT=STATISTIC, AGGREGATE=GROUP)
 }
 
 #############################################################################################

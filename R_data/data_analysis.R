@@ -6,9 +6,46 @@ library(extrafont)
 
 if (!exists("survey")) {
   print("Reading csv data into 'survey' dataframe...")
-  survey <- read.csv("/home/nelsonni/Documents/Research/Merge Conflicts Project/SANERPaper/R_data/survey.csv", 
+  survey <- read.csv("/home/nelsonni/Documents/Research/Merge Conflicts Project/SANERPaper/R_data/data.csv", 
                      header=TRUE, sep=",", na.strings=c("", "NA"))
 }
+
+# CORRELATION ANALYSIS
+# Merge Conflict Difficulty Factors
+time_to_resolve       <- as.numeric(survey$Q50_4[which(!is.na(as.numeric(survey$Q50_4)))])-35
+number_lines          <- as.numeric(survey$Q50_5[which(!is.na(as.numeric(survey$Q50_5)))])-35
+complexity_lines      <- as.numeric(survey$Q50_6[which(!is.na(as.numeric(survey$Q50_6)))])-35
+number_files          <- as.numeric(survey$Q50_7[which(!is.na(as.numeric(survey$Q50_7)))])-35
+complexity_files      <- as.numeric(survey$Q50_8[which(!is.na(as.numeric(survey$Q50_8)))])-35
+nonfunctional_changes <- as.numeric(survey$Q50_9[which(!is.na(as.numeric(survey$Q50_9)))])-35
+dependencies          <- as.numeric(survey$Q50_10[which(!is.na(as.numeric(survey$Q50_10)))])-35
+atomicity             <- as.numeric(survey$Q50_11[which(!is.na(as.numeric(survey$Q50_11)))])-35
+local_expertise_mc    <- as.numeric(survey$Q50_16[which(!is.na(as.numeric(survey$Q50_16)))])-35
+
+# Conflict Resolution Difficulty Factors
+amount_info           <- as.numeric(survey$Q36_1[which(!is.na(as.numeric(survey$Q36_1)))])-12
+understandability     <- as.numeric(survey$Q36_2[which(!is.na(as.numeric(survey$Q36_2)))])-12
+tool_for_history      <- as.numeric(survey$Q36_3[which(!is.na(as.numeric(survey$Q36_3)))])-12
+project_complexity    <- as.numeric(survey$Q36_4[which(!is.na(as.numeric(survey$Q36_4)))])-12
+info_presentation     <- as.numeric(survey$Q36_5[which(!is.na(as.numeric(survey$Q36_5)))])-12
+tool_trust            <- as.numeric(survey$Q36_6[which(!is.na(as.numeric(survey$Q36_6)))])-12
+informative_commits   <- as.numeric(survey$Q36_7[which(!is.na(as.numeric(survey$Q36_7)))])-12
+changing_assumptions  <- as.numeric(survey$Q36_8[which(!is.na(as.numeric(survey$Q36_8)))])-12
+project_culture       <- as.numeric(survey$Q36_10[which(!is.na(as.numeric(survey$Q36_10)))])-12
+local_expertise_mcr   <- as.numeric(survey$Q36_11[which(!is.na(as.numeric(survey$Q36_11)))])-12
+
+cor.test(lines, complexity, test='pearson')
+cor.test(lines, local_expertise, test='pearson')
+
+
+# boxplot chart for means on the 'Complexity of conflicting lines of code' question
+mydata <- data.frame(exp_labels = c("1-5 years", "6-10 years", "11-15 years", "16-20 years", "21-25 years", "26+ years"),
+                     means = c(3.31, 3.37, 3.83, 3.75, 3.20, 4.06))
+
+bplot <- barplot(mydata$means-1, main="Mean of Likert Score", axes=F, ylim=c(0,5), names.arg=mydata$exp_labels)
+axis(side = 2, at=(1:5)-1, labels=(1:5))
+abline(h=0)
+text(x = bplot, y = mydata$means-1, label = round(mydata$means, 2), pos = 3, cex = 0.8)
 
 # GENDER
 gender.male        <- survey[grep("Male", survey$Gender), ]
