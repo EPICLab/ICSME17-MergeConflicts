@@ -1,12 +1,62 @@
-\subsection{RQ1: How do developers approach merge conflicts?}\label{RQ1}
+\subsection{\textbf{RQ1:} How do developers approach merge conflicts?}\label{RQ1}
 
 To understand the perspective of developers when encountering a merge conflict, we asked interview participants a series of open-ended questions regarding situations, information needs, contributing factors, and processes that are followed when initially evaluating a merge conflict.
+
+The results of our interview indicate that developers recognize certain traits of a merge conflict as contributing to the overall difficulty of the conflict.
+Card sorting of interview transcripts resulted in 9 distinct categories that relate to these traits: \textit{Temporal}, \textit{Deadlines}, \textit{Patch Management}, \textit{Atomicity}, \textit{Size of Conflict}, \textit{3-Way Merge Conflicts}, \textit{Code Style}, and \textit{Domain Knowledge} (see Table~\ref{interview_tags}).
+These trait categories served as the foundation for the questions and answers included in our survey.
+
+\begin{table}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Merge Conflict Difficulty Categories from Interviews}
+\label{interview_tags}
+\centering
+\begin{tabularx}{0.45\textwidth}{@{}{r}@{ }{c}@{ }p{4.5cm}}
+\toprule
+	Category & \# Cards & Description \\
+\midrule
+	Temporal & 1 & Elapsed time between commits in a merge conflict. \\
+	Deadlines & 3 & Increased rates of developer error leading up to deadlines. \\
+	Patch Management & 5 & Ordering patches to prevent merge conflicts. \\
+	Atomicity & 6 & Consolidation of changes based upon logic units. \\
+	Size of Conflict & 3 & Larger commits, or higher volumes of commits, leading to conflicts. \\
+	3-Way Merge Conflicts & 1 & Multiple commits involved in a single conflict. \\
+	Code Style & 3 & Subtle changes that cause conflicts due to spacing, renaming, etc.\\
+	Domain Knowledge & 2 & Awareness about conflicting lines and surrounding code. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 We also asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of merge conflict difficulty.
 These survey questions were based on a 5-point Likert scale.
 We analyzed the survey responses by demographics such as gender, roles, experience, primary project model, and primary project size.
 
-Overwhelmingly, \textit{complexity of conflicting lines of code} (mean: 3.52, std. deviation: 1.10) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.50, std. deviation: 1.05) are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
-Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors.
+\begin{table*}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Factors of Merge Conflict Difficulty from Survey}
+\label{survey_merge_conflicts}
+\centering
+%\begin{tabularx}{0.9\textwidth}{@{}r|*{6}{C}c@{}}
+\begin{tabularx}{0.9\textwidth}{r | *5{c} | *3{c}}
+
+\toprule
+	Factor & 1 & 2 & 3 & 4 & 5 & Mean & Median & Std. Dev. \\
+\midrule
+	Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 &  & 1.09 \\
+	Number of conflicting lines of code & 2 & 40 & 64 & 45 & 11 & 3.14 &  & 0.91 \\
+	\textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & & \textbf{1.10} \\
+	Number of files in the conflict & 10 & 69 & 50 & 26 & 6 & 2.68 & & 0.94 \\
+	Complexity of the files with conflicts & 8 & 34 & 49 & 51 & 18 & 3.23 & & 1.07 \\
+	\textbf{Non-functional changes (whitespace, renaming, etc.)} & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & & \textbf{1.03} \\
+	Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & & 1.16 \\
+	Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & & 1.12 \\
+	\textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & & \textbf{1.05} \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The results of our survey indicate that \textit{complexity of conflicting lines of code} (mean: 3.52, std. deviation: 1.10) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.50, std. deviation: 1.05) are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
+Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
 
 Practitioners with 1-5 years and 6-10 years of experience were only nominally in agreement that merge conflict difficulty is affected by \textit{complexity of conflicting lines of code} (mean: 3.31 and mean: 3.37 respectively) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.21 and mean: 3.42 respectively).
 As practitioner experiences increases, the level of agreement increases on both of these factors, with practitioners indicating 26+ years experience having the highest consensus (mean: 4.06, std. deviation: 0.77). 
@@ -40,19 +90,7 @@ Practitioners have less to reason about when resolving merge conflicts that invo
 \subsubsection{Interviews}
 %The interview results suggest that developers approach merge conflicts...
 
-Our interview results found that when developers first approach a merge conflict, they recognize certain traits of the conflict as points of difficulty. We found 9 categories of traits:
-\todo{Give short explanations of each tag}
-\begin{enumerate}
-\item \textbf{Temporal}
-\item \textbf{Deadlines}
-\item \textbf{Patch Management}
-\item \textbf{Atomicity}
-\item \textbf{Size of Conflict}
-\item \textbf{Code Complexity}
-\item \textbf{3-Way Merge Conflict}
-\item \textbf{Code Style}
-\item \textbf{Domain Knowledge}
-\end{enumerate}
+
 
 \todo{Give description of which categories produced which survey options}
 
