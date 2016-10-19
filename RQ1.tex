@@ -1,5 +1,31 @@
 \subsection{RQ1: How do developers approach merge conflicts?}\label{RQ1}
 
+To understand the perspective of developers when encountering a merge conflict, we asked interview participants a series of open-ended questions regarding situations, information needs, contributing factors, and processes that are followed when initially evaluating a merge conflict.
+We also asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of merge conflict difficulty.
+These survey questions were based on a 5-point Likert scale.
+We analyzed the survey responses by demographics such as gender, roles, experience, primary project model, and primary project size.
+
+Overwhelmingly, \textit{complexity of conflicting lines of code} (mean: 3.52, std. deviation: 1.10) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.50, std. deviation: 1.05) are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
+Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors.
+
+Practitioners with 1-5 years and 6-10 years of experience were only nominally in agreement that merge conflict difficulty is affected by \textit{complexity of conflicting lines of code} (mean: 3.31 and mean: 3.37 respectively) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.21 and mean: 3.42 respectively).
+As practitioner experiences increases, the level of agreement increases on both of these factors, with practitioners indicating 26+ years experience having the highest consensus (mean: 4.06, std. deviation: 0.77). 
+
+Larger, more complex projects typically require that developers have more experience and a higher degree of knowledge about the systems used in the project.
+As the size of a software project increases, so does the complexity of the underlying code~\cite{banker1993software}\cite{curtis1979third}.
+Therefore, more experienced practitioners are likely to have a broader range of understanding about both \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} and their affects on merge conflict difficulty.
+
+We also found that practitioners agree that \textit{non-functional changes (whitespace, renaming, etc.)} (mean: 2.16, std. deviation: 1.03) has no effect on the perceived difficulty of a merge conflict.
+Non-functional changes are textual conflicts that can be resolved without consideration of dependencies, performance, or scope.
+Practitioners have less to reason about when resolving merge conflicts that involve only textual conflicts, and therefore are unlikely to perceive \textit{non-functional changes} as affecting the difficulty of merge conflicts.
+
+%Intuitively, we would assume that an increased perception of \textit{knowledge/expertise in the area of conflicting code} as difficulty factor would correlate with a decreased perception of \textit{complexity of conflicting lines of code} as a difficulty factor of merge conflicts.
+%This relationship would indicate that a developer's expertise allows them to rationalize about merge conflicts with higher complexity, since they have a higher degree of past knowledge in that area of conflict.
+%However, we find a statistical significant correlation between \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} (Pearson's correlation coefficient: 0.2766, p-value: 0.0003664, 95\% confidence interval: 0.1279 0.4132).
+%This suggests that ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection{Interviews}
 %The interview results suggest that developers approach merge conflicts...
 
