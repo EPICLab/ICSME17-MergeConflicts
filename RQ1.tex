@@ -15,6 +15,17 @@ Larger, more complex projects typically require that developers have more experi
 As the size of a software project increases, so does the complexity of the underlying code~\cite{banker1993software}\cite{curtis1979third}.
 Therefore, more experienced practitioners are likely to have a broader range of understanding about both \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} and their affects on merge conflict difficulty.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.4in]{MeanProjectSize.pdf}
+\caption{Mean Likert Score by Project Size for \textit{knowledge/expertise in the area of conflicting code} category of factors that effect the perceived difficulty of merge conflicts.}
+\label{mean_likert_project_size}
+\end{figure}
+
+When analyzing by the size of project that practitioners normally work on, we found that \textit{knowledge/expertise in the area of conflicting code} was increasingly viewed as having an effect on merge conflict difficult as the practitioners' project size increased (see Figure~\ref{mean_likert_project_size}).
+The practitioners that usually work in project sizes of \textit{1 developer}, \textit{2-5 developers}, and \textit{6-10 developers} had relatively neutral responses regarding the effects of \textit{knowledge/expertise in the area of conflicting code} (mean: 3.12, mean: 3.38, and mean: 3.47 respectively).
+However, practitioners that usually work in project sizes of \textit{11-50 developers} and \textit{51+ developers} more positively indicated that \textit{knowledge/expertise in the area of conflicting code} has an effect on the difficulty of merge conflicts (mean: 4.00 and mean: 3.69 respectively).
+
 We also found that practitioners agree that \textit{non-functional changes (whitespace, renaming, etc.)} (mean: 2.16, std. deviation: 1.03) has no effect on the perceived difficulty of a merge conflict.
 Non-functional changes are textual conflicts that can be resolved without consideration of dependencies, performance, or scope.
 Practitioners have less to reason about when resolving merge conflicts that involve only textual conflicts, and therefore are unlikely to perceive \textit{non-functional changes} as affecting the difficulty of merge conflicts.
@@ -32,9 +43,13 @@ Practitioners have less to reason about when resolving merge conflicts that invo
 Our interview results found that when developers first approach a merge conflict, they recognize certain traits of the conflict as points of difficulty. We found 9 categories of traits:
 \todo{Give short explanations of each tag}
 \begin{enumerate}
+\item \textbf{Temporal}
+\item \textbf{Deadlines}
+\item \textbf{Patch Management}
 \item \textbf{Atomicity}
 \item \textbf{Size of Conflict}
 \item \textbf{Code Complexity}
+\item \textbf{3-Way Merge Conflict}
 \item \textbf{Code Style}
 \item \textbf{Domain Knowledge}
 \end{enumerate}
