@@ -1,5 +1,34 @@
 \subsection{RQ3: Do developer tools meet developer needs for merge conflicts?}\label{RQ3}
 
+In the interview stage, we found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. 
+
+\comment{*** Git blame issues***}
+
+When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that while backporting in a large system, it is extremely hard to understand when code was deleted. "You can't git blame it. You can't git blame something that doesn't exist, right?" 
+The git blame tool allows developers to find when a certain line was added or changed. It also offers a git blame --reverse option in the command line. When asked why the --reverse option did not satisfy this need, the participant said, "It still requires thorough background knowledge of the code base. Also I work on large changes in time in hot paths. This could mean many additions and deletions that would lead to further confusion." In other words, trying to use this tool in an area of high activity becomes very difficult in a shorter amount of time. Additionally, developers who use git blame Furthermore, it does not appear that git blame --reverse has made the jump into graphical Git tools, making this scenario more difficult for those using graphical tools.
+
+\comment{*** Git Blame problems with refactorings ***}
+
+http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
+
+\comment{***Information Presentation is bad ***}
+
+Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool whenever switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned.
+
+One survey participant says, "Tower, which is a GUI for GIT, can also show me the two files side-by-side. However, the use of "ours" and "theirs" is confusing."
+Another survey participant says, "Tools don't make it easy to work with two arbitrary revisions side by side."
+"I usually try to just replay my or their commits manually before retrying a merge/rebase (git) to minimize the conflict."
+"Eclipse. I suck at knowing what it is trying to tell me."
+"WebStorm has an amazing conflict resolution tool and is able to provide full linting and intellisense of the partially merged file to show impact of the changes. Displays the final and conflicting lines clearly."
+
+\textbf{*** Toolset is too fragmented ***}
+
+Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, "I had to jump around between tools and copy and paste version numbers from one to? See, this is why [toolset] integration matters." This frustration is understandable, as a developer whose workflow is frequently interrupted by needless, inefficient operations.
+
+\textbf{*** Tools are not trusted ***}
+
+Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the necessary steps have been taken. "I've never trusted the merge tools, in a way? Or the diff tools. It would always just make me skittish? So my overall perception is that I'm scared of them? Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code." This quote comes from Participant 4, a professional software developer with 10 years of experience. 
+It is worth noting that many tool-related complaints came from within the context of the archeology lens [Mihai paper], meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, "Give me a way to explore this. Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened." The reality for developers using Git for more advanced use cases is that tool support is incredibly thin, if not nonexistent. Problems with this archeology process accounted for 13\% of the cards in this category.
 \todo{talk about tool needs in interviews and how survey answer options were formed}
 
 Our survey suggests that regardless of gender, developer role, experience level, project size, and source distribution model, software practitioners say that the following factors affect the difficulty of a merge conflict most:
