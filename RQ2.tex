@@ -1,21 +1,71 @@
 \subsection{\textbf{RQ2:} What factors impact the difficulty of a conflict resolution?}\label{RQ2}
 
 \todo{talk about resolution difficulties in interviews and how survey answer options were formed}
-\todo{get std deviations}
+\todo{double check card descriptions with actual cards}
 
-Our survey results show that three of the factors we investigated have an effect on the difficulty of the process of resolving merge conflicts: \textit{The amount of information you have about the conflicting code}(mean: 3.62) \textit{Your expertise in the area of code with the merge conflict} (mean: 3.72), and \textit{How easy it is to understand the code involved in the merge conflict} (mean: 3.89). 
+\begin{table}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Merge Conflict Resolution Difficulty Categories from Interviews}
+\label{interview_tags_rq2}
+\centering
+\begin{tabularx}{0.5\textwidth}{@{}{c}@{ }{c}@{ }p{4.4cm}}
+\toprule
+	Category & \# Cards & \hfil Description \\
+\midrule
 
-Participants also rated the following factors, but their mean response values place them in the neutral category:
-\begin{enumerate}
-	\item \textit{How well tools present information in an understandable way} (mean: 3.48)
-	\item \textit{Changing assumptions within the code} (3.30)
-	\item \textit{Complexity of the project structure} (3.18)
-	\item \textit{Trustworthiness of tools} (3.12)
-	\item \textit{Informativeness of commit messages} (3.07)
-	\item \textit{Project culture} (3.04)
-	\item \textit{Tool support for examining development history} (3.03)
-\end{enumerate}
+\textit{Code Comprehensibility}	& 9 & How understandable the code is\\
+\textit{Archeology} & 8 & Exploring a project's history\\
+\textit{Tool Functionality Deficiencies} & 6 & Tools not providing needed assistance\\
+\textit{Tool Information Presentation} & 6 & Tools information presentation is confusing or insufficient\\
+\textit{Maintaining Behavior} & 5 & Program behavior should not change because of the conflict\\
+\textit{Complex Project Structure} & 4 & Increased difficulty because the project is more complex\\
+\textit{Tangled Toolset} & 4 & Modular tools' lack of integration with one another\\
+\textit{Knowledge Gap} & 4 & Practitioners lack the knowledge necessary to resolve a merge conflict\\
+\textit{Shifting Assumptions	} & 3 & Code-based assumptions are different between two code versions\\
+\textit{Dependency Hell} & 3 & References to external code other parts of the system make resolution more complicated\\
+\textit{Commit Messages}	 & 3 & The impact of commit message content\\
+\textit{Territorial Contributors} &	2 & Some contributors have perceived ownership over sections of code which must be respected\\
+\textit{Tool Mistrust} & 2 & Tools do not have the trust of their users\\
+\textit{Legacy Code} & 1 & Old code where the original author is no longer accessible\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+Our survey results show that three of the factors we investigated have an effect on the difficulty of the process of resolving merge conflicts: 
+\begin{itemize}
+\item \textit{How easy it is to understand the code involved in the merge conflict}. 
+\item \textit{Your expertise in the area of code with the merge conflict}
+\item \textit{The amount of information you have about the conflicting code} 
+\end{itemize}
+Table \ref{survey_res_diffs} shows the survey result of each factor in this question.  
+
+\begin{table*}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Difficulties in Resolving a Merge Conflict from Survey}
+\label{survey_res_diffs}
+\centering
+\begin{tabularx}{0.9\textwidth}{r | *5{c} | *3{c}}
+
+\toprule
+	Factor & 1 & 2 & 3 & 4 & 5 & Mean & Median & Std. Dev. \\
+\midrule
+	\textbf{How easy it is to understand the code involved in the merge conflict} & 0 & 14 & 25 & 65 & 37 & \textbf{3.89} & 4 & 0.91\\
+	\textbf{Your expertise in the area of code with the merge conflict} & 1 & 17 & 38 & 49 & 36 & \textbf{3.72} & 4 & 1.00\\
+	\textbf{The amount of information you have about the conflicting code} & 2 & 21 & 38 & 48 & 32 & \textbf{3.62} & 4 & 1.04\\
+	How well tools present information in an understandable way & 4 & 24 & 47 & 32 & 34 & 3.48 & 3 & 1.12\\
+	Changing assumptions within the code & 8 & 27 & 45 & 36 & 25 & 3.30 & 3 & 1.14\\
+	Complexity of the project structure & 6 & 38 & 39 & 41 & 17 & 3.18 & 3 & 1.09\\
+	Trustworthiness of tools & 17 & 29 & 39 & 32 & 34 & 3.12 & 3 & 1.26\\
+	Informativeness of commit messages & 18 & 32 & 30 & 44 & 17 & 3.07 & 3 & 1.24\\
+	Project Culture & 13 & 37 & 43 & 27 & 21 & 3.04 & 3 & 1.19\\
+	Tool support for examining development history & 16 & 40 & 31 & 32 & 22 & 3.03 & 3 & 1.26\\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
 
 No factor in this category had an average below 3.03, so there were no factors tested that have little to no effect on the difficulty of a merge conflict resolution.
 
-Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected \textit{Informativeness of commit messages} to have a larger impact on the difficulty of a merge conflict resolution. One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short to provide much insight to a software practitioner in need of information.
+Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected \textit{Informativeness of commit messages} to have a larger impact on the difficulty of a merge conflict resolution. One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short to provide a reliable source of insight to a software practitioner in need of information about the commit.

@@ -11,9 +11,9 @@ These trait categories served as the foundation for the questions and answers in
 \caption{Merge Conflict Difficulty Categories from Interviews}
 \label{interview_tags}
 \centering
-\begin{tabularx}{0.45\textwidth}{@{}{r}@{ }{c}@{ }p{4.5cm}}
+\begin{tabularx}{0.5\textwidth}{@{}{c}@{ }{c}@{ }p{4.5cm}}
 \toprule
-	Category & \# Cards & Description \\
+	Category & \# Cards & \hfil Description \\
 \midrule
 	Temporal & 1 & Elapsed time between commits in a merge conflict. \\
 	Deadlines & 3 & Increased rates of developer error leading up to deadlines. \\
@@ -42,20 +42,20 @@ We analyzed the survey responses by demographics such as gender, roles, experien
 \toprule
 	Factor & 1 & 2 & 3 & 4 & 5 & Mean & Median & Std. Dev. \\
 \midrule
-	Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 &  & 1.09 \\
-	Number of conflicting lines of code & 2 & 40 & 64 & 45 & 11 & 3.14 &  & 0.91 \\
-	\textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & & \textbf{1.10} \\
-	Number of files in the conflict & 10 & 69 & 50 & 26 & 6 & 2.68 & & 0.94 \\
-	Complexity of the files with conflicts & 8 & 34 & 49 & 51 & 18 & 3.23 & & 1.07 \\
-	\textbf{Non-functional changes (whitespace, renaming, etc.)} & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & & \textbf{1.03} \\
-	Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & & 1.16 \\
-	Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & & 1.12 \\
-	\textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & & \textbf{1.05} \\
+	\textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & 4 & 1.10 \\
+	\textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & 4 & 1.05 \\
+	Complexity of the files with conflicts & 8 & 34 & 49 & 51 & 18 & 3.23 & 3 & 1.07 \\
+	Number of conflicting lines of code & 2 & 40 & 64 & 45 & 11 & 3.14 & 3 & 0.91 \\
+	Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 & 3 & 1.09 \\
+	Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & 3 & 1.12 \\
+	Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & 3 & 1.16 \\
+	Number of files in the conflict & 10 & 69 & 50 & 26 & 6 & 2.68 & 3 & 0.94 \\
+	\textbf{Non-functional changes (whitespace, renaming, etc.)} & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & 2 & 1.03 \\
 \bottomrule
 \end{tabularx}
 \end{table*}
 
-The results of our survey indicate that \textit{complexity of conflicting lines of code} (mean: 3.52, std. deviation: 1.10) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.50, std. deviation: 1.05) are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
+The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
 Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
 
 Practitioners with 1-5 years and 6-10 years of experience were only nominally in agreement that merge conflict difficulty is affected by \textit{complexity of conflicting lines of code} (mean: 3.31 and mean: 3.37 respectively) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.21 and mean: 3.42 respectively).
