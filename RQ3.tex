@@ -4,6 +4,7 @@ In the interview stage, we found four different kinds of problems that participa
 
 \comment{*** Git blame issues***}
 
+\subsubsection{Tool functional deficiencies}
 When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that while backporting in a large system, it is extremely hard to understand when code was deleted. 
 
 \begin{displayquote}
@@ -24,13 +25,10 @@ http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
 
 \comment{***Information Presentation is bad ***}
 
-Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool whenever switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned. Another survey participant says, 
+Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool whenever switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned. For instance, one survey participant says, 
 \begin{displayquote}
 \textit{``Tools don't make it easy to work with two arbitrary revisions side by side.''}
 \end{displayquote}
-``I usually try to just replay my or their commits manually before retrying a merge/rebase (git) to minimize the conflict.''
-``Eclipse. I suck at knowing what it is trying to tell me.''
-``WebStorm has an amazing conflict resolution tool and is able to provide full linting and Intellisense of the partially merged file to show impact of the changes. Displays the final and conflicting lines clearly.''
 
 \comment{*** Toolset is fragmented... But most people don't seem to care ***}
 
@@ -40,7 +38,7 @@ Toolset fragmentation was a complaint when participants tried to track down info
 \textit{``I had to jump around between tools and copy and paste version numbers from one to... See, this is why [toolset] integration matters.''}
 \end{displayquote}
 
-This frustration is understandable, as a developer whose workflow frequently gets interrupted by tool switches. Psychology studies have found that task switching comes with a cost \cite{Meiran2000}\cite{gopher2000switching}, and Gerald Weinberg has discussed the problem within engineering teams \cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. This suggest that the benefits of a more modular toolset offsets the cost of switching tools with better features or usability. 
+This frustration is understandable for developers whose workflows frequently get interrupted by tool switches. Psychology studies have found that task switching comes with a cost \cite{Meiran2000}\cite{gopher2000switching}, and Gerald Weinberg has discussed the problem within engineering teams \cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. This suggests that the benefits of a more modular toolset offsets the cost of switching tools with better features or user experiences within the tools themselves.
 
 \comment{*** Tools are not trusted ***}
 
@@ -72,9 +70,7 @@ This prompted us to ask developers how much do they trust your merging, history 
 \item How much tool trust is enough? 
 \item What is the trust threshold for not using a tool anymore?
 \end{itemize}
-If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since there does not appear to be any previous work relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\%.of developers operate within this gap in tool trust.
-
-
+If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% (developers with \textit{A moderate amount} of trust or less) of developers operate within this gap in tool trust.
 
 \comment{*** History Exploration not well-supported ***}
 
@@ -84,21 +80,10 @@ Notably, many tool-related complaints in the interviews came from within the con
 \textit{``Give me a way to explore this. Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
 \end{displayquote}
 
-The reality for developers using Git for more advanced history exploration use cases is that tool support is incredibly thin.
+The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. Participant 1, as someone who frequently dives deep into Git history had resorted to writing his own scripts to 
 
-\todo{better transition, update with new survey analysis}
 
-\begin{itemize}
-	\item \textit{Exploring project history}\\
-	\item \textit{Filtering relevant info}\\
-	\item \textit{Better usability}\\
-\end{itemize}
 
-People universally say that these have no effect:
-\begin{itemize}
-	\item \textit{Better terminology}\\
-	\item \textit{Better transparency}\\
-\end{itemize}
 
 \begin{table}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -119,6 +104,25 @@ KDiff3 & 9\\
 Meld & 8\\
 SourceTree & 8\\
 Sublime Text & 7\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Merge Conflict Resolution Difficulty Categories from Interviews}
+\label{interview_tags_rq3}
+\centering
+\begin{tabularx}{0.5\textwidth}{@{}{c}@{ }{c}@{ }p{4.4cm}}
+\toprule
+	Category & \# Cards & \hfil Description \\
+\midrule
+
+\textit{Tool Functionality Deficiencies} & 6 & Tools not providing needed assistance\\
+\textit{Tool Information Presentation} & 6 & Tools information presentation is confusing or insufficient\\
+\textit{Tangled Toolset} & 4 & Modular tools' lack of integration with one another\\
+\textit{Tool Mistrust} & 2 & Tools do not have the trust of their users\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
