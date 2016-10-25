@@ -28,7 +28,7 @@
 \end{tabularx}
 \end{table}
 
-\subsubsection{Interviews}
+\subsubsection{General}
 
 Our interviews resulted in 10 categories in this category, as shown in Table \ref{interview_tags_rq2}.
 
@@ -68,4 +68,18 @@ Table \ref{survey_res_diffs} shows the survey result of each factor in this ques
 
 No factor in this category had an average below 3.03, so there were no factors tested that have little to no effect on the difficulty of a merge conflict resolution.
 
-Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected \textit{Informativeness of commit messages} to have a larger impact on the difficulty of a merge conflict resolution. One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short to provide a reliable source of insight to a software practitioner in need of information about the commit.
+\subsubsection{Commit Messages}
+Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
+P10 agrees with this, but still wishes that commit messages could be more informative:
+\begin{displayquote}
+	\textit{That really helps in making decisions on... two commits that have done something similar, and one commit has done some additional work... then I know that this commit has additional changes and I should look out for those when I'm resolving the merge conflict. So yeah, more information in commit messages would definitely help.}
+\end{displayquote}
+
+In contrast, P5 says that commit messages just aren't descriptive enough:
+\begin{displayquote}
+\textit{I wont understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.}
+\end{displayquote}
+
+P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets more vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
+
+Given the mixed information about commit messages in the interviews, we further investigated developer perceptions in the survey and found that software practitioners believe that \textit{Informativeness of commit messages} has a moderate impact on the difficulty of a merge conflict resolution, making it the 8th  of the 10 factors we asked about (see Table \ref{survey_res_diffs}). One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short or vague to provide helpful information about the commits involved in a conflict.
