@@ -75,7 +75,7 @@ The results for this section are given in Table \ref{survey_res_diffs}, which hi
 No factor in this category had an average below 3.03, so there were no factors tested that were rated as having less than a moderate amount of affect on the difficulty of a merge conflict resolution.
 
 \subsubsection{Commit Messages}
-Based on prior work stating the value of commit messages \cite{yamauchi2014clustering} \cite{hindle2009automatic} \cite{cortes2014automatically} \cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
+Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
 P10 agrees with this, but still wishes that commit messages could be more informative:
 \begin{displayquote}
 	\textit{That really helps in making decisions on... two commits that have done something similar, and one commit has done some additional work... then I know that this commit has additional changes and I should look out for those when I'm resolving the merge conflict. So yeah, more information in commit messages would definitely help.}
@@ -99,7 +99,14 @@ In addition, Participant 8 draws a direct relationship between size and difficul
 \textit{Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.}
 \end{displayquote}
 However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution.
-This motivated a survey question to compare increased complexity to increased size, which is illustrated in 
+This motivated a survey question to compare increased size to increased complexity, which showed that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as seen in Figure \ref{size_vs_complexity}.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{ConflictComplexityVsSize.pdf}
+\caption{Effectiveness of developer tools in supporting varying levels of size and complexity.}
+\label{size_vs_complexity}
+\end{figure}
 
 \subsubsection{Archeology}
 
