@@ -101,16 +101,22 @@ In addition, Participant 8 draws a direct relationship between size and difficul
 However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution.
 This motivated a survey question to compare increased size to increased complexity, which showed that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as seen in Figure \ref{size_vs_complexity}.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.5in]{ConflictComplexityVsSize.pdf}
-\caption{Effectiveness of developer tools in supporting varying levels of size and complexity.}
+\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
+\caption{Effectiveness of developer tools in supporting varying levels of size and complexity (by developer experience).}
 \label{size_vs_complexity}
-\end{figure}
+\end{figure*}
 
 \subsubsection{Archeology}
+Archeology is an important step for many software developers, as illustrated in the following quote from P8:
+\begin{displayquote}
+\textit{I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.}
+\end{displayquote}
+P2 explains that projects make it a priority to keep a well-curated Git history because
+\begin{displayquote}
+\textit{That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	}
+\end{displayquote}
 
-
-
-
+However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured.
 
