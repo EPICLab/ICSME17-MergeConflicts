@@ -98,7 +98,7 @@ In addition, Participant 8 draws a direct relationship between size and difficul
 \begin{displayquote}
 \textit{Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.}
 \end{displayquote}
-However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution.
+However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
 This motivated a survey question to compare increased size to increased complexity, which showed that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as seen in Figure \ref{size_vs_complexity}.
 
 \begin{figure*}[!t]
@@ -118,5 +118,7 @@ P2 explains that projects make it a priority to keep a well-curated Git history 
 \textit{That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	}
 \end{displayquote}
 
-However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured.
+\todo{add P1 quote}
+
+However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
 
