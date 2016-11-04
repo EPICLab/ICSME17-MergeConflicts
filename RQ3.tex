@@ -1,6 +1,25 @@
+\begin{table}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Merge Conflict Resolution Difficulty Categories from Interviews}
+\label{interview_tags_rq3}
+\centering
+\begin{tabularx}{0.5\textwidth}{@{}{c}@{ }{c}@{ }p{4.4cm}}
+\toprule
+	Category & \# Cards & \hfil Description \\
+\midrule
+
+\textit{Tool Functionality Deficiencies} & 6 & Tools not providing needed assistance\\
+\textit{Tool Information Presentation} & 6 & Tools information presentation is confusing or insufficient\\
+\textit{Tangled Toolset} & 4 & Modular tools' lack of integration with one another\\
+\textit{Tool Mistrust} & 2 & Tools do not have the trust of their users\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{\textbf{RQ3:} Do developer tools meet developer needs for merge conflicts?}\label{RQ3}
 
-In the interview stage, we found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. 
+In the interview stage, we found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. These categories are describe and sorted by number of cards per category in Table~\ref{interview_tags_rq3}.
 
 \comment{*** Git blame issues***}
 
@@ -18,6 +37,12 @@ The git blame tool allows developers to find when a certain line was added or ch
 \end{displayquote}
 
  In other words, trying to use this tool in an area of high activity becomes very difficult in a shorter amount of time. Furthermore, it does not appear that git blame --reverse has made the jump into graphical Git tools, making this scenario more difficult for those using graphical tools.
+ 
+ P1 mentions a specific issue that he encounters to illustrate that tools work with a surface understanding of a merge conflict's process. The situation described is a conflict where one branch cherrypicks changes from the other, then the second branch reverts the same changes that were cherrypicked. When the two branches merge back together, tools have trouble supporting the resolution of the more complex conflict:
+ \begin{displayquote}
+ ``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''
+ \end{displayquote}
+ Using this in light of our top difficulties from Table \ref{survey_res_diffs}, this suggests that tools would benefit from assisting developers in more complex situations by providing them with more specific information about what caused the conflict (in this case, the combination of cherrypicking and reverting). 
 
 \comment{***Information Presentation is bad***}
 
@@ -34,7 +59,7 @@ Toolset fragmentation was a complaint when participants tried to track down info
 \textit{``I had to jump around between tools and copy and paste version numbers from one to... See, this is why [toolset] integration matters.''}
 \end{displayquote}
 
-This frustration is understandable for developers whose workflows frequently get interrupted by tool switches. Psychology studies have found that task switching comes with a cost~\cite{Meiran2000}\cite{gopher2000switching}, and Gerald Weinberg has discussed the problem within engineering teams~\cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. To ensure that these developer perceptions were not biased based on the current toolset of the developer (i.e. people do not dislike multiple tools because they do not have multiple tools), we compared the tool list for people who chose \textit{Never} or \textit{Rarely} and found that the groups share 9 of their top 10 tools. This suggests that the benefits of a more modular toolset offsets the cost of switching tools with better features or user experiences in the tools in their toolchains. 
+This frustration is understandable for developers whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with a cost, and Gerald Weinberg has discussed the problem within engineering teams~\cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. To ensure that these developer perceptions were not biased based on the current toolset of the developer (i.e. people do not dislike multiple tools because they do not have multiple tools), we compared the tool list for people who chose \textit{Never} or \textit{Rarely} and found that the groups share 9 of their top 10 tools. This suggests that the benefits of a more modular toolset offsets the cost of switching tools with better features or user experiences in the tools in their toolchains. 
 
 \comment{*** Tools are not trusted ***}
 
@@ -66,7 +91,7 @@ This prompted us to ask developers how much do they trust your merging, history 
 \item How much tool trust is enough? 
 \item What is the trust threshold for not using a tool anymore?
 \end{itemize}
-If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% (developers with \textit{A moderate amount} of trust or less) of developers operate within this gap in tool trust.
+If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% of developers (those with \textit{A moderate amount} of trust or less) operate within this gap in tool trust.
 
 \todo{Do another look around for tool trust threshold papers, just in case.}
 
@@ -78,11 +103,12 @@ Notably, many tool-related complaints in the interviews came from within the con
 \textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
 \end{displayquote}
 
-The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. Participant 1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. Participant 9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
+The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. Participant 1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
 \begin{displayquote}
-\textit{This is a tool that's specific to the [project], but I think other projects are using it as well. The big thing that [our diff tool] does that's different is git-diff will just do the diff based on the SHAs... but that doesn't really help us... we're adding metadata and cherry picking; the SHAs are always going to be changing. What this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information, so we can... essentially create a true diff... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics. So, you can say... `what's the diff between this branch and this branch but ignore everything that isn't SemVer \footnote{http://semver.org/} patch, ignore everything that is a maintenance commit, and give me just the SHAs, reverse that list, and then pipe that...'}
+\textit{git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.}
 \end{displayquote}
 
+P9 says that all of these changes are in an attempt to create something that will \textit{``essentially create a true diff''.}
 This suggests that current tools have not been able to keep up with the rapid expansion of metadata that Git and Github are able to provide, to the extent that projects will divert resources to create a tool for more advanced diffing systems. 
 
 \begin{table}[!]
@@ -104,25 +130,6 @@ KDiff3 & 9\\
 Meld & 8\\
 SourceTree & 8\\
 Sublime Text & 7\\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\begin{table}[!]
-\renewcommand{\arraystretch}{1.3}
-\caption{Merge Conflict Resolution Difficulty Categories from Interviews}
-\label{interview_tags_rq3}
-\centering
-\begin{tabularx}{0.5\textwidth}{@{}{c}@{ }{c}@{ }p{4.4cm}}
-\toprule
-	Category & \# Cards & \hfil Description \\
-\midrule
-
-\textit{Tool Functionality Deficiencies} & 6 & Tools not providing needed assistance\\
-\textit{Tool Information Presentation} & 6 & Tools information presentation is confusing or insufficient\\
-\textit{Tangled Toolset} & 4 & Modular tools' lack of integration with one another\\
-\textit{Tool Mistrust} & 2 & Tools do not have the trust of their users\\
-
 \bottomrule
 \end{tabularx}
 \end{table}

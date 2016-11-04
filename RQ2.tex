@@ -1,6 +1,5 @@
 \subsection{\textbf{RQ2:} What factors impact the difficulty of a conflict resolution?}\label{RQ2}
 
-\todo{talk about resolution difficulties in interviews and how survey answer options were formed}
 \todo{double check card descriptions with actual cards}
 
 \begin{table}[!]
@@ -28,19 +27,18 @@
 \end{tabularx}
 \end{table}
 
-\subsubsection{General}
+Our interview analysis resulted in 10 categories in this category, which are described and sorted by number of cards in Table~\ref{interview_tags_rq2}.
 
-Our interviews resulted in 10 categories in this category, as shown in Table \ref{interview_tags_rq2}.
-
-For this section in the survey, 141 participants rated how much each factor affects the difficulty of resolving merge conflicts and were given the following options:
-
+Considering these interview categories, we created 10 factors of difficulty while resolving merge conflicts, and 141 participants rated how much each factor affects that difficulty. Participants were given the following options:
+\vbox{
 \begin{enumerate}
-	\item \textit{Not at all}
-	\item \textit{A little}
-	\item \textit{A moderate amount}
-	\item \textit{A lot}
-	\item \textit{A great deal}
-\end{enumerate}
+\item \textit{Not at all}
+\item \textit{A little}
+\item \textit{A moderate amount}
+\item \textit{A lot}
+\item \textit{A great deal}
+\end{enumerate}}
+
 The results for this section are given in Table \ref{survey_res_diffs}, which highlights three of the factors which show stronger developer opinions:
 \begin{itemize}
 \item \textit{How easy it is to understand the code involved in the merge conflict}. 
@@ -72,7 +70,7 @@ The results for this section are given in Table \ref{survey_res_diffs}, which hi
 \end{tabularx}
 \end{table*}
 
-No factor in this category had an average below 3.03, so there were no factors tested that were rated as having less than a moderate amount of affect on the difficulty of a merge conflict resolution.
+No factor in this category had an average below 3.03, so there were no factors tested that were rated as having less than \textit{A moderate amount} of affect on the difficulty of a merge conflict resolution on average.
 
 \subsubsection{Commit Messages}
 Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
@@ -98,7 +96,7 @@ In addition, Participant 8 draws a direct relationship between size and difficul
 \begin{displayquote}
 \textit{Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.}
 \end{displayquote}
-However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
+However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care to ensure a correct resolution. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
 This motivated a survey question to compare increased size to increased complexity, which showed that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as seen in Figure \ref{size_vs_complexity}.
 
 \begin{figure*}[!t]
