@@ -71,8 +71,16 @@ In the interview, P4 was asked about how the size of the conflict impacted its d
 \textit{``The size is usually not the issue. Just the complexity of the code that happen to be with the conflicting state.''}	
 \end{displayquote}
 
-Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14).
- 
+Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14). This suggests that either complexity impacts the apparent difficulty of the conflict more than size or that size is a component of the complexity of a merge conflict.
+
+\subsubsection{Domain Knowledge}
+Domain knowledge represents the developer's knowledge of the area of code where the conflict is located. In the interview, P5 said, 
+
+\begin{displayquote}
+	\textit{``A lot of what I work on is... in my own little area, so when there is a merge conflict in that area, I will know what to do... But if I'm... helping out in the [other part of project], then I'll.. get someone else to... resolve the merge conflict for me... It's someone else's, and I don't want to screw it up.''}
+\end{displayquote}
+
+This participant found domain knowledge to be important enough that he would find someone who is familiar with the code around the merge conflict rather than resolving the conflict himself. In the event of non-intuitive code, this option is a helpful approach to resolution because it does not require the developer to understand the code before resolving. It also takes into consideration other changes that may be happening around that conflict resolution that would be affected by a bad merge.
 
 %The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
 %Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
