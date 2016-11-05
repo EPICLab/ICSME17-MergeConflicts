@@ -28,9 +28,16 @@ These trait categories served as the foundation for the questions and answers in
 \end{tabularx}
 \end{table}
 
-We also asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of merge conflict difficulty.
-These survey questions were based on a 5-point Likert scale.
-We analyzed the survey responses by demographics such as gender, roles, experience, primary project model, and primary project size.
+We also asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of how difficult a merge conflict will be. These factors are observable or estimable traits of the conflict, which means that they are factors that developers can use when initially assessing merge conflicts.
+Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point Likert scale consisting of the following answer options:
+
+\begin{enumerate}
+	\item \textit{Not at all}
+	\item \textit{A little}
+	\item \textit{A moderate amount}
+	\item \textit{A lot}
+	\item \textit{A great deal}
+\end{enumerate}
 
 \begin{table*}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -56,30 +63,41 @@ We analyzed the survey responses by demographics such as gender, roles, experien
 \end{tabularx}
 \end{table*}
 
-The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
-Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
+\subsubsection{Code Complexity}
+Cyclomatic complexity \cite{mccabe1976complexity} is a well-established measure of code complexity in software. However, it has also been criticized as being based on poor theoretical foundations \cite{Shepperd1988}, and not all software developers have experience using it. So for this study, we intentionally left the interpretation of the word ``complexity'' to the individual participants for these reasons.
+In the interview, P4 was asked about how the size of the conflict impacted its difficulty, and he said,
 
-Practitioners with 1-5 years and 6-10 years of experience were only nominally in agreement that merge conflict difficulty is affected by \textit{complexity of conflicting lines of code} (mean: 3.31 and mean: 3.37 respectively) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.21 and mean: 3.42 respectively).
-As practitioner experiences increases, the level of agreement increases on both of these factors, with practitioners indicating 26+ years experience having the highest consensus (mean: 4.06, std. deviation: 0.77). 
+\begin{displayquote}
+\textit{``The size is usually not the issue. Just the complexity of the code that happen to be with the conflicting state.''}	
+\end{displayquote}
 
-Larger, more complex projects typically require that developers have more experience and a higher degree of knowledge about the systems used in the project.
-As the size of a software project increases, so does the complexity of the underlying code~\cite{banker1993software}\cite{curtis1979third}.
-Therefore, more experienced practitioners are likely to have a broader range of understanding about both \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} and their affects on merge conflict difficulty.
+Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14).
+ 
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.4in]{MeanProjectSize.pdf}
-\caption{Mean Likert Score by Project Size for \textit{knowledge/expertise in the area of conflicting code} category of factors that effect the perceived difficulty of merge conflicts.}
-\label{mean_likert_project_size}
-\end{figure}
-
-When analyzing by the size of project that practitioners normally work on, we found that \textit{knowledge/expertise in the area of conflicting code} was increasingly viewed as having an effect on merge conflict difficult as the practitioners' project size increased (see Figure~\ref{mean_likert_project_size}).
-The practitioners that usually work in project sizes of \textit{1 developer}, \textit{2-5 developers}, and \textit{6-10 developers} had relatively neutral responses regarding the effects of \textit{knowledge/expertise in the area of conflicting code} (mean: 3.12, mean: 3.38, and mean: 3.47 respectively).
-However, practitioners that usually work in project sizes of \textit{11-50 developers} and \textit{51+ developers} more positively indicated that \textit{knowledge/expertise in the area of conflicting code} has an effect on the difficulty of merge conflicts (mean: 4.00 and mean: 3.69 respectively).
-
-We also found that practitioners agree that \textit{non-functional changes (whitespace, renaming, etc.)} (mean: 2.16, std. deviation: 1.03) has no effect on the perceived difficulty of a merge conflict.
-Non-functional changes are textual conflicts that can be resolved without consideration of dependencies, performance, or scope.
-Practitioners have less to reason about when resolving merge conflicts that involve only textual conflicts, and therefore are unlikely to perceive \textit{non-functional changes} as affecting the difficulty of merge conflicts.
+%The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
+%Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
+%
+%Practitioners with 1-5 years and 6-10 years of experience were only nominally in agreement that merge conflict difficulty is affected by \textit{complexity of conflicting lines of code} (mean: 3.31 and mean: 3.37 respectively) and \textit{knowledge/expertise in the area of conflicting code} (mean: 3.21 and mean: 3.42 respectively).
+%As practitioner experiences increases, the level of agreement increases on both of these factors, with practitioners indicating 26+ years experience having the highest consensus (mean: 4.06, std. deviation: 0.77). 
+%
+%Larger, more complex projects typically require that developers have more experience and a higher degree of knowledge about the systems used in the project.
+%As the size of a software project increases, so does the complexity of the underlying code~\cite{banker1993software}\cite{curtis1979third}.
+%Therefore, more experienced practitioners are likely to have a broader range of understanding about both \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} and their affects on merge conflict difficulty.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=3.4in]{MeanProjectSize.pdf}
+%\caption{Mean Likert Score by Project Size for \textit{knowledge/expertise in the area of conflicting code} category of factors that effect the perceived difficulty of merge conflicts.}
+%\label{mean_likert_project_size}
+%\end{figure}
+%
+%When analyzing by the size of project that practitioners normally work on, we found that \textit{knowledge/expertise in the area of conflicting code} was increasingly viewed as having an effect on merge conflict difficult as the practitioners' project size increased (see Figure~\ref{mean_likert_project_size}).
+%The practitioners that usually work in project sizes of \textit{1 developer}, \textit{2-5 developers}, and \textit{6-10 developers} had relatively neutral responses regarding the effects of \textit{knowledge/expertise in the area of conflicting code} (mean: 3.12, mean: 3.38, and mean: 3.47 respectively).
+%However, practitioners that usually work in project sizes of \textit{11-50 developers} and \textit{51+ developers} more positively indicated that \textit{knowledge/expertise in the area of conflicting code} has an effect on the difficulty of merge conflicts (mean: 4.00 and mean: 3.69 respectively).
+%
+%We also found that practitioners agree that \textit{non-functional changes (whitespace, renaming, etc.)} (mean: 2.16, std. deviation: 1.03) has no effect on the perceived difficulty of a merge conflict.
+%Non-functional changes are textual conflicts that can be resolved without consideration of dependencies, performance, or scope.
+%Practitioners have less to reason about when resolving merge conflicts that involve only textual conflicts, and therefore are unlikely to perceive \textit{non-functional changes} as affecting the difficulty of merge conflicts.
 
 %Intuitively, we would assume that an increased perception of \textit{knowledge/expertise in the area of conflicting code} as difficulty factor would correlate with a decreased perception of \textit{complexity of conflicting lines of code} as a difficulty factor of merge conflicts.
 %This relationship would indicate that a developer's expertise allows them to rationalize about merge conflicts with higher complexity, since they have a higher degree of past knowledge in that area of conflict.
@@ -88,39 +106,35 @@ Practitioners have less to reason about when resolving merge conflicts that invo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Interviews}
-%The interview results suggest that developers approach merge conflicts...
-
-
-
-\todo{Give description of which categories produced which survey options}
-
-\subsubsection{Survey}
-Our survey suggests that regardless of gender, developer role, experience level, project size, and source distribution model, software practitioners say that the following factors affect the difficulty of a merge conflict most: 
-\begin{itemize}
-\item \textit{Complexity of conflicting lines of code}
-\item \textit{Your knowledge/expertise in area of conflicting code}
-\end{itemize}
-
-Similarly, software practitioners across every measured demographic perceived the following factors to be less important when deciding the difficulty of a merge conflict:
-\begin{itemize}
-\item \textit{Non-functional changes (whitespace, renaming, etc)}
-\item \textit{Number of files in the conflict}
-\end{itemize}
-
-While survey participants did not agree that non-functional changes strongly factor into the difficulty of a merge conflict, it is still worth noting that several interview participants named non-functional changes, such as large refactor or reformatting changes, as a cause for merge conflicts. This suggests that non-functional changes may increase the likelihood of a merge conflict happening, but they do not contribute to the conflict's difficulty.
-
-However, some demographics do view certain difficulties. For instance, open-source developers think that \textit{Atomicity of change sets in the conflict} impacts the difficulty, while closed-source developers and people who split their time evenly think that atomic change sets have no effect on the difficulty. This may be explained by the findings in Rigby et al\cite{OSS_smaller_commits}, which shows that open-source projects tend to review smaller changes than closed-source projects because "The small size lets reviewers focus on the entire change, and the incrementality reduces reviewers’ preparation time and lets them maintain an overall picture of how the change fits into the system." It is possible that our result reflects this difference of culture.
-
-We also found that Project Maintainers say that \textit{Time to resolve a conflict} has an effect, while no other role agrees. This suggests that those in a maintainer role may be more subject to time-related constraints such as maintenance or release schedules. 
-
-\comment{Project Managers say no effect because they focus on project schedules, not conflict resolutions, i.e. they are higher level/abstraction?}
-
-\todo{might be previous work}
-Support and infrastructure roles (System Engineer, Sys Admin, System Architect, DevOps) emphasized that \textit{Dependencies of conflicting code on other components} have more of an effect than other roles did. This might be due to infrastructure systems being maintained in a live environment, or systems that are currently in production use and at risk of real-time dependency failures. 
-
-Developers on projects of size 1 say that \textit{Dependencies of conflicting code on other components}. Because no other project sizes agree with this idea, we hypothesize that this could be due to their high dependence on external code because of the software production limitations of a 1-developer team.
-
-We also found that the group of developers with 21-25 years of experience frequently contradicted general consensus, but it seems more likely that these differences were simply due to the group's small sample size (4).
+%\subsubsection{Interviews}
+%%The interview results suggest that developers approach merge conflicts...
+%
+%\subsubsection{Survey}
+%Our survey suggests that regardless of gender, developer role, experience level, project size, and source distribution model, software practitioners say that the following factors affect the difficulty of a merge conflict most: 
+%\begin{itemize}
+%\item \textit{Complexity of conflicting lines of code}
+%\item \textit{Your knowledge/expertise in area of conflicting code}
+%\end{itemize}
+%
+%Similarly, software practitioners across every measured demographic perceived the following factors to be less important when deciding the difficulty of a merge conflict:
+%\begin{itemize}
+%\item \textit{Non-functional changes (whitespace, renaming, etc)}
+%\item \textit{Number of files in the conflict}
+%\end{itemize}
+%
+%While survey participants did not agree that non-functional changes strongly factor into the difficulty of a merge conflict, it is still worth noting that several interview participants named non-functional changes, such as large refactor or reformatting changes, as a cause for merge conflicts. This suggests that non-functional changes may increase the likelihood of a merge conflict happening, but they do not contribute to the conflict's difficulty.
+%
+%However, some demographics do view certain difficulties. For instance, open-source developers think that \textit{Atomicity of change sets in the conflict} impacts the difficulty, while closed-source developers and people who split their time evenly think that atomic change sets have no effect on the difficulty. This may be explained by the findings in Rigby et al\cite{OSS_smaller_commits}, which shows that open-source projects tend to review smaller changes than closed-source projects because "The small size lets reviewers focus on the entire change, and the incrementality reduces reviewers’ preparation time and lets them maintain an overall picture of how the change fits into the system." It is possible that our result reflects this difference of culture.
+%
+%We also found that Project Maintainers say that \textit{Time to resolve a conflict} has an effect, while no other role agrees. This suggests that those in a maintainer role may be more subject to time-related constraints such as maintenance or release schedules. 
+%
+%\comment{Project Managers say no effect because they focus on project schedules, not conflict resolutions, i.e. they are higher level/abstraction?}
+%
+%\todo{might be previous work}
+%Support and infrastructure roles (System Engineer, Sys Admin, System Architect, DevOps) emphasized that \textit{Dependencies of conflicting code on other components} have more of an effect than other roles did. This might be due to infrastructure systems being maintained in a live environment, or systems that are currently in production use and at risk of real-time dependency failures. 
+%
+%Developers on projects of size 1 say that \textit{Dependencies of conflicting code on other components}. Because no other project sizes agree with this idea, we hypothesize that this could be due to their high dependence on external code because of the software production limitations of a 1-developer team.
+%
+%We also found that the group of developers with 21-25 years of experience frequently contradicted general consensus, but it seems more likely that these differences were simply due to the group's small sample size (4).
 
 %We asked participants how much they trust their merging, history exploration, and/or conflict resolution tools, and 57.9\% of participants reported that they trusted these tools either \textit{A Lot} or \textit{Completely}. While this is a majority of developers, this still leaves a significant number of people (42.1\%) who trust their tools \textit{A moderate amount} or \textit{A little}. Though we had the option for \textit{Not at all}, no participants selected this option, presumably because users stop using tools that they do not trust at all. While we found no previous work discussing the threshold for how much users must trust tools for a good tool experience, we postulate that users who cannot trust their tools \textit{A Lot} or \textit{Completely} will avoid relying on such tools too much.

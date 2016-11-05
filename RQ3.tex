@@ -51,7 +51,7 @@ Complaints about information presentation are a result of bad or inconsistent to
 \textit{``Tools don't make it easy to work with two arbitrary revisions side by side.''}
 \end{displayquote}
 
-\comment{*** Toolset is fragmented... But most people don't seem to care ***}
+\subsubsection{Toolset Fragmentation}
 
 Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, 
 
@@ -61,7 +61,7 @@ Toolset fragmentation was a complaint when participants tried to track down info
 
 This frustration is understandable for developers whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with a cost, and Gerald Weinberg has discussed the problem within engineering teams~\cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. To ensure that these developer perceptions were not biased based on the current toolset of the developer (i.e. people do not dislike multiple tools because they do not have multiple tools), we compared the tool list for people who chose \textit{Never} or \textit{Rarely} and found that the groups share 9 of their top 10 tools. This suggests that the benefits of a more modular toolset offsets the cost of switching tools with better features or user experiences in the tools in their toolchains. 
 
-\comment{*** Tools are not trusted ***}
+\subsubsection{Tool Mistrust}
 
 \begin{table}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -93,9 +93,27 @@ This prompted us to ask developers how much do they trust your merging, history 
 \end{itemize}
 If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% of developers (those with \textit{A moderate amount} of trust or less) operate within this gap in tool trust.
 
-\todo{Do another look around for tool trust threshold papers, just in case.}
+\todo{Do another look around again for tool trust threshold papers, just in case.}
+As seen in Sections \ref{RQ1} and \ref{RQ2}, developers mentioned both size and complexity in the interviews, which raised questions about how developers view each of these metrics. More specifically, we wanted to know how well developers think tools support increased size and complexity.  
+This motivated a survey question to compare increased size to increased complexity by asking participants to rate how well their tools handle the following kinds of conflicts:
 
-\comment{*** History Exploration not well-supported ***}
+\begin{itemize}
+	\item Simple, small merge conflict resolutions
+	\item Simple, large merge conflict resolutions 
+	\item Complex, small merge conflict resolutions
+	\item Complex, large merge conflict resolutions
+\end{itemize}
+
+Our results show that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as visualized in Figure \ref{size_vs_complexity}.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
+\caption{Effectiveness of developer tools in supporting varying levels of size and complexity (by developer experience). Values are number of responses per answer.}
+\label{size_vs_complexity}
+\end{figure*}
+
+\subsubsection{History Exploration}
 
 Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, 
 
@@ -105,7 +123,7 @@ Notably, many tool-related complaints in the interviews came from within the con
 
 The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. Participant 1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
 \begin{displayquote}
-\textit{git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.}
+\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
 \end{displayquote}
 
 P9 says that all of these changes are in an attempt to create something that will \textit{``essentially create a true diff''.}

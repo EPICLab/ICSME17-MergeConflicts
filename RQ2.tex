@@ -76,12 +76,12 @@ No factor in this category had an average below 3.03, so there were no factors t
 Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
 P10 agrees with this, but still wishes that commit messages could be more informative:
 \begin{displayquote}
-	\textit{That really helps in making decisions on... two commits that have done something similar, and one commit has done some additional work... then I know that this commit has additional changes and I should look out for those when I'm resolving the merge conflict. So yeah, more information in commit messages would definitely help.}
+	\textit{``That really helps in making decisions on... two commits that have done something similar, and one commit has done some additional work... then I know that this commit has additional changes and I should look out for those when I'm resolving the merge conflict. So yeah, more information in commit messages would definitely help.''}
 \end{displayquote}
 
 In contrast, P5 says that commit messages just aren't descriptive enough:
 \begin{displayquote}
-\textit{I wont understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.}
+\textit{``I wont understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.''}
 \end{displayquote}
 
 P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets more vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
@@ -90,33 +90,24 @@ Given this mixed information about commit messages in the interviews, we further
 \subsubsection{Code Comprehensibility}
 Code comprehensibility came out in the interview as a general category to cover how people attempt to understand what makes the merge conflict resolution difficult. Several participants with cards in this category mention size as having an impact on their ability to comprehend the code. For instance, when working with two conflicting commits of different sizes, Participant 1 says,
 \begin{displayquote}
-\textit{You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change, right?}
+\textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change, right?''}
 \end{displayquote}	
 In addition, Participant 8 draws a direct relationship between size and difficulty, saying:
 \begin{displayquote}
-\textit{Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.}
+\textit{``Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.''}
 \end{displayquote}
 However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care to ensure a correct resolution. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
-This motivated a survey question to compare increased size to increased complexity, which showed that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as seen in Figure \ref{size_vs_complexity}.
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
-\caption{Effectiveness of developer tools in supporting varying levels of size and complexity (by developer experience).}
-\label{size_vs_complexity}
-\end{figure*}
+\todo{Put survey results here}
 
 \subsubsection{Archeology}
 Archeology is an important step for many software developers, as illustrated in the following quote from P8:
 \begin{displayquote}
-\textit{I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.}
+\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
 \end{displayquote}
 P2 explains that projects make it a priority to keep a well-curated Git history because
 \begin{displayquote}
-\textit{That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	}
+\textit{``That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	''}
 \end{displayquote}
-
-\todo{add P1 quote}
 
 However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
 
