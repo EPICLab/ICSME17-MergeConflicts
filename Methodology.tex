@@ -23,7 +23,7 @@
 \end{tabularx}
 \end{table*}
 
-Our approach consists of two phases - first an exploratory interview phase, followed by a validation survey. We conducted the interviews with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to get a wider review of our interview findings.
+Our approach consists of two phases - first an exploratory interview phase, followed by a validation survey. We conducted the interviews with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to to confirm and broaden our interview findings.
 This two phase approach allowed us to explore the topic of merge conflicts from an individual developer perspective, and to analyze the broader impact of these perspectives on the larger developer population.
 
 \subsection{Interviews}\label{interview_methods}
@@ -44,11 +44,9 @@ The semi-structured interview format allowed participants to provide us with una
 Intercoder agreement was determined through \textit{negotiated agreement}, and was reached when no further thematic categories could be created and agreed upon by both coders~\cite{garrison2006revisiting}\cite{ritchie2013qualitative}.
 The coding scheme dictated that sentences must be consecutive and topically related to be grouped into a single card. Logically connected statements that were separated by other lines were considered to be separate cards, as a conservative measure to preserve context within each card.
 
-Card sorting is used as a collaborative technique of exploring how people think about a certain topic~\cite{spencer2009card}\cite{card_sort}.
-Card sorting allows key concepts and associations to be identified either through open sorting methods (categories are created during the card sorting process) or closed sorting methods (a set of categories is predefined before beginning to card sort).
+Card sorting, a collaborative technique of exploring how people think about a certain topic~\cite{spencer2009card}\cite{card_sort},  allows key concepts and associations to be identified either through open sorting methods (categories are created during the card sorting process) or closed sorting methods (a set of categories is predefined before beginning to card sort).
 The card sorting process consists of: deciding upon the topic space, selecting the method (open or closed), gathering the cards, sorting the cards and recording the data, and analyzing the outcomes.
-The card sorting process is meant to be collaborative, but argumentative, in order to explore the details of a selected topic.
-The process can be repeated several times in order to reach consensus among coders.
+This process is meant to be both collaborative and argumentative in order to explore the details of a selected topic and can be repeated several times in order to reach consensus among coders.
 
 The first two authors individually coded emerging themes in the cards and discussed the emerging taxonomies until consensus was reached~\cite{card_sort}.
 We performed two iterations of the open card sorting process, and found three themes within our resulting categories: the factors that impact how developers approach merge conflicts (Section~\ref{RQ1}), the difficulties that developers face when resolving conflicts (Section~\ref{RQ2}), and the impact of developer tools on the resolution process (Section~\ref{RQ3}).
@@ -59,7 +57,7 @@ We performed two iterations of the open card sorting process, and found three th
 
 \begin{table}[!]
 \renewcommand{\arraystretch}{1.3}
-\caption{Survey Participant Roles}
+\caption{\textit{Survey Participant Roles}. Since each participant was able to choose multiple roles, each number represents the number of overlapping participants between each role. The total number in each role is on the diagonal.}
 \label{survey_roles}
 \centering
 \begin{tabularx}{0.45\textwidth}{@{}r|*{10}{C}c@{}}
@@ -87,9 +85,9 @@ We performed two iterations of the open card sorting process, and found three th
 We conducted a 50-question survey of software development practitioners in order to examine the themes and categories found in the interviews.
 The survey was conducted online and anonymity was guaranteed in order to elicit honest responses from participants.
 Questions were developed to confirm, extend, and broaden the results from the interviews.
-We wanted to understand which factors impact developers the most when they encounter and resolve merge conflicts.
+We sought to understand which factors impact developers the most when they encounter and resolve merge conflicts.
 
-Survey participants were recruited from contributor lists on open-source repositories on GitHub\footnote{https://github.com/}, advertised on social networking sites (Facebook\footnote{https://www.facebook.com/} and Reddit\footnote{https://www.reddit.com/}), and by directly contacting software developers via email. Due to the nature of social media, mailing lists and email forwarding, we have no way of knowing the number of people who saw our survey request, so we have no way to calculate accurate response rates.
+Survey participants were recruited from contributor lists on open-source repositories on GitHub\footnote{https://github.com/}, advertised on social networking sites (Facebook\footnote{https://www.facebook.com/} and Reddit\footnote{https://www.reddit.com/}), and by directly contacting software developers via email. Due to the nature of social media, mailing lists and email forwarding, we cannot know how many people saw our survey and did not respond, so we do not give a response rate.
 We received 226 survey responses, but individual questions have varying response rates and are reported where appropriate in Section~\ref{results}.
 
 The population of 226 survey respondents were overwhelmingly male (91.89\% overall). A majority of respondents considered themselves to be \textit{Software Engineer/Developer} (94.25\% overall, see Table~\ref{survey_roles}). They had a median software development experience of 6-10 years (33.63\% overall), and worked on project sizes ranging from 2-51 developers (the median was 2-5 developers, constituting 49.1\%).
@@ -103,5 +101,6 @@ Most questions used a 5-point Likert scale and included an optional open-ended t
 
 \textit{Analysis:} We evaluated the distribution of survey answers for each Likert scale question by analyzing across demographic categories. 
 We use the mean score for each demographic to determine the positive, negative, or neutral response of the population. 
-We considered the third option of the 5-point Likert scale to be neutral, and considered mean scores in the range 2.50 to 3.50 to be equivalent to this neutral response. Mean scores of 3.50 or greater were considered on the higher end of the defined spectrum, while scores less than 2.5 were considered to be on the lower end of the spectrum. This threshold did place a large majority of our factors (76\%)into the neutral category, making our estimates conservative.
-Answer choices measured the extent to which participants agreed with a particular answer choice (i.e. \textit{Not at all} to \textit{A great deal}). Because of this, lower mean and median values indicate less agreement than higher mean and median values, rather than indicating any kind of opposition that exists in some Likert scales (i.e. Strongly disagree to Strongly agree).
+We considered the third option of the 5-point Likert scale to be moderate, and considered mean scores in the range 2.50 to 3.50 to be equivalent to this moderate response. Mean scores of 3.50 or greater were considered on the higher end of the defined spectrum, while scores less than 2.5 were considered to be on the lower end of the spectrum. This threshold did place a large majority of our factors (76\%) into the moderate category, making our estimates conservative.
+
+Answer choices measured the extent to which participants agreed with a particular answer choice (i.e. \textit{Not at all} to \textit{A great deal}). Because of this, lower mean and median values indicate less agreement than higher mean and median values. As a result, a value of 1.5 and a value of 5 do not represent opposing opinions that we would see in a Likert scale that gives options from Strongly disagree to Strongly agree.

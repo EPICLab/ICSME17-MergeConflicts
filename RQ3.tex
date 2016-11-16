@@ -19,14 +19,14 @@
 
 \subsection{\textbf{RQ3:} Do developer tools meet developer needs for merge conflicts?}\label{RQ3}
 
-In the interview stage, we found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. These categories are describe and sorted by number of cards per category in Table~\ref{interview_tags_rq3}.
+In the interview stage, we found four different kinds of problems that participants encountered with tools: functional deficiencies, information presentation, tool fragmentation, and tool mistrust. These categories are described and sorted by number of cards per category in Table~\ref{interview_tags_rq3}.
 
 To get a picture of the kinds of tools being used, we asked participants which tools they use during conflict resolution. We received 105 different tools, though some were general responses such as \textit{``my text editor''}. Table~\ref{survey_toolset} lists the top 10 tools given by participants.
 
 \comment{*** Git blame issues***}
 
 \subsubsection{Tool functional deficiencies}
-When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, Participant 3 points out that while backporting~\cite{gutzmann2009backporting} in a large system, it is extremely hard to understand when code was deleted. 
+When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, P3 points out that while backporting~\cite{gutzmann2009backporting} in a large system, it is extremely hard to understand when code was deleted. 
 
 \begin{displayquote}
 \textit{``You can't git blame it. You can't git blame something that doesn't exist, right?''}
@@ -42,7 +42,7 @@ The git blame tool allows developers to find when a certain line was added or ch
  
  P1 mentions a specific issue that he encounters to illustrate that tools work with a surface understanding of a merge conflict's process. The situation described is a conflict where one branch cherrypicks changes from the other, then the second branch reverts the same changes that were cherrypicked. When the two branches merge back together, tools have trouble supporting the resolution of the more complex conflict:
  \begin{displayquote}
- ``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''
+ \textit{``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''}
  \end{displayquote}
  Using this in light of our top difficulties from Table \ref{survey_res_diffs}, this suggests that tools would benefit from assisting developers in more complex situations by providing them with more specific information about what caused the conflict (in this case, the combination of cherrypicking and reverting). 
 
@@ -55,7 +55,7 @@ Complaints about information presentation are a result of bad or inconsistent to
 
 \subsubsection{Toolset Fragmentation}
 
-Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, Participant 1 says, 
+Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, P1 says, 
 
 \begin{displayquote}
 \textit{``I had to jump around between tools and copy and paste version numbers from one to... See, this is why [toolset] integration matters.''}
@@ -88,7 +88,7 @@ Tool mistrust seemed to come from being unsure about what the tool was really do
 \begin{displayquote}
 \textit{``I've never trusted the merge tools, in a way. Or the diff tools. It would always just make me skittish. So my overall perception is that I'm scared of them. Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code.''}
 \end{displayquote}
-This quote comes from Participant 4, a software developer with 10 years of experience.
+This quote comes from P4, a software developer with 10 years of experience.
 This prompted us to ask developers how much do they trust your merging, history exploration, and/or conflict resolution tools. Of 121 respondents to this question, 91.74\% said that they trusted their tools at least \textit{A moderate amount}, and 57.86\% said they trust their tools \textit{A lot} or \textit{Completely} (Table \ref{survey_tool_trust}). This raises the questions: 
 \begin{itemize}
 \item How much tool trust is enough? 
@@ -96,7 +96,6 @@ This prompted us to ask developers how much do they trust your merging, history 
 \end{itemize}
 If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust. Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% of developers (those with \textit{A moderate amount} of trust or less) operate within this gap in tool trust.
 
-\todo{Do another look around again for tool trust threshold papers, just in case.}
 As seen in Sections \ref{RQ1} and \ref{RQ2}, developers mentioned both size and complexity in the interviews, which raised questions about how developers view each of these metrics. More specifically, we wanted to know how well developers think tools support increased size and complexity.  
 This motivated a survey question to compare increased size to increased complexity by asking participants to rate how well their tools handle the following kinds of conflicts:
 
@@ -118,13 +117,13 @@ Our results show that current tools handle increasing the size of the conflict b
 
 \subsubsection{History Exploration}
 
-Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore history. In the words of Participant 1, 
+Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore history. In the words of P1, 
 
 \begin{displayquote}
 \textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
 \end{displayquote}
 
-The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. Participant 1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
+The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. P1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
 \begin{displayquote}
 \textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
 \end{displayquote}
@@ -137,20 +136,20 @@ This suggests that current tools have not been able to keep up with the rapid ex
 \caption{Survey Participant Toolset (Top 10 tools)}
 \label{survey_toolset}
 \centering
-\begin{tabularx}{0.45\textwidth}{@{}r|*{10}{C}c@{}}
+\begin{tabularx}{0.45\textwidth}{@{}r|*{10}{C}c@{}c@{}}
 \toprule
-Tool & Participants using tool\\
+Tool & \# Participants & Description\\
 \midrule
-Git	& 37\\
-Vim/vi & 17\\
-Text Editor (generic) & 14\\
-Git Diff & 11\\
-GitHub & 11\\
-Eclipse & 10\\
-KDiff3 & 9\\
-Meld & 8\\
-SourceTree & 8\\
-Sublime Text & 7\\
+Git	& 37 & Version Control System\\
+Vim/vi & 17 & Text Editor\\
+Text Editor (unspecified) & 14 & Text Editor\\
+Git Diff & 11 & Diffing Tool\\
+GitHub & 11 & Website\\
+Eclipse & 10 & IDE\\
+KDiff3 & 9 & Diff \& Merge\\
+Meld & 8 & Diff \& Merge\\
+SourceTree & 8 & Git/Hg Desktop Client\\
+Sublime Text & 7 & Text Editor\\
 \bottomrule
 \end{tabularx}
 \end{table}

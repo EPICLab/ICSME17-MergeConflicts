@@ -2,9 +2,8 @@
 
 \comment{***Distributed, parallel development in Branches. Git operations***}
 
-Modern software development models involve concurrent development of a project with the use of version control systems such as Git, Mercurial, SVN, etc. This model works by allowing developers to work on a single project by keeping copies of the project locally and syncing with a shared version when they have completed a change. However, there are problems with this model. For instance, syncing with the shared version of the code may not always result in the two versions merging automatically.
+Modern software development models account for the concurrent development of a project with the use of version control systems such as Git, Mercurial, SVN, and others. This model works by allowing developers to work on a single project by keeping copies of the project locally and syncing with a shared version when they have completed a change. However, there are problems with this model. For instance, syncing with the shared version of the code may not always result in the two versions merging automatically.
 
-In this paper, we refer to merge conflicts, which we define for our purposes as follows:
-A merge conflict is a scenario in software development in which two copies of the same codebase diverge in such a way that they cannot be automatically merged together, requiring human intervention to successfully merge back together. 
+In this paper, we refer to merge conflicts, which we define as a scenario in software development in which two copies of the same codebase diverge in such a way that they cannot be automatically merged together, requiring human intervention to successfully merge back together. 
 
-While we recognize that other types of conflicts exist in software projects (i.e. social conflicts), we focus on conflicts in code and leave non-code conflicts to other research.
+While we recognize that other types of conflicts exist in software projects (i.e. social conflicts), we focus on conflicts in code.

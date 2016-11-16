@@ -4,7 +4,7 @@
 
 \comment{\textbf{***Conflicts occur often and cause integration errors****}}
 \todo{Remove citation of Caius/Iftekhar paper if their paper gets rejected, add official citation if accepted}
-Version control systems like Git offer easier collaboration via an automated merging process. This process enables large-scale distributed development, but as sophisticated as these tools are, they still require manual merging in ambiguous cases called merge conflicts. Sarma et al \cite{cassandra} shows that merge conflicts are as frequent as 19\% of merges, and Brindescu \& Ahmed et al (maybe) shows that [\% of merges that are conflicts] of merges result in conflict. Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
+Version control systems like Git offer collaboration via an automated merging process, which enables large-scale distributed development, but they still require manual merging in ambiguous cases called merge conflicts. Sarma et al. \cite{cassandra} show that merge conflicts are as frequent as 19\% of all merges, while Brindescu \& Ahmed et al. [cite] found the rate to be 19.32\% of all conflicts. Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
 
 \comment{***current work on proactive detection***}
 
@@ -12,7 +12,7 @@ Several studies have examined models for proactive merge detection and preventio
 
 \comment{***we need to know more about conflicts because...***}
 
-Despite the focus in this area, few studies have actually talked to developers to understand their perceptions about merge conflicts. Talking directly to developers is crucial to understanding their problems from their perspectives, since some details of merge conflict resolution cannot be observed by mining a GitHub repository. Other studies have also recognized the importance of directly talking to developers about other problems such as understanding integrator difficulties.
+Despite the focus in this area, we found no studies that actually talked to developers to understand their perceptions about merge conflicts. Talking directly to developers is crucial to understanding their problems from their perspectives, since some details of merge conflict resolution ---such as cognitive difficulties--- cannot be observed by mining a GitHub repository. For this reason, others such as Gousios et al. \cite{integrator_perspective} have also recognized the importance of directly talking to developers about their problems to better understand integrator difficulties.\\
 
 Our research questions are as follows:
 \begin{itemize}
@@ -21,6 +21,8 @@ Our research questions are as follows:
 \item\textbf{RQ3:} Do developer tools meet developer needs for merge conflicts?\\
 \end{itemize}
 
-In this study, we investigate these research questions with an interview of 10 developers and a survey of 226 software practitioners. We provide personal accounts from interviews of experiences in resolving merge conflicts and ranked lists of: (a) the 9 factors that developers use to assess the difficulty of a conflict, (b) the 10 factors that impact developer difficulty while resolving merge conflicts, and (c) 6 tool needs for merge conflict resolution.
+In this study, we investigate these research questions with an interview of 10 developers and a survey of 226 software practitioners. We provide personal accounts from interviews of experiences in resolving merge conflicts and ranked lists of: the 9 factors that developers use to assess the difficulty of a conflict, the 10 factors that impact developer difficulty while resolving merge conflicts, and 6 tool needs for merge conflict resolution.
 
-When initially assessing the difficulty of a merge conflict, we found developers focus on the \textit{Complexity of conflicting lines of code} and \textit{Your knowledge/expertise in the area of conflicting code} as the top factors that impact their estimated difficulty, while non-functional changes like whitespace and renaming have little effect on this assessment. Later, during the resolution process, we found that developers confirmed \textit{How easy it is to understand the code involved in the merge conflict}, \textit{Your expertise in the area of code with the merge conflict}, and \textit{The amount of information you have about the conflicting code} as 3 important factors that impact the difficulty of the resolution.
+When initially assessing the difficulty of a merge conflict, we found developers focus on the code complexity of conflicting lines and their knowledge or expertise in the area of the conflict as the top factors that impact their estimated difficulty, while non-functional changes like whitespace and renaming have little effect on this assessment. 
+During the resolution process, we found that developers confirmed code understandability, their knowledge or expertise in the area of the conflict, and the amount of available information about the conflicting code as 3 important factors that impact the difficulty of the resolution.
+We also found 6 tool improvements such as better usability and better information filtering, all of which were rated as being moderately 
