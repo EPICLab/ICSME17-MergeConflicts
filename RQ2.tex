@@ -25,7 +25,7 @@
 \end{tabularx}
 \end{table}
 
-Our interview analysis resulted in 10 categories in this category, which are described and sorted by number of cards in Table~\ref{interview_tags_rq2}.
+Our interview analysis resulted in 10 categories in this section, which are described and sorted by number of cards in Table~\ref{interview_tags_rq2}.
 
 Considering these interview categories, we created 10 factors of difficulty while resolving merge conflicts, and 141 participants rated how much each factor affects that difficulty. Participants were given the following options:
 (1) Not at all (2) A little (3) A moderate amount (4) A lot (5) A great deal.
@@ -63,7 +63,7 @@ The results for this section are given in Table \ref{survey_res_diffs}, which hi
 
 No factor in this category had an average below 3.03, so there were no factors tested that were rated as having less than \textit{A moderate amount} of affect on the difficulty of a merge conflict resolution on average.
 
-\subsubsection{Commit Messages}
+\underline{\textit{Commit Messages}}:
 Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
 P10 agrees with this, but still wishes that commit messages could be more informative:
 \begin{displayquote}
@@ -72,13 +72,16 @@ P10 agrees with this, but still wishes that commit messages could be more inform
 
 In contrast, P5 says that commit messages just aren't descriptive enough:
 \begin{displayquote}
-\textit{``I wont understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.''}
+\textit{``I won't understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.''}
 \end{displayquote}
 
-P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets more vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
+P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
 
-Given this mixed information about commit messages in the interviews, we further investigated developer perceptions in the survey and found that software practitioners believe that \textit{Informativeness of commit messages} has a moderate impact (mean 3.03) on the difficulty of a merge conflict resolution. making it the 8th  of the 10 factors we asked about (see Table \ref{survey_res_diffs}). One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short or vague to provide helpful information about the commits involved in a conflict.
-\subsubsection{Code Comprehensibility}
+Given this mixed information about commit messages in the interviews, we further investigated developer perceptions in the survey and found that software practitioners believe that \textit{Informativeness of commit messages} has a moderate impact (mean 3.03) on the difficulty of a merge conflict resolution. making it the 8th  of the 10 factors we asked about (see Table \ref{survey_res_diffs}). Commit messages are also a resource for developers as documentation and researchers as mineable data \cite{d2010commit}. However, the idea that commit messages are uninformative has been discussed by looking at message length and content~\cite{maalej2010can}, and some studies have tried to find a solution by generating good commit messages~\cite{cortes2014}. Our findings confirm that developers do not find commit messages particularly useful.
+
+% One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short or vague to provide developers with helpful information about the commits involved in a conflict.
+
+\underline{\textit{Code Comprehensibility}}:
 Code comprehensibility came out in the interview as a general category to cover how people attempt to understand what makes the merge conflict resolution difficult. Several participants with cards in this category mention size as having an impact on their ability to comprehend the code. For instance, when working with two conflicting commits of different sizes, Participant 1 says,
 \begin{displayquote}
 \textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change, right?''}
@@ -89,15 +92,15 @@ In addition, Participant 8 draws a direct relationship between size and difficul
 \end{displayquote}
 However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care to ensure a correct resolution. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
 
-\subsubsection{Archeology}
+\underline{\textit{Archeology}}:
 Archeology is an important step for many software developers, as illustrated in the following quote from P8:
 \begin{displayquote}
 \textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
 \end{displayquote}
-P2 explains that projects make it a priority to keep a well-curated Git history because
+P2 explains that projects make it a priority to keep a well-curated Git history because:
 \begin{displayquote}
 \textit{``That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	''}
 \end{displayquote}
 
-However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
+However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests either that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
 
