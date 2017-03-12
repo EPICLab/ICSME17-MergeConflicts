@@ -10,6 +10,19 @@
 \DeclareGraphicsExtensions{.pdf}
 \usepackage{tabularx,booktabs,rotating}
 \usepackage{caption}
+\usepackage[roman]{parnotes}
+%
+% This will go in the next version
+%
+\makeatletter
+\def\parnoteclear{%
+    \gdef\PN@text{}%
+    \parnotereset
+}
+\makeatother
+
+\newcolumntype{L}{>{\hsize=.8\hsize\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 
 \newcommand\comment[1]{}

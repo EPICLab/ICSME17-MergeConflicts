@@ -2,26 +2,27 @@
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
-\captionsetup{justification=centering}
-\caption{Interview Participant Demographics\\ \small Project Sizes: (S)mall, (M)edium, (L)arge}
+\caption{Interview Participant Demographics}
 \label{interview_demographics}
 \centering
-\begin{tabularx}{0.45\textwidth}{@{}clc*{2}{C}@{}}
+\begin{tabularx}{0.49\textwidth}{@{}CClLR@{}}
 \toprule
-	\textbf{Participant} & \textbf{Role} & \textbf{Exp.} & \textbf{Project Source} & \textbf{Project Size}\\
+	\parnoteclear % tabularx will otherwise add each note thrice
+	\textbf{Ptc.\parnote{Ptc. = Participant}} & \textbf{Exp.\parnote{Exp. = Years of Software Development Experience}} & \textbf{Role} & \textbf{Project Source} & \textbf{Project \mbox{Contrib.\parnote{Project Contrib. = Approximate number of project contributors (March 2016-March 2017)}}}\\
 \midrule
-	P1 & Senior \mbox{Software} \mbox{Engineer} & 18 yrs. & Open & L\\
-	P2 & Software \mbox{Engineer} & 6 yrs. & Open & L\\
-	P3 & Software \mbox{Engineer} & 3 yrs. & Open & L\\
-	P4 & Software \mbox{Engineer} & 10 yrs. & Open & S\\
-	P5 & Infrastructure \mbox{Engineer} & 3 yrs. & Closed & M\\
-	P6 & Software \mbox{Engineer} & 5 yrs. & Closed & M\\
-	P7 & Software \mbox{Engineer} & 5 yrs. & Open & M\\
-	P8 & Director & 25 yrs. & Open & L\\
-	P9 & Collaborator \mbox{Developer} & 8 yrs. & Open & L\\
-	P10 & Collaborator \mbox{Developer} & 2 yrs. & Open & S\\
+	P1 & 18 yrs. & Sr. \mbox{Software} \mbox{Developer} & Open & 1700\\
+	P2 & 6 yrs. & Software \mbox{Engineer} & Open & 1700\\
+	P3 & 3 yrs. & Software \mbox{Engineer} & Open & 1700\\
+	P4 & 10 yrs. & Software \mbox{Developer} & Open & \textless10\\
+	P5 & 3 yrs. & Infrastructure \mbox{Engineer} & Closed & \textless10\\
+	P6 & 5 yrs. & Software \mbox{Developer} & Closed & \textless10\\
+	P7 & 5 yrs. & Software \mbox{Engineer} & Open & 200\\
+	P8 & 25 yrs. & Director & Open & 600\\
+	P9 & 8 yrs. & Software \mbox{Developer} & Open & 600\\
+	P10 & 2 yrs. & Software \mbox{Developer} & Open & \textless5\\
 \bottomrule
 \end{tabularx}
+\parnotes
 \end{table}
 
 Our approach consists of two phases - first an exploratory interview phase, followed by a validation survey. We conducted the interviews with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to to confirm and broaden our interview findings.
@@ -29,10 +30,24 @@ This two phase approach allowed us to explore the topic of merge conflicts from 
 
 \subsection{Interviews}\label{interview_methods}
 
-We conducted semi-structured interviews with software practitioners to discover which factors and concerns they care about when working with merge conflicts.
-Interview participants were selected from top contributors to open-source projects and from industry contacts using snowball sampling~\cite{goodman1961snowball}.
+We conducted semi-structured interviews with software practitioners to discover the factors and concerns they care about when working with merge conflicts.
 
-Interviews lasted between 30-60 minutes, and were conducted by the first author. 
+Interview participants were selected from top contributors to open-source projects and from industry contacts using snowball sampling~\cite{goodman1961snowball}.
+We interviewed 10 software practitioners from 7 different organizations, including consumer \& business software companies, academic software development teams at two U.S. universities, a semiconductor manufacturer, a healthcare software company, and a sports \& wellness technology company.
+Our participants had five years of software development experience on average.
+
+We assigned each participant a subject number (Table~\ref{interview_demographics}).
+Each interview lasted between 30 and 60 minutes, and the participants were offered US\$50 in either cash, gift card, or donation to a charity of their choice.
+
+The interviews were based on the research questions presented in Section~\ref{introduction}.
+The following is an example of some of the questions we asked in the interview:
+\begin{itemize}
+	\item Can you describe a merge conflict, or a set of conflicts, that you would consider to be the typical case?
+	\item Do you have any particularly memorable merge conflict resolutions that you can recall?
+	\item Have you had some code structures, design patterns, coding styles, etc. that you would consider a ``usual suspect'' in a conflict?
+	\item What kind of measures would you take to try to minimize the amount of defects that you introduce?
+\end{itemize}  
+
 Interviews were audio-taped and later transcribed for analysis. 
 At the beginning of the interview we gave participants a short explanation of the research goals and collected demographics data. 
 Participants were then asked about the roles they play in their project, their experience working in team settings,  questions about merge conflicts, the process of conflict resolution, and the difficulties that they faced in conflict resolution. 
