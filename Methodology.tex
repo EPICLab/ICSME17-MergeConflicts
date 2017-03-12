@@ -25,8 +25,12 @@
 \parnotes
 \end{table}
 
-Our approach consists of two phases - first an exploratory interview phase, followed by a validation survey. We conducted the interviews with software practitioners who have experience working in team environments. Our goal was to understand the difficulties that developers have when they face merge conflicts and in the conflict resolution process. We followed this with a validation survey to to confirm and broaden our interview findings.
-This two phase approach allowed us to explore the topic of merge conflicts from an individual developer perspective, and to analyze the broader impact of these perspectives on the larger developer population.
+We employed exploratory interviews with software practitioners and surveys of practitioners to validate our findings.
+Adhering to the philosophical stance of \textit{pragmatism}~\cite{easterbrook2008selecting}, we use mixed methods to first explore the topic of practitioners' difficulties when encountering merge conflicts, and then validate our findings through a survey of practitioners.
+
+Inspired by established guidelines~\cite{latoza2006maintaining, shull2008guide, tao2012software}, we codified the interviews into a taxonomy of barriers, constraints, and concerns.
+We build a survey populating the answers to each question with the results of the interviews.
+We use a shared vocabulary from the interviews to form questions that are emblematic of merge conflicts, but also relatable to software practitioners.
 
 \subsection{Interviews}\label{interview_methods}
 
@@ -47,8 +51,6 @@ The following is an example of some of the questions we asked in the interview:
 	\item Have you had some code structures, design patterns, coding styles, etc. that you would consider a ``usual suspect'' in a conflict?
 	\item What kind of measures would you take to try to minimize the amount of defects that you introduce?
 \end{itemize}
-
-\todo{Nick: Further clean-up for the text within this sub-section is needed.}
 
 Interviews were audio-taped and later transcribed for analysis. 
 At the beginning of the interview we gave participants a short explanation of the research goals and collected demographics data. 
@@ -97,7 +99,7 @@ We performed two iterations of the open card sorting process, and found three th
 	Systems Administrators & 29 & 22 & 21 & 16 & 15 & 31 & \\
 	Other & 9 & 5 & 4 & 4 & 1 & 2 & 11 \\
 \bottomrule
-	\multicolumn{8}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i} Survey respondents were allowed to select multiple roles. Each entry represents the number of respondents that selected both of the roles indicated for the column and row. 77 out of 226 respondents (34\%) selected three or more roles.}}
+	\multicolumn{8}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents were allowed to select multiple roles. Each entry represents the number of respondents that selected both of the roles indicated for the column and row. 77 out of 226 respondents (34\%) selected three or more roles.}}
 \end{tabularx}
 \end{table}
 
