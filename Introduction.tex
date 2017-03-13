@@ -5,7 +5,17 @@
 \comment{\textbf{***distributed development process***}}
 
 \comment{\textbf{***Conflicts occur often and cause integration errors****}}
-Version control systems like Git offer collaboration via an automated merging process, which enables large-scale distributed development, but they still require manual merging in ambiguous cases called merge conflicts. Sarma et al. \cite{cassandra} show that merge conflicts occur in approximately 19\% of all merges. Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
+
+Team collaboration is essential for the success of multi-developer projects~\cite{hattori2010syde}.
+Version Control Systems (VCS), such as Git, are typically used to to enable both collaboration and large-scale distributed development.
+The distributed nature of these systems requires synchronization between repositories.
+For Git and other distributed VCS, synchronization occurs through merge commits that add changes on top of the currently tracked versions of files.
+
+Most commits are able to cleanly merge changes into a repository.
+However, Kasi et al.~\cite{cassandra} found that merge conflicts occur in approximately 19\% of all merges.
+Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
+Software practitioners responding to merge conflicts have to consider the origins of the conflict, the dependencies associated with the conflicting code, and the possible solutions for resolving the discrepancies between conflicting versions of files.
+The difficulties associated with these aspects are non-trivial and require attention and awareness from practitioners in order to successfully mitigate associated concerns.
 
 \comment{***current work on proactive detection***}
 
@@ -18,9 +28,13 @@ Talking directly to developers is crucial to understanding their problems in con
 Gousios et al.~\cite{integrator_perspective} talked directly to integrators through interviews and surveys in order to understand the perspectives of their target population.
 We conduct similar studies on software practitioners in order to understand their perspectives and experiences with merge conflicts in software development.
 
-This paper investigates merge conflicts from the developer standpoint, seeking to understand the perceived difficulties and the processes of resolving them.
+This paper examines merge conflicts from the developer standpoint, seeking to understand the perceived difficulties and the processes of resolving them.
 We then identify target areas for improvement in merge conflict resolution tools.
-Our research questions reflect these priorities:
+To investigate these factors, we interview 10 software practitioners about their experiences and perceptions of merge conflicts in the software development process.
+To triangulate our findings, we deployed a survey.
+The survey samples 226 participants, of which 95\% have held the role of Software Engineer/Developer, and 74.2\% have 6 or more years of software development experience.
+The interviews provide the basis for the survey, and personal accounts of merge conflicts, and the survey provides a broader understanding of the extend to which those perceptions permeate the larger software development community.
+Analyzing the data from both, we answer three research questions:
 
 \vspace{3px}
 \noindent\textbf{RQ1:} \textit{How do developers approach merge conflicts?}\\
@@ -28,14 +42,14 @@ Our research questions reflect these priorities:
 \noindent\textbf{RQ3:} \textit{Do developer tools meet developer needs for merge conflicts?}
 \vspace{3px}
 
-In this study, we interview 10 developers to investigate these research questions, then confirm interview findings in a survey of 226 developers. We provide personal accounts from interviews of experiences in resolving merge conflicts and ranked lists of: the 9 factors that developers use to assess the difficulty of a conflict, the 10 factors that impact developer difficulty while resolving merge conflicts, and 6 tool needs for merge conflict resolution.
+Based on the results of our study, we found several factors that contribute to the overall perception of difficulty when working with merge conflicts.
 
 We found that developers, when initially assessing a merge conflict, focus on the code complexity of conflicting lines and their knowledge in the area of the conflict as the top factors that impact their estimated difficulty.
 Non-functional changes like whitespace and renaming have little effect on this assessment. 
 
 We found that, during the resolution process, developers identified code understandability, their knowledge in the area of code conflict, and the available information about the conflicting code as key factors that impact the difficulty of resolving merge conflicts.
 
-We also found 6 tool improvements such as better usability and better information filtering, all of which were rated as being moderately.
+We also found usability and information retrieval functionality as being the most desired improvements for developer tools to support the evaluation and resolution of merge conflicts.
 
 This paper makes the following contributions:
 \begin{itemize}
