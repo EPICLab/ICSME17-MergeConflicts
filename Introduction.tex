@@ -11,7 +11,7 @@ Version Control Systems (VCS), such as Git, are typically used to to enable both
 The distributed nature of these systems requires synchronization between repositories.
 For Git and other distributed VCS, synchronization occurs through merge commits that add changes on top of the currently tracked versions of files.
 
-Most commits are able to cleanly merge changes into a repository.
+Most commits are cleanly merged into a repository.
 However, Kasi et al.~\cite{cassandra} found that merge conflicts occur in approximately 19\% of all merges.
 Resolving merge conflicts can be a costly process that delays projects while developers decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
 Software practitioners responding to merge conflicts have to consider the origins of the conflict, the dependencies associated with the conflicting code, and the possible solutions for resolving the discrepancies between conflicting versions of files.
