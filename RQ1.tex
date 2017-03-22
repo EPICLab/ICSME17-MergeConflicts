@@ -1,12 +1,12 @@
 \subsection{\textbf{RQ1:} How do developers approach merge conflicts?}\label{RQ1}
-
+\todo{See what Nick thinks about this change to the following paragraphs}
 To understand the perspective of developers when encountering a merge conflict, we asked interview participants a series of open-ended questions regarding situations, information needs, contributing factors, and processes that are followed when initially evaluating a merge conflict.
 
 The results of our interview indicate that developers recognize certain traits of a merge conflict as contributing to the overall difficulty of the conflict.
-Card sorting of interview transcripts resulted in 9 distinct categories that relate to these traits: \textit{Temporal}, \textit{Deadlines}, \textit{Patch Management}, \textit{Atomicity}, \textit{Size of Conflict}, \textit{3-Way Merge Conflicts}, \textit{Code Style}, and \textit{Domain Knowledge} (see Table~\ref{interview_tags}).
-These trait categories served as the foundation for the questions and answers included in our survey.
+%Card sorting of interview transcripts resulted in 9 distinct categories that relate to these traits: \textit{Temporal}, \textit{Deadlines}, \textit{Patch Management}, \textit{Atomicity}, \textit{Size of Conflict}, \textit{3-Way Merge Conflicts}, \textit{Code Style}, and \textit{Domain Knowledge} (see Table~\ref{interview_tags}).
+These results served as the foundation for the questions and answer choices included in our survey.
 
-We also asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of how difficult a merge conflict will be. These factors are observable or estimable traits of the conflict, which means that they are factors that developers can use when initially assessing merge conflicts.
+We asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of how difficult a merge conflict will be. These factors are observable or estimable traits of the conflict, which means that they are factors that developers can use when initially assessing merge conflicts.
 Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point Likert scale consisting of the following answer options:
 (1) Not at all (2) A little (3) A moderate amount (4) A lot (5) A great deal.
 
@@ -35,22 +35,22 @@ Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point 
 \end{table*}
 
 \todo{from Rafa: "Jump?" Maybe a rough transition}
-\underline{\textit{Code Complexity:}} Cyclomatic complexity \cite{mccabe1976complexity} is a well-established measure of code complexity in software. However, it has also been criticized as being based on poor theoretical foundations \cite{Shepperd1988}, and not all software developers have experience using it. So for this study, we intentionally left the interpretation of the word ``complexity'' to the individual participants.
+\underline{\textit{Code Complexity:}} Cyclomatic complexity \cite{mccabe1976complexity} is a well-established measure of code complexity in software. However, it has also been criticized as being based on poor theoretical foundations \cite{Shepperd1988}, and not all software developers have experience using it. For this study, we intentionally left the interpretation of the word ``complexity'' to the individual participants.
 In the interview, P4 commented on how the size of the conflict impacts its difficulty, saying,
 
 \begin{displayquote}
 \textit{``The size is usually not the issue. Just the complexity of the code that happens to be with the conflicting state.''}	
 \end{displayquote}
 \todo{Nick: Maybe find another participant or two that also motivate this?}
-Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14). This suggests that complexity impacts the apparent difficulty of the conflict more than size. However, it is also possible that conflict size is part of what defines conflict complexity, which would mean that size cannot be more impactful than complexity.
+Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14). This suggests that complexity impacts the apparent difficulty of the conflict more than size. However, it is also possible that conflict size is part of what defines conflict complexity, which would mean that size cannot be more impactful than complexity. 
 
-\underline{\textit{Domain Knowledge:}} Domain knowledge represents the developer's knowledge of the area of code where the conflict is located. In the interview, P5 said, 
+\underline{\textit{Knowledge/Expertise:}} Domain knowledge represents the developer's knowledge of the area of code where the conflict is located. In the interview, P5 said, 
 
 \begin{displayquote}
-	\textit{``A lot of what I work on is\textellipsis in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm\textellipsis in the [other part of project], then I'll\textellipsis get someone else to\textellipsis resolve the merge conflict for me\textellipsis It's someone else's, and I don't want to screw it up.''}
+	\textit{``A lot of what I work on is\textellipsis in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm\textellipsis in the [unfamiliar part of project], then I'll\textellipsis get someone else to\textellipsis resolve the merge conflict for me\textellipsis It's someone else's, and I don't want to screw it up.''}
 \end{displayquote}
 
-This participant found domain knowledge to be important enough that he would find someone who is familiar with the code around the merge conflict rather than resolving the conflict himself. In the event of non-intuitive code, this option is a helpful approach to resolution because it does not require the developer to fully understand the code before resolving. It also takes into consideration other changes that may be happening around that conflict resolution that would be affected by a bad merge.
+This participant found knowledge of the effected code to be important enough that he would find someone who is familiar with the code around the merge conflict rather than resolving the conflict himself. In the event of non-intuitive code, this option is a helpful approach to resolution because it does not require the developer to fully understand the code before resolving. By taking this approach, P5 acknowledges the time incentive to avoid understanding the whole context of the conflict, but he also states that \textit{"It's someone else's"}, highlighting the idea that merge conflicts are both social and technical challenges.
 
 %The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
 %Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
