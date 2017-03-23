@@ -5,8 +5,6 @@ In the interview stage, we found four different kinds of problems that participa
 
 To get a picture of the kinds of tools being used, we asked participants which tools they use during conflict resolution. We received 105 different tools, though some were general responses such as \textit{``my text editor''}. Table~\ref{survey_toolset} lists the top 10 tools given by participants.
 
-\comment{*** Git blame issues***}
-
 \underline{\textit{Tool functional deficiencies:}}
 When told that our study was seeking to find difficulties in resolving merge conflicts, some participants came prepared with examples of functional deficiencies in conflict resolution tools. For instance, P3 points out that while backporting~\cite{gutzmann2009backporting} in a large system, it is extremely hard to understand when code was deleted. 
 
@@ -27,8 +25,6 @@ The git blame tool allows developers to find when a certain line was added or ch
  \textit{``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''}
  \end{displayquote}
  Using this in light of our top difficulties from Table \ref{survey_res_diffs} suggests that tools would benefit from assisting developers in more complex situations by providing them with more specific information about what caused the conflict (in this case, the combination of cherrypicking and reverting).
-
-\comment{***Information Presentation is bad***}
 
 Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool when switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned. For instance, one survey participant says, 
 \begin{displayquote}
