@@ -12,8 +12,7 @@
 \usepackage[noadjust]{cite}
 \usepackage{caption}
 \usepackage[roman]{parnotes}
-\usepackage{lmodern}
-\usepackage{tcolorbox}
+\usepackage[many]{tcolorbox}
 %
 % This will go in the next version
 %
@@ -31,6 +30,8 @@
 %\newcommand\comment[1]{}
 %\newcommand{\comment}[1]{{\noindent\bfseries #1\\}}
 \newcommand\todo[1]{{\noindent\color{red}\\\textbf{TODO:~}#1\\}}
+\newcounter{takeawaycounter}
+\setcounter{takeawaycounter}{1}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -45,7 +46,7 @@ Oregon State University,
 Corvallis, OR\\ \{mckeesh, nelsonni, anita.sarma, digd\}@oregonstate.edu}}
 
 \maketitle
-
+\todo{Make sure this is the correct author order}
 \input{Abstract}
 \IEEEpeerreviewmaketitle
 \input{Introduction}

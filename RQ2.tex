@@ -36,9 +36,15 @@ The results for this section are given in Table \ref{survey_res_diffs}, which hi
 \end{tabularx}
 \end{table*}
 
-\begin{tcolorbox}
 No factor in this category had an average below 3.03, so participants did not rate any factors as having less than \textit{A moderate amount} of affect on the difficulty of a merge conflict resolution on average.
+
+\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
+attach boxed title to top left=
+{xshift=0mm,yshift=-1mm},
+boxed title style={size=small}]
+Participants rated all difficulties relating to the merge conflict resolution process as moderately impactful on merge conflict resolution difficulty.
 \end{tcolorbox}
+\addtocounter{takeawaycounter}{1}
 
 \underline{\textit{Commit Messages}}:
 Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
@@ -55,9 +61,14 @@ In contrast, P5 says that commit messages just aren't descriptive enough:
 P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
 
 Given this mixed information about commit messages in the interviews, we further investigated developer perceptions in the survey and found that software practitioners believe that \textit{Informativeness of commit messages} has a moderate impact (mean 3.03) on the difficulty of a merge conflict resolution. making it the 8th  of the 10 factors we asked about (see Table \ref{survey_res_diffs}). Commit messages are also a resource for developers as documentation and researchers as mineable data \cite{d2010commit}. However, commit message uninformativeness has been discussed by looking at message length and content~\cite{maalej2010can}, and some studies have tried to find a solution by generating good commit messages~\cite{cortes2014}. Our findings confirm that commit messages impact the difficulty of a merge conflict a moderate amount, but we still find that 
-\begin{tcolorbox}
+
+\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
+attach boxed title to top left=
+{xshift=0mm,yshift=-1mm},
+boxed title style={size=small}]
 7 of the other 9 factors are more important than commit messages when resolving a merge conflict.
 \end{tcolorbox}
+\addtocounter{takeawaycounter}{1}
 
 % One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short or vague to provide developers with helpful information about the commits involved in a conflict.
 
@@ -66,10 +77,12 @@ Code comprehensibility came out in the interview as a general category to cover 
 \begin{displayquote}
 \textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change, right?''}
 \end{displayquote}	
+
 In addition, Participant 8 draws a direct relationship between size and difficulty, saying:
 \begin{displayquote}
 \textit{``Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.''}
 \end{displayquote}
+
 However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care to ensure a correct resolution. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
 
 \underline{\textit{Archeology}}:
