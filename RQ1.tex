@@ -1,10 +1,10 @@
 \subsection{\textbf{RQ1:} How do developers approach merge conflicts?}\label{RQ1}
 
 We asked survey participants to rate how much factors affected their perceptions of difficulty in approaching a merge conflict.
-We received 162 responses across 9 factors using a 5-point Likert scale for degree to which that factor had an effect (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
+We received 162 responses across 9 factors using a 5-point Likert scale indicating the degree of effect on conflict difficulty  for each factor (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
 
 Results of the survey are presented in Table~\ref{survey_merge_conflicts}.
-We present and discuss in detail the top 4 factors based upon the mean score.
+We present and discuss in detail the top 4 factors based on mean score.
 The factors are grouped into \textit{Artifact-based Factors} and \textit{Knowledge-based Factors}.
 
 \begin{table*}[!]
@@ -34,10 +34,10 @@ The factors are grouped into \textit{Artifact-based Factors} and \textit{Knowled
 \subsubsection{\underline{Artifact-based Factors}}
 Typical proxies used by lay practitioners for code complexity have included cyclomatic complexity~\cite{fenton2000quantitative}, atomicity~\cite{khelladi2016ad}, number of lines of code, number of files, etc.
 However, we find that the practitioner's perceptions of complexity are just as important in determining how they approach the resolution of a merge conflict.
-These perceptions can affect whether the practitioner resolves it immediately, when it is small, or whether they wait to examine the conflict when further resources (time, people, expertise, etc.) can be allocated to the task.
+These perceptions can affect whether the practitioner resolves it immediately, when it is small, or whether they wait to examine the conflict when further resources can be allocated.
 
 If a merge conflict is perceived to be large or complex, a practitioner may decide to forgo attempting to resolve it through code manipulation and choose to revert changes instead.
-This ``nuclear option'' requires practitioners to disrupt the development flow, set aside their current development work, and potentially remove ``good'' code that was not part of the conflict in order to return the code to a non-conflicting state.
+This ``nuclear option'' requires practitioners to disrupt the development flow, set aside their current development work, and potentially remove ``good'' code that was not part of the conflict in order to return to a non-conflicting state.
 
 Further, when integrators are preparing code for production environments they prioritize merge conflicts for code review based upon the perceived difficulty of resolving the affected code.
 We find that these decisions rely on humanistic factors as much as they rely on data-driven metrics.
