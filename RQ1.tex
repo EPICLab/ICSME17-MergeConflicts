@@ -1,4 +1,5 @@
 \subsection{\textbf{RQ1:} How do developers approach merge conflicts?}\label{RQ1}
+\todo{say 226 people}
 \todo{See what Nick thinks about this change to the following paragraphs}
 To understand the perspective of developers when encountering a merge conflict, we asked interview participants a series of open-ended questions regarding situations, information needs, contributing factors, and processes that are followed when initially evaluating a merge conflict.
 
@@ -11,6 +12,7 @@ Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point 
 (1) Not at all (2) A little (3) A moderate amount (4) A lot (5) A great deal.
 
 
+\todo{remove std. dev from tables, bold things that we will talk about}
 
 \begin{table*}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -35,8 +37,10 @@ Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point 
 \bottomrule
 \end{tabularx}
 \end{table*}
-
+\todo{Anita says fluff-to-fact transition is what makes this rough. Talk about why these factors were shown.}
 \todo{from Rafa: "Jump?" Maybe a rough transition}
+\todo{We intentionally left complexity to participants because we did not want to bias a certain metric}
+\todo{Tie in positive AND negative results: Takeaway is that we need a better metric for human understandability}
 \underline{\textit{Code Complexity:}} Cyclomatic complexity \cite{mccabe1976complexity} is a well-established measure of code complexity in software. However, it has also been criticized as being based on poor theoretical foundations \cite{Shepperd1988}, and not all software developers have experience using it. For this study, we intentionally left the interpretation of the word ``complexity'' to the individual participants.
 In the interview, P4 commented on how the size of the conflict impacts its difficulty, saying,
 
@@ -45,6 +49,7 @@ In the interview, P4 commented on how the size of the conflict impacts its diffi
 \end{displayquote}
 Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14). This suggests that complexity impacts the apparent difficulty of the conflict more than size. However, it is also possible that conflict size is part of what defines conflict complexity, which would mean that size cannot be more impactful than complexity. 
 
+\todo{Possible need for an expertise locator? Need more research to get there?}
 \underline{\textit{Knowledge/Expertise:}} Domain knowledge represents the developer's knowledge of the area of code where the conflict is located. In the interview, P5 said, 
 
 \begin{displayquote}
