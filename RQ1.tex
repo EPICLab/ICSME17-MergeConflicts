@@ -1,19 +1,11 @@
 \subsection{\textbf{RQ1:} How do developers approach merge conflicts?}\label{RQ1}
-\todo{say 226 people}
-\todo{See what Nick thinks about this change to the following paragraphs}
-To understand the perspective of developers when encountering a merge conflict, we asked interview participants a series of open-ended questions regarding situations, information needs, contributing factors, and processes that are followed when initially evaluating a merge conflict.
 
-We received 226 responses to questions regarding developer perceptions of merge conflicts.
-The results of our interview indicate that developers recognize certain traits of a merge conflict as contributing to the overall difficulty of the conflict.
-%Card sorting of interview transcripts resulted in 9 distinct categories that relate to these traits: \textit{Temporal}, \textit{Deadlines}, \textit{Patch Management}, \textit{Atomicity}, \textit{Size of Conflict}, \textit{3-Way Merge Conflicts}, \textit{Code Style}, and \textit{Domain Knowledge} (see Table~\ref{interview_tags}).
-These results served as the foundation for the questions and answer choices included in our survey.
+We asked survey participants to rate how much factors affected their perceptions of difficulty in approaching a merge conflict.
+We received 162 responses across 9 factors using a 5-point Likert scale for degree to which that factor had an effect (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
 
-We asked survey participants to rate how much particular factors, derived from the interviews, have an effect on their perceptions of how difficult a merge conflict will be. These factors are observable or estimable traits of the conflict, which means that they are factors that developers can use when initially assessing merge conflicts.
-Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point Likert scale consisting of the following answer options:
-(1) Not at all (2) A little (3) A moderate amount (4) A lot (5) A great deal.
-
-
-\todo{remove std. dev from tables, bold things that we will talk about}
+Results of the survey are presented in Table~\ref{survey_merge_conflicts}.
+We present and discuss in detail the top 4 factors based upon the mean score.
+The factors are grouped into \textit{Artifact-based Factors} and \textit{Knowledge-based Factors}.
 
 \begin{table*}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -21,30 +13,37 @@ Each factor was ranked in Table \ref{survey_merge_conflicts} based on a 5-point 
 \label{survey_merge_conflicts}
 \centering
 %\begin{tabularx}{0.9\textwidth}{@{}r|*{6}{C}c@{}}
-\begin{tabularx}{0.78\textwidth}{r | *5{c} | *3{c}}
+\begin{tabularx}{0.78\textwidth}{c | l | *5{c} | *2{c}}
 
 \toprule
-	Factor & 1 & 2 & 3 & 4 & 5 & Mean & Median & Std. Dev. \\
+	Factor & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median \\
 \midrule
-	\textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & 4 & 1.10 \\
-	\textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & 4 & 1.05 \\
-	Complexity of the files with conflicts & 8 & 34 & 49 & 51 & 18 & 3.23 & 3 & 1.07 \\
-	Number of conflicting lines of code & 2 & 40 & 64 & 45 & 11 & 3.14 & 3 & 0.91 \\
-	Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 & 3 & 1.09 \\
-	Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & 3 & 1.12 \\
-	Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & 3 & 1.16 \\
-	Number of files in the conflict & 10 & 69 & 50 & 26 & 6 & 2.68 & 3 & 0.94 \\
-	\textbf{Non-functional changes (whitespace, renaming, etc.)} & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & 2 & 1.03 \\
+	F1 & \textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & 4 \\
+	F2 & \textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & 4 \\
+	F3 & \textbf{Complexity of the files with conflicts} & 8 & 34 & 49 & 51 & 18 & \textbf{3.23} & 3 \\
+	F4 & \textbf{Number of conflicting lines of code} & 2 & 40 & 64 & 45 & 11 & \textbf{3.14} & 3 \\
+	F5 & Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 & 3 \\
+	F6 & Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & 3 \\
+	F7 & Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & 3 \\
+	F8 & Number of files in the conflict & 10 & 69 & 50 & 26 & 6 & 2.68 & 3 \\
+	F9 & Non-functional changes (whitespace, renaming, etc.) & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & 2 \\
 \bottomrule
 \end{tabularx}
 \end{table*}
-\todo{Anita says fluff-to-fact transition is what makes this rough. Talk about why these factors were shown.}
+
+\subsubsection{\underline{Artifact-based Factors}}
+Typical proxies used by lay practitioners for code complexity have included cyclomatic complexity~\cite{fenton2000quantitative}, atomicity~\cite{khelladi2016ad}, number of lines of code, number of files, etc.
+However, we find that the practitioner's perceptions of complexity are just as important in determining how they approach the resolution of a merge conflict.
+These perceptions can affect whether the practitioner resolves it immediately, when it is small, or whether they wait to examine the conflict when further resources (time, people, expertise, etc.) can be allocated to the task.
+
+If a merge conflict is perceived to be large or complex, a practitioner may decide to forgo attempting to resolve it through code manipulation and choose to revert changes instead.
+This ``nuclear option'' requires practitioners to disrupt the development flow, set aside their current development work, and potentially remove ``good'' code that was not part of the conflict in order to return the code to a non-conflicting state.
+
+Further, when integrators are preparing code for production environments they prioritize merge conflicts for code review based upon the perceived difficulty of resolving the affected code.
+We find that these decisions rely on humanistic factors as much as they rely on data-driven metrics.
+Therefore, we need metrics that are human-aware and take into account the perceived difficulties of merge conflicts.
 
 \todo{
-Typical proxies used by "lay" developers are used to represent difficult code (cyclomatic complexity, atomicity, number of lines of code, number of files, etc.), but are not seen as high factors (table) according to developers. what was important was the developer's perception of the complexity of the code that they had to fix in a merge conflict.
-
-what we need are metrics that can capture the complexity of the code which is human-understandable
-
 Other researchers have shown that [ref], knowledge/domain experituse is important. THis hsows that knowing hwo is hte right person to assist with resolving a merge conflict, (integrator), is very importnat.
 }
 
