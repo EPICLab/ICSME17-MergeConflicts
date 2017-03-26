@@ -2,11 +2,12 @@ library(dplyr)
 library(cowplot)
 library(ggrepel)
 library(extrafont)
+library(reshape2)
 #source("effectiveness.R")  # BROKEN FOR NOW
 
 if (!exists("survey")) {
   print("Reading csv data into 'survey' dataframe...")
-  survey <- read.csv("/home/nelsonni/Documents/Research/Merge Conflicts Project/SANERPaper/R_data/data.csv", 
+  survey <- read.csv("data.csv", 
                      header=TRUE, sep=",", na.strings=c("", "NA"))
 }
 
@@ -37,6 +38,8 @@ local_expertise_mcr   <- as.numeric(survey$Q36_11[which(!is.na(as.numeric(survey
 cor.test(lines, complexity, test='pearson')
 cor.test(lines, local_expertise, test='pearson')
 
+# Wilcoxon rank sum test to determine statistical order of factors
+dd = data.frame(time_to_resolve, number_lines)
 
 # boxplot chart for means on the 'Complexity of conflicting lines of code' question
 mydata <- data.frame(exp_labels = c("1 developer", "2-5 developers", "6-10 developers", "11-50 developers", "51+ developers"),
