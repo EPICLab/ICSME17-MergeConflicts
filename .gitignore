@@ -4,6 +4,7 @@ main.pdf
 *.synctex.gz
 *.tex.swp
 .Rproj.user
+.Rapp.history
 .RData
 .Rhistory
 .texpadtmp/
