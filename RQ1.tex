@@ -42,14 +42,15 @@ In the interview, P4 commented on how the size of the conflict impacts its diffi
 
 Since P4 did not explicitly state whether he meant complexity of the lines of code in the conflict or complexity of the files in the conflict (which accounts for a bigger-picture view of the code), we asked participants about both line complexity and file complexity. Our results show that both line complexity (mean of 3.52) and file complexity (mean of 3.23) rank above \textit{Number of conflicting lines of code} (mean of 3.14). This suggests that complexity impacts the apparent difficulty of the conflict more than size. However, it is also possible that conflict size is part of what defines conflict complexity, which would mean that size cannot be more impactful than complexity. 
 
+\todo{Possible need for an expertise locator? Need more research to get there?}
 \subsubsection{\underline{Knowledge-based Factors}}
 Our findings show that expertise in the area of conflicting code is a top factor in determining a merge conflict's difficulty (see F2 in Table~\ref{survey_merge_conflicts}).
-Practitioners working in unfamiliar code encounter merge conflicts. In these cases, they often feel uncomfortable making decisions during a merge due to lack of familiarity with the code or impacts related to the code change\cite{CostaSarma}. 
+Knowing the impact of knowledge-based factors allows us to understand the difference that practitioners attribute to having more information. Ideally, every developer would know everything about the code base, but this is often unrealistic in larger projects. Instead, other practitioners with expertise help fill this information gap.
 
+When attempting to resolve a conflict alone, developers working in unfamiliar code often feel uncomfortable making decisions during a merge due to lack of familiarity with the code or impacts related to the code change\cite{CostaSarma}. 
 Situations such as these raise questions relating to which person is best suited to resolve the conflict without introducing a new bug or unintentionally changing code behavior. Studies such as Costa et al.~\cite{CostaSarma} hope to alleviate some risk by selecting the best practitioner to resolve conflicts. Our findings confirm the need for expertise-location tools and encourage further research into selection of knowledgeable practitioners for merge conflict resolution.
 
-\todo{Possible need for an expertise locator? Need more research to get there?}
-\underline{\textit{Knowledge/Expertise:}} Domain knowledge represents the developer's knowledge of the area of code where the conflict is located. In the interview, P5 said, 
+In our interview, P5 explained a situation where he applied this technique: 
 
 \begin{displayquote}
 	\textit{``A lot of what I work on is\textellipsis in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm\textellipsis in the [unfamiliar part of project], then I'll\textellipsis get someone else to\textellipsis resolve the merge conflict for me\textellipsis It's someone else's, and I don't want to screw it up.''}
