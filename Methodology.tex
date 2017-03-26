@@ -115,16 +115,15 @@ We performed two iterations of the open card sorting process, and found three th
 \caption{Factors of Merge Conflict Difficulty from Survey}
 \label{survey_merge_conflicts}
 \centering
-%\begin{tabularx}{0.9\textwidth}{@{}r|*{6}{C}c@{}}
-\begin{tabularx}{0.77\textwidth}{c | l | *5{c} | *2{c}}
+\begin{tabularx}{0.77\textwidth}{>{\rowmac}c | >{\rowmac}l | *5{>{\rowmac}c} | *2{>{\rowmac}c}<{\clearrow}}
 
 \toprule
 	Factor & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median \\
 \midrule
-	F1 & \textbf{Complexity of conflicting lines of code} & 5 & 29 & 38 & 56 & 34 & \textbf{3.52} & 4 \\
-	F2 & \textbf{Your knowledge/expertise in area of conflicting code} & 5 & 23 & 50 & 54 & 30 & \textbf{3.50} & 4 \\
-	F3 & \textbf{Complexity of the files with conflicts} & 8 & 34 & 49 & 51 & 18 & \textbf{3.23} & 3 \\
-	F4 & \textbf{Number of conflicting lines of code} & 2 & 40 & 64 & 45 & 11 & \textbf{3.14} & 3 \\
+	\setrow{\bfseries}F1 & Complexity of conflicting lines of code & 5 & 29 & 38 & 56 & 34 & 3.52 & 4 \\
+	\setrow{\bfseries}F2 & Your knowledge/expertise in area of conflicting code & 5 & 23 & 50 & 54 & 30 & 3.50 & 4 \\
+	\setrow{\bfseries}F3 & Complexity of the files with conflicts & 8 & 34 & 49 & 51 & 18 & 3.23 & 3 \\
+	\setrow{\bfseries}F4 & Number of conflicting lines of code & 2 & 40 & 64 & 45 & 11 & 3.14 & 3 \\
 	F5 & Time to resolve a conflict & 14 & 56 & 51 & 25 & 15 & 2.82 & 3 \\
 	F6 & Atomicity of changesets in the conflict & 20 & 48 & 51 & 29 & 13 & 2.80 & 3 \\
 	F7 & Dependencies of conflicting code on other components & 20 & 56 & 39 & 33 & 14 & 2.78 & 3 \\

@@ -1,30 +1,5 @@
-\begin{table*}[!htbp]
-\renewcommand{\arraystretch}{1.3}
-\caption{Practitioners' Needs for Merge Conflict Resolutions from Survey}
-\label{survey_res_diffs}
-\centering
-\begin{tabularx}{0.87\textwidth}{c | l | *5{c} | *2{c}}
-
-\toprule
-	Need & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median \\
-\midrule
-	N1 & \textbf{How easy it is to understand the code involved in the merge conflict} & 0 & 14 & 25 & 65 & 37 & \textbf{3.89} & 4 \\
-	N2 & \textbf{Your expertise in the area of code with the merge conflict} & 1 & 17 & 38 & 49 & 36 & \textbf{3.72} & 4 \\
-	N3 & \textbf{The amount of information you have about the conflicting code} & 2 & 21 & 38 & 48 & 32 & \textbf{3.62} & 4 \\
-	N4 & How well tools present information in an understandable way & 4 & 24 & 47 & 32 & 34 & 3.48 & 3 \\
-	N5 & Changing assumptions within the code & 8 & 27 & 45 & 36 & 25 & 3.30 & 3 \\
-	N6 & Complexity of the project structure & 6 & 38 & 39 & 41 & 17 & 3.18 & 3 \\
-	N7 & Trustworthiness of tools & 17 & 29 & 39 & 32 & 34 & 3.12 & 3 \\
-	N8 & Informativeness of commit messages & 18 & 32 & 30 & 44 & 17 & 3.07 & 3 \\
-	N9 & Project culture & 13 & 37 & 43 & 27 & 21 & 3.04 & 3 \\
-	N10 & Tool support for examining development history & 16 & 40 & 31 & 32 & 22 & 3.03 & 3 \\
-\bottomrule
-\end{tabularx}
-\end{table*}
-
 \subsection{\textbf{RQ2:} What unmet needs impact the difficulty of a conflict resolution?}\label{RQ2}
 
-\todo{order needs to be more dependent on table 4 ranks}
 \todo{Story: Everything was important, commit messages have a research bias, Archeology catapults us into RQ3 with motivations}
 The perception of merge conflict difficulty and the actual hurdles of resolving them are distinct, and at times separated by a gap in knowledge or awareness that prevent practitioners from accurately gauging the difficulty of resolving merge conflicts.
 We asked interview participants a series of open-ended questions regarding unmet needs, the impact of unmet needs on understandability, and their impact on resolving merge conflicts in real-world situations.
@@ -32,15 +7,28 @@ We asked interview participants a series of open-ended questions regarding unmet
 Using results from the interview to inform the construction of the survey, we asked survey participants to rate how much each of 10 unmet needs affected their ability to resolve merge conflicts.
 We received 141 responses using a 5-point Likert scale indicating the degree of effect on resolution difficulty (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
 
-\todo{get rid of bullets}
-The results for this section are given in Table \ref{survey_res_diffs}, which highlights three of the factors which show stronger developer opinions:
-\begin{itemize}
-\item \textit{How easy it is to understand the code involved in the merge conflict}. 
-\item \textit{Your expertise in the area of code with the merge conflict}
-\item \textit{The amount of information you have about the conflicting code} 
-\end{itemize} 
+Results of the survey are presented in Table~\ref{survey_res_diffs}.
+We present and discuss in detail the top 4 unmet needs based on mean score.
+The top 4 unmet needs all relate to practitioners' understanding and their expertise in resolving conflicts. 
 
-No factor in this category had an average below 3.03, so participants did not rate any factors as having less than \textit{A moderate amount} of affect on the difficulty of a merge conflict resolution on average.
+All of the unmet needs in Table~\ref{survey_res_diffs} can be considered important to practitioners when resolving merge conflicts, since each received a mean score of at least 3.03 on the 5-point Likert scale.
+When analyzed across demographic categories, we find that practitioners uniformly agree with this assessment except for N10 when examined across open-source/closed-source practitioners.
+We further discuss these demographic differences for N10 in Section~\ref{oss_vs_closed_tool_support}.
+
+\todo{discussion sections for N1-N4}
+
+\subsubsection{Open-Source vs. Closed-Source Tool Support}
+\label{oss_vs_closed_tool_support}
+
+We found that practitioners who focus on open-source software development consider \textit{tool support for examining development history} (N10) to be the 3rd highest unmet need (mean: 3.60).
+Whereas, practitioners who focus on closed-source software development consider it to be the 10th, and least, impactful unmet need (mean: 2.86).
+This trend was also evident in our interviews, with P8 stating:
+\begin{displayquote}
+\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
+\end{displayquote}
+
+This result suggests that either history exploration in open-source projects is a more difficult task, or that tools are better at supporting history exploration use cases in closed-source development environments.
+
 \todo{Make takeaways something actionable}
 \begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
 attach boxed title to top left=

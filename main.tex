@@ -26,6 +26,9 @@
 \newcolumntype{L}{>{\hsize=.8\hsize\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
+\newcommand\clearrow{\global\let\rowmac\relax}
+\clearrow
 
 %\newcommand\comment[1]{}
 %\newcommand{\comment}[1]{{\noindent\bfseries #1\\}}
