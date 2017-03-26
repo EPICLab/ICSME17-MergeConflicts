@@ -26,29 +26,23 @@ Further, when integrators are preparing code for production environments they pr
 We find that these decisions rely on humanistic factors as much as they rely on data-driven metrics.
 Therefore, we need metrics that are human-aware and take into account the perceived difficulties of merge conflicts.
 
-\todo{
-Other researchers have shown that [ref], knowledge/domain experituse is important. THis hsows that knowing hwo is hte right person to assist with resolving a merge conflict, (integrator), is very importnat.
-}
-
-\todo{from Rafa: "Jump?" Maybe a rough transition}
-\todo{We intentionally left complexity to participants because we did not want to bias a certain metric}
-\todo{Tie in positive AND negative results: Takeaway is that we need a better metric for human understandability}
-
-\todo{Possible need for an expertise locator? Need more research to get there?}
 \subsubsection{\underline{Knowledge-based Factors}}
 Our findings show that expertise in the area of conflicting code is a top factor in determining the difficulty of a merge conflict (F2).
-Knowing the impact of knowledge-based factors allows us to understand the difference that practitioners attribute to having more information. Ideally, every developer would know everything about the code base, but this is often unrealistic in larger projects. Instead, other practitioners with expertise help fill this information gap.
+The importance of the knowledge-based factor indicates that practitioners attribute value to information; the greater knowledge in the conflicting code, the more likely it can be resolved correctly.
+When information is not available, practitioners seek others with expertise to fill this information gap.
 
-When attempting to resolve a conflict alone, developers working in unfamiliar code often feel uncomfortable making decisions during a merge due to lack of familiarity with the code or impacts related to the code change\cite{CostaSarma}. 
-Situations such as these raise questions relating to which person is best suited to resolve the conflict without introducing a new bug or unintentionally changing code behavior. Studies such as Costa et al.~\cite{CostaSarma} hope to alleviate some risk by selecting the best practitioner to resolve conflicts. Our findings confirm the need for expertise-location tools and encourage further research into selection of knowledgeable practitioners for merge conflict resolution.
+When attempting to resolve a conflict alone, developers working in unfamiliar code often feel uncomfortable making decisions during a merge due to lack of familiarity with the code or impacts related to the code change~\cite{CostaSarma}. 
+Situations such as these raise questions relating to which person is best suited to resolve the conflict without introducing a new bug or unintentionally changing code behavior. 
+Our findings confirm the need for tools to locate experts~\cite{CostaSarma} and encourage further research into selection of knowledgeable practitioners for merge conflict resolution.
 
-In our interview, P5 explained a situation where he applied this technique: 
+In our interview, P5 illustrated this need for expertise when describing his workflow: 
 
 \begin{displayquote}
 	\textit{``A lot of what I work on is\textellipsis in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm\textellipsis in the [unfamiliar part of project], then I'll\textellipsis get someone else to\textellipsis resolve the merge conflict for me\textellipsis It's someone else's, and I don't want to screw it up.''}
 \end{displayquote}
 
-This participant found knowledge of the effected code to be important enough that he would find someone who is familiar with the code around the merge conflict rather than resolving the conflict himself. In the event of non-intuitive code, this option is a helpful approach to resolution because it does not require the developer to fully understand the code before resolving. By taking this approach, P5 acknowledges the time incentive to avoid understanding the whole context of the conflict, but he also states that \textit{"It's someone else's"}, highlighting the idea that merge conflicts are both social and technical challenges.
+We find that expertise, as well as awareness of specific expert knowledge among teams, is an important factor in determining the difficulty of a merge conflict.
+The ability to know who to contact in order to resolve a merge conflict partially explains the drive towards specific integrator and release engineer roles increasing appearing in many software development projects~\cite{adams_release_eng}.
 
 %The results of our survey indicate that \textit{complexity of conflicting lines of code} and \textit{knowledge/expertise in the area of conflicting code} are factors that practitioners find have a direct effect on the perceived difficulty of a merge conflict.
 %Although we found consensus across all demographics, the experience level of respondents had an affect on the degree to which they responded affirmatively for these factors (see Table~\ref{survey_merge_conflicts}).
