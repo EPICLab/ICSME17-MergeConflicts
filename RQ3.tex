@@ -9,7 +9,28 @@ We received 105 different tools from 115 responses, though some were generic res
 We group these generic responses together where semantically similar meanings exist. 
 Table~\ref{survey_toolset} lists the top 10 most common tools used by participants to resolve merge conflicts.
 
-\todo{rough transition, number of survey responses}
+\begin{table}[!htbp]
+\renewcommand{\arraystretch}{1.3}
+\caption{Survey Participant Toolset (Top 10 tools)}
+\label{survey_toolset}
+\centering
+\begin{tabularx}{0.45\textwidth}{@{}r|Cl@{}}
+\toprule
+Tool & \# Participants & Description\\
+\midrule
+Git	& 37 & Version Control System\\
+Vim/vi & 17 & Text Editor\\
+Text Editor (unspecified) & 14 & Text Editor\\
+Git Diff & 11 & Diffing Tool\\
+GitHub & 11 & Website\\
+Eclipse & 10 & IDE\\
+KDiff3 & 9 & Diff \& Merge\\
+Meld & 8 & Diff \& Merge\\
+SourceTree & 8 & Git/Hg Desktop Client\\
+Sublime Text & 7 & Text Editor\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \todo{Use the same terms from survey, not toolset fragmentation}
 \todo{"Big bang up front"}
@@ -58,7 +79,7 @@ Complaints about information presentation are a result of bad or inconsistent to
 
 \todo{need more explaining here}
 
-\begin{table}[!]
+\begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{How much software practitioners trust their merging, history exploration, and/or conflict resolution tools}
 \label{survey_tool_trust}
@@ -123,26 +144,3 @@ When told that our study was seeking to find difficulties in resolving merge con
  \textit{``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''}
  \end{displayquote}
  Using this in light of our top difficulties from Table \ref{survey_res_diffs} suggests that tools would benefit from assisting developers in more complex situations by providing them with more specific information about what caused the conflict (in this case, the combination of cherrypicking and reverting).
-
-\begin{table}[!]
-\renewcommand{\arraystretch}{1.3}
-\caption{Survey Participant Toolset (Top 10 tools)}
-\label{survey_toolset}
-\centering
-\begin{tabularx}{0.45\textwidth}{@{}r|*{10}{C}c@{}c@{}}
-\toprule
-Tool & \# Participants & Description\\
-\midrule
-Git	& 37 & Version Control System\\
-Vim/vi & 17 & Text Editor\\
-Text Editor (unspecified) & 14 & Text Editor\\
-Git Diff & 11 & Diffing Tool\\
-GitHub & 11 & Website\\
-Eclipse & 10 & IDE\\
-KDiff3 & 9 & Diff \& Merge\\
-Meld & 8 & Diff \& Merge\\
-SourceTree & 8 & Git/Hg Desktop Client\\
-Sublime Text & 7 & Text Editor\\
-\bottomrule
-\end{tabularx}
-\end{table}
