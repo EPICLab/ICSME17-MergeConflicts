@@ -96,6 +96,27 @@ P2 explains that projects make it a priority to keep a well-curated Git history 
 \textit{``That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	''}
 \end{displayquote}
 
+\begin{table*}[!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Improvements for Practitioner Toolsets}
+\label{survey_tool_needs}
+\centering
+%\begin{tabularx}{0.9\textwidth}{@{}r|*{6}{C}c@{}}
+\begin{tabularx}{0.852\textwidth}{c | l | *5{c} | *2{c}}
+
+\toprule
+	Improvement & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median\\
+\midrule
+	I1 & \textbf{Better usability} & 6 & 17 & 32 & 48 & 16 & 3.43 & 4\\
+	I2 & \textbf{Better ways of filtering out less relevant information} & 8 & 15 & 32 & 48 & 16 & 3.41 & 4\\
+	I3 & \textbf{Better ways of exploring project history} & 7 & 21 & 36 & 39 & 16 & 3.30 & 3\\
+	I4 & \textbf{Better graphical presentation of information} & 13 & 26 & 26 & 37 & 16 & 3.14 & 3\\
+	I5 & Better transparency in tool functionality/operations & 16 & 36 & 24 & 40 & 3 & 2.82 & 3\\
+	I6 & Better terminology that is more consistent with my other tools & 23 & 41 & 32 & 15 & 8 & 2.53 & 2\\
+	\bottomrule
+\end{tabularx}
+\end{table*}
+
 However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests either that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
 \todo{Tools still need to fill the gap between metrics and knowledge}
 \todo{Tools need to cater to the humans}
