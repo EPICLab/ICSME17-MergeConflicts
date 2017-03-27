@@ -6,17 +6,10 @@ Our interviews informed survey questions ranking 6 practitioner needs for tool i
 To get a picture of the kinds of tools being used, we asked participants which tools they use during conflict resolution. We received 105 different tools from 115 responses, though some were general responses such as \textit{``my text editor''}. Table~\ref{survey_toolset} lists the top 10 tools used by participants to resolve merge conflicts.
 
 \todo{rough transition, number of survey responses}
-\todo{functional deficiencies -> functions not supported by tools, they should all be terms or all be definitions}
-
-\subsubsection{\underline{Information Presentation}}
-Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool when switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned. For instance, one survey participant says, 
-\begin{displayquote}
-\textit{``Tools don't make it easy to work with two arbitrary revisions side by side.''}
-\end{displayquote}
 
 \todo{Use the same terms from survey, not toolset fragmentation}
 \todo{"Big bang up front"}
-\subsubsection{\underline{Toolset Fragmentation:}} Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, P1 says, 
+\subsubsection{\underline{Tool Usability:}} Toolset fragmentation was a complaint when participants tried to track down information because they felt that information should be communicated better between different parts of their process. For instance, P1 says, 
 
 \begin{displayquote}
 \textit{``I had to jump around between tools and copy and paste version numbers from one to... See, this is why [toolset] integration matters.''}
@@ -25,6 +18,33 @@ Complaints about information presentation are a result of bad or inconsistent to
 This frustration is understandable for developers whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with a cost, and Gerald Weinberg has discussed the problem within engineering teams~\cite{Weinberg1992}. However, when asked, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''}, 121 survey participants responded with an average response of 2.04 (\textit{Rarely}) on a 5-point Likert scale from \textit{Never} to \textit{Always}. 
 
 To ensure that these developer perceptions were not biased based on the current toolset of the developer (i.e. people do not have a problem with having too many tools because they use IDEs), we compared the tool list for people who chose \textit{Never} or \textit{Rarely} and found that the groups share 9 of the top 10 tools. The fact that developers do not mind using multiple tools suggests that the benefits of a more modular toolset offsets the cost of switching tools with more features or better user experiences in the tools in their toolchains. 
+
+\subsubsection{\underline{Exploring Project History:}}
+Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore older history to understand the evolution of a project or even a single line of code. In the words of P1, 
+
+\begin{displayquote}
+\textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
+\end{displayquote}
+
+\todo{need more explaining here}
+
+\subsubsection{\underline{Filtering Less-Relevant Information:}}
+
+The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. P1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
+\begin{displayquote}
+\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
+\end{displayquote}
+
+P9 says that all of these changes are in an attempt to create something that will \textit{``essentially create a true diff''.}
+This suggests that current tools have not been able to keep up with the rapid expansion of metadata that Git and Github are able to provide, to the extent that projects will divert resources to create a tool for more advanced diffing functionality. 
+
+\subsubsection{\underline{Information Presentation}}
+Complaints about information presentation are a result of bad or inconsistent tool design. For instance, some complaints about inconsistent terminology, coloring, and organization across different resolution tools required developers to reorient themselves within each tool when switching contexts. While these are problems with the way these tools work together, individual tool usability was also questioned. For instance, one survey participant says, 
+\begin{displayquote}
+\textit{``Tools don't make it easy to work with two arbitrary revisions side by side.''}
+\end{displayquote}
+
+\todo{need more explaining here}
 
 \begin{table}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -44,13 +64,14 @@ Not at all & 0 & 0\\
 \end{tabularx}
 \end{table}
 
-\subsubsection{\underline{Tool Mistrust:}}
+
+\subsubsection{\underline{Tool Mistrust/Transparency:}}
 Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the appropriate steps have been initiated by the tool. 
 \begin{displayquote}
 \textit{``I've never trusted the merge tools, in a way. Or the diff tools. It would always just make me skittish. So my overall perception is that I'm scared of them. Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code.''}
 \end{displayquote}
 This quote comes from P4, a software developer with 10 years of experience.
-This prompted us to ask developers how much they trust thier merging, history exploration, and/or conflict resolution tools. Of 121 respondents to this question, 91.74\% said that they trusted their tools at least \textit{A moderate amount}, and 57.86\% said they trust their tools \textit{A lot} or \textit{Completely} (Table \ref{survey_tool_trust}). This raises the questions: 
+This prompted us to ask developers how much they trust their merging, history exploration, and/or conflict resolution tools. Of 121 respondents to this question, 91.74\% said that they trusted their tools at least \textit{A moderate amount}, and 57.86\% said they trust their tools \textit{A lot} or \textit{Completely} (Table \ref{survey_tool_trust}). This raises the questions: 
 \begin{itemize}
 \item How much tool trust is enough? 
 \item What is the trust threshold for not using a tool anymore?
@@ -75,21 +96,6 @@ Our results show that current tools handle increasing the size of the conflict b
 \caption{Effectiveness of developer tools in supporting varying levels of size and complexity (by developer experience). Values are number of responses per answer, and bubble size indicates the number of responses for comparison purposes.}
 \label{size_vs_complexity}
 \end{figure*}
-
-\subsubsection{\underline{History Exploration:}}
-Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore older history to understand the evolution of a project or even a single line of code. In the words of P1, 
-
-\begin{displayquote}
-\textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
-\end{displayquote}
-
-The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. P1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
-\begin{displayquote}
-\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
-\end{displayquote}
-
-P9 says that all of these changes are in an attempt to create something that will \textit{``essentially create a true diff''.}
-This suggests that current tools have not been able to keep up with the rapid expansion of metadata that Git and Github are able to provide, to the extent that projects will divert resources to create a tool for more advanced diffing functionality. 
 
 \subsubsection{\underline{Tool functional deficiencies}}
 When told that our study was seeking to find difficulties in resolving merge conflicts, some participants prepared examples of functional deficiencies in conflict resolution tools. P3 shared a specific case from a backporting~\cite{gutzmann2009backporting} experience. In a large system, it is extremely hard to understand when code was deleted. The \texttt{--reverse} option for the \textit{Git Blame} tool offers this functionality, but as P3 points out:  
