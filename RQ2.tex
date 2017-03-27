@@ -1,6 +1,5 @@
 \subsection{\textbf{RQ2:} What unmet needs impact the difficulty of a conflict resolution?}\label{RQ2}
 
-\todo{Story: Everything was important, commit messages have a research bias, Archeology catapults us into RQ3 with motivations}
 The perception of merge conflict difficulty and the actual hurdles of resolving them are distinct, and at times separated by a gap in knowledge or awareness that prevent practitioners from accurately gauging the difficulty of resolving merge conflicts.
 We asked interview participants a series of open-ended questions regarding unmet needs, the impact of unmet needs on understandability, and their impact on resolving merge conflicts in real-world situations.
 
@@ -15,86 +14,13 @@ All of the unmet needs in Table~\ref{survey_res_diffs} can be considered importa
 When analyzed across demographic categories, we find that practitioners uniformly agree with this assessment except for N10 when examined across open-source/closed-source practitioners.
 We further discuss these demographic differences for N10 in Section~\ref{oss_vs_closed_tool_support}.
 
-\todo{discussion sections for N1-N4}
-
-\subsubsection{Open-Source vs. Closed-Source Tool Support}
-\label{oss_vs_closed_tool_support}
-
-We found that practitioners who focus on open-source software development consider \textit{tool support for examining development history} (N10) to be the 3rd highest unmet need (mean: 3.60).
-Whereas, practitioners who focus on closed-source software development consider it to be the 10th, and least, impactful unmet need (mean: 2.86).
-This trend was also evident in our interviews, with P8 stating:
+\subsubsection{\underline{Understanding Code Involved in a Merge Conflict}}
+We found that practitioners consider the ability to understand the code involved in a merge conflict to be the unmet need with the highest impact on resolution (N1).
+For instance, when working with two conflicting commits of different sizes, P1 said:
 \begin{displayquote}
-\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
+\textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change.''}
 \end{displayquote}
-
-This result suggests that either history exploration in open-source projects is a more difficult task, or that tools are better at supporting history exploration use cases in closed-source development environments.
-
-\todo{Make takeaways something actionable}
-\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
-attach boxed title to top left=
-{xshift=0mm,yshift=-1mm},
-boxed title style={size=small}]
-Participants rated all listed merge conflict resolution difficulties as \textit{moderately impactful} or above.
-\end{tcolorbox}
-\addtocounter{takeawaycounter}{1}
-
-\underline{\textit{Commit Messages}}:
-Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution. 
-P10 agrees with this, but still wishes that commit messages could be more informative:
-\begin{displayquote}
-	\textit{``That really helps in making decisions on... two commits that have done something similar, and one commit has done some additional work... then I know that this commit has additional changes and I should look out for those when I'm resolving the merge conflict. So yeah, more information in commit messages would definitely help.''}
-\end{displayquote}
-
-In contrast, P5 says that commit messages just aren't descriptive enough:
-\begin{displayquote}
-\textit{``I won't understand from just the commit messages what the other person was trying to do... I just won't have enough information to resolve the merge.''}
-\end{displayquote}
-
-P4 compared his past experience working in industry and his current work on open-source academic research software, explaining that developer messages from more experienced professionals are helpful, but gets vague commit messages from \textit{``less experienced developers, students, post-docs, guys who are just used to not even using source control.''}
-
-Given this mixed information about commit messages in the interviews, we further investigated developer perceptions in the survey and found that software practitioners believe that \textit{Informativeness of commit messages} has a moderate impact (mean 3.03) on the difficulty of a merge conflict resolution. making it the 8th  of the 10 factors we asked about (see Table \ref{survey_res_diffs}). Commit messages are also a resource for developers as documentation and researchers as mineable data \cite{d2010commit}. However, commit message uninformativeness has been discussed by looking at message length and content~\cite{maalej2010can}, and some studies have tried to find a solution by generating good commit messages~\cite{cortes2014}. Our findings confirm that commit messages impact the difficulty of a merge conflict a moderate amount, but we still find that 7 of the other 9 factors are more important than commit messages when resolving a merge conflict.
-
-\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
-attach boxed title to top left=
-{xshift=0mm,yshift=-1mm},
-boxed title style={size=small}]
-Commit messages are 8th most impactful of 10 factors affecting the difficulty of merge conflict resolutions.
-\end{tcolorbox}
-\addtocounter{takeawaycounter}{1}
-
-% One possible explanation for this discrepancy between the literature and perceptions is that commit messages provide a good source of metadata for researchers mining software repositories, but they are often too short or vague to provide developers with helpful information about the commits involved in a conflict.
-
-\underline{\textit{Code Comprehensibility}}:
-Code comprehensibility came out in the interview as a general category to cover how people attempt to understand what makes the merge conflict resolution difficult. Several participants mention size as having an impact on their ability to comprehend the code. For instance, when working with two conflicting commits of different sizes, P1 says,
-\begin{displayquote}
-\textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change''}
-\end{displayquote}	
-
-In addition, P8 draws a direct relationship between size and difficulty, saying:
-\begin{displayquote}
-\textit{``Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict.''}
-\end{displayquote}
-
-However, P1 resolved a 1-line merge conflict that, after some investigation, was not as trivial as he had expected, requiring history exploration and extra care to ensure a correct resolution. This combination of small size and increased complexity of the conflict resulted in a more difficult conflict resolution than a simpler one-line merge conflict.
-
-\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
-attach boxed title to top left=
-{xshift=0mm,yshift=-1mm},
-boxed title style={size=small}]
-Size and complexity of the merge conflict, highly-rated factors from Table \ref{survey_merge_conflicts}, later affect the the difficulty of the resolution process by making the conflict more difficult to understand.
-\end{tcolorbox}
-\addtocounter{takeawaycounter}{1}
-
-\todo{Explain that open/closed source difference made this important to discuss}
-\underline{\textit{Archeology}}:
-Archeology is an important step for many software developers, as illustrated in the following quote from P8:
-\begin{displayquote}
-\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
-\end{displayquote}
-P2 explains that projects make it a priority to keep a well-curated Git history because:
-\begin{displayquote}
-\textit{``That's a tool to reason about the project... if it's messy with a bunch of reverts... it's harder to figure out what was going on.	''}
-\end{displayquote}
+Prior work on workspace awareness and codebase visualizations~\cite{palantir}\cite{lanza_manhattan} have similarly found that knowledge of code is an important factor in preventing the occurrence of merge conflicts, or reducing the difficulty in resolving them.
 
 \begin{table*}[!]
 \renewcommand{\arraystretch}{1.3}
@@ -117,14 +43,43 @@ P2 explains that projects make it a priority to keep a well-curated Git history 
 \end{tabularx}
 \end{table*}
 
-However, when asked to rate the impact of \textit{Tool support for examining development history} on merge conflict resolution difficulty, developers rated it at a mean of 3.03 (A moderate amount). This places it as the least impactful of the 10 factors measured. However, P2 and P8 are both developers on open-source projects, which led us to investigate the effect of project type on history exploration's mean value. We found that open-source developers (mean of 3.60) found this to be their 3rd most impactful factor of difficulty, while closed-source developers (mean of 2.86) perceived it as the least-impactful factor. This suggests either that history exploration in open source projects is a more difficult task or that tools are better at supporting the history exploration use cases that exist in closed-source development workflows.
-\todo{Tools still need to fill the gap between metrics and knowledge}
-\todo{Tools need to cater to the humans}
-\begin{tcolorbox}[enhanced,minipage boxed title,enhanced,title={Takeaway \arabic{takeawaycounter}},
-attach boxed title to top left=
-{xshift=0mm,yshift=-1mm},
-boxed title style={size=small}]
-Open-source developers rank \textit{Tool support for examining development history} as the 3rd most impactful factor of difficulty of the 10 factors, while closed-source developers (mean of 2.86) ranked it as the least-impactful factor.
-\end{tcolorbox}
-\addtocounter{takeawaycounter}{1}
+\subsubsection{\underline{Expertise in Area of Merge Conflict}}
+Knowledge is a key component of practitioner's needs when resolving merge conflicts, but along with that general knowledge is a need for expertise in the specific areas of code involved in a conflict.
+Practitioners recognize this need as having a sizable effect on their ability to resolve a merge conflict (N2).
+
+This result aligns with the goals of the TIPMerge tool~\cite{CostaSarma}, which seeks to locate experts that are best suited to resolve conflicts in a particular area of code.
+Since practitioners indicate that this is the second most impactful unmet need, more focus is needed on developing team processes, policies, or tools to leverage the advantages of expertise.
+
+\subsubsection{\underline{Amount of Information About Conflicting Code}}
+Understanding the code is important to resolving a merge conflict, but knowledge of change history, surrounding code, and design decisions all factor into a greater awareness of the causes that lead to a merge conflict.
+Our results show that participants selected \textit{the amount of information you have about the conflicting code} as the third most impactful unmet need (N3).
+
+During our interview, P7 was asked about information needs during merge conflicts and said:
+\begin{displayquote}
+\textit{``I can imagine that it's harder to merge code when you're merging in some legacy code which was written by some dinosaurs thirty years ago. But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
+\end{displayquote}
+
+This unmet need, along N1 and N2, illustrate a theme of both knowledge and awareness of information that practitioners see as the biggest unmet needs when working with merge conflicts.
+Such a theme leads us to conclude that further support through processes and tools are needed, and that research to lower this burden is worthwhile.
+
+\subsubsection{\underline{Research Bias}}
+Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering}\cite{hindle2009automatic}\cite{cortes2014automatically}\cite{hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution.
+However, we found that \textit{informativeness of commit messages} (N8) was toward the bottom of the rankings compared to other unmet needs.
+
+With a mean of 3.07 on a 5-point Likert scale, N8 has \textit{a moderate amount} of effect on the difficulty of resolving a merge conflict according to survey participants.
+But considering the position of 8th in a list of 10 unmet needs, it appears to receive a disproportionate amount of focus by the research community.
+
+
+
+\subsubsection{\underline{Open-Source vs. Closed-Source Tool Support}}
+\label{oss_vs_closed_tool_support}
+We found that practitioners who focus on open-source software development consider \textit{tool support for examining development history} (N10) to be the 3rd highest unmet need (mean: 3.60).
+Whereas, practitioners who focus on closed-source software development consider it to be the 10th, and least, impactful unmet need (mean: 2.86).
+This trend was also evident in our interviews, with P8 stating:
+
+\begin{displayquote}
+\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
+\end{displayquote}
+
+This result suggests that either history exploration in open-source projects is a more difficult task, or that tools are better at supporting history exploration use cases in closed-source development environments.
 
