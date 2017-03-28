@@ -56,14 +56,17 @@ Therefore, we examined the tool lists of participants that chose \textit{Never} 
 Since both groups are responding about problems in the same set of tools, we conclude that both groups had different perceptions about the difficulties in using multiple tools as opposed to any particular combination of tools.
 
 \subsubsection{\underline{Better Filtering of Less-Relevant Information}}
-
-The reality for developers using Git for more advanced history exploration use cases is that tool support is thin. P1, as someone who frequently dives deep into Git history, had resorted to writing his own scripts to better find the parts of the history that he really cares about. P9 described a similar tool developed by their open-source project which fills the need for more advanced branch diffing:
+Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
+For software practitioners using \texttt{git}, and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
+During the interviews, P1 described writing several scripts in order to locate particular historical commits that relate to a current merge conflict.
+P9 also described a tool, \texttt{git-diff}, developed as part of their efforts to add additional difference analysis functionality across branches:
 \begin{displayquote}
-\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, [so] the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
+\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, so the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
 \end{displayquote}
 
-P9 says that all of these changes are in an attempt to create something that will \textit{``essentially create a true diff''.}
-This suggests that current tools have not been able to keep up with the rapid expansion of metadata that Git and Github are able to provide, to the extent that projects will divert resources to create a tool for more advanced diffing functionality. 
+In our survey results, we see that practitioners rank \textit{better ways of filtering out less relevant information} (I2) as the second highest improvement needed in modern merge toolsets.
+Combined with our interviews, we find that the expansion of metadata capabilities in GitHub, GitLab\footnote{https://gitlab.com/}, and other cloud-based repository hosting services are also driving the development of scripts and tools to utilize this data in practitioners' workflows.
+Further work is needed to bring these capabilities from single-purpose scripts into common toolsets used by all practitioners.
 
 \subsubsection{\underline{Better Exploration of Project History}}
 Notably, many tool-related complaints in the interviews came from within the context of the \textit{Archeology Lens}~\cite{mihai_lenses}, meaning that developers find tool support lacking when trying to explore older history to understand the evolution of a project or even a single line of code. In the words of P1, 
