@@ -88,6 +88,14 @@ proj_size.11_50   <- survey[grep("11-50 developers", survey$TeamSize), ]
 proj_size.50_u    <- survey[grep("51", survey$TeamSize), ]
 
 
+opened_devs <- survey[survey$Q31 == 1,]
+opened_devs <- opened_devs$Q36_3
+opened_devs <- opened_devs[!is.na(opened_devs)]
+# Q36_3 is for Tool support for examining development history
+closed_devs <- survey[survey$Q31 == 2,]
+closed_devs <- closed_devs$Q36_3
+closed_devs <- closed_devs[!is.na(closed_devs)]
+wilcox.test(opened_devs, closed_devs)
 
 # prop.test(table(survey$Experience, survey$Q36_1), correct=FALSE)
 # 
