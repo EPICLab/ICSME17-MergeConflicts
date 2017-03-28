@@ -5,7 +5,7 @@ We examined demographics, they had the same challenges, needs, tool issues.
 Implications in 3 sections as previously written...
 }
 
-This paper provides a look at the way that software developers perceive the merge conflict resolution process and highlights the most important parts, from their perspectives. We break down the separate implications for researchers, tool builders, and managers as follows:
+This paper provides a look at the way that software practitioners perceive the merge conflict resolution process and discusses the implications, from their perspectives. We break down the separate implications for researchers, tool builders, and managers as follows:
 
 \todo{These... these suck. Redo in light of Anita discussion. (Commit messages/}
 \subsection{For Researchers}
@@ -24,9 +24,11 @@ Program comprehension is a major thing for merge conflicts, the focus on mainten
 
 \todo{Give them some concrete things to work on}
 \subsection{For Tool Builders}
-From the interviews, this study provides direct quotes from developers relating to trust in tools, usability, presentation of information, and functional deficiencies. From the survey, we provide tool builders with a list of priorities for tool improvements, as suggested by 10 interviewees and ranked by 162 software developers. With this information, tool builders can make more informed decisions about how to allocate resources.
+Tools should solve the targeted problem, but our results also suggest that they should enable developers by addressing developer needs for more context and analysis during a conflict resolution. Mainstream tools should help find expertise in areas of conflicting code, as Costa et al. did with TIPMerge tool~\cite{CostaSarma}. Additionally, they should provide a report of the impact of the changes involved in the conflict and provide relevant details about the circumstances surrounding the conflict.
+Tool builders should address history exploration at scale, specifically for those in integrator roles. Support for more advanced and more specific use cases is critical to supporting those who deal with larger and more frequent merge-related tasks.
+\todo{list RQ3 impls} 
 
 \todo{Managers need to facilitate better paired resolutions/code reviews, code understanding is important, so pairing experienced devs with new devs might be helpful/expertise differences}
 \todo{Ripple effect paper http://ieeexplore.ieee.org/document/5710950/}
 \subsection{For Managers}
-As Table \ref{survey_roles} shows, 53 of the 54 project managers in our survey also identified as software developers themselves. As a result, many project managers likely have their own experiences and preferences of what is difficult and what their own tool needs are. In this paper, we provide a reference for managers to understand a more general set of difficulties and needs for a larger group of software developers. While each team's needs will vary, our results give managers another tool with which to evaluate potential tools and management practices.
+Practitioners solving merge conflicts find the merge conflict resolution process to be challenging due to a lack of information, lack of expertise, and a lack of code comprehensibility (N1-N3). This suggests that managers should encourage code reviews and paired conflict resolutions. Allowing better communication between different stakeholders allows domain experts to express concerns about impacts of changes, allows authors to understand the intentions of others' code changes, and allows developers to put the collective knowledge of the group to the task of finding the best resolution of the conflict.
