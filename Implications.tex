@@ -12,12 +12,15 @@ This paper provides a look at the way that software developers perceive the merg
 Our results inform future research in the area of merge conflict difficulties from the human perspective.
 Our findings from \ref{artifact-based-factors} and \ref{knowledge-based-factors} show that researchers should focus on knowledge gaps that practitioners experience just as much as interpretation of code-centric metrics like code complexity and SLOC. \textit{Complexity of conflicting lines of code} (F1) and \textit{Your knowledge/expertise in the area of conflicting code} (F2) represent our top 2 factors in the initial difficulty assessment of a merge conflict and also illustrate the divide between common metrics and the knowledge needs of the humans performing the resolutions.
  
-Our findings confirm that informativeness of commit messages (N8) moderately impacts practitioner perceptions, making it a helpful metric in understanding difficulty, but we also found that 7 other factors affect difficulty to a greater degree.
+Our findings confirm that informativeness of commit messages (N8) moderately impacts practitioner perceptions, making it a helpful metric in understanding difficulty, but we also found that 7 other factors affect difficulty to a greater degree. This indicates that while commit message analysis is important, future research should focus on knowledge- and comprehension-based difficulties of  merge conflict resolutions.
+
+We also highlight needs (N1-N9) and factors (F1-F9) which have no statistical differences across experience, project size, open/closed source, or role. Practitioners agree on unmet needs across all measured demographics, leaving opportunity for future research into human perception of merge conflict difficulty in these areas.
+
 \todo{
 Program comprehension is a major thing for merge conflicts, the focus on maintenance and bug-fixes have primarily been the focus of the ICPC conference. Perhaps more focus needs to be placed on code comprehension in regards to merge conflicts. 
 }
  
-The intention of this paper is to provide an investigative platform for future work into how developers perceive difficulties related to merge conflict resolution. Notably, we have already seen work in the area of history exploration \cite{mihai_lenses}.
+%The intention of this paper is to provide an investigative platform for future work into how developers perceive difficulties related to merge conflict resolution. Notably, we have already seen work in the area of history exploration \cite{mihai_lenses}.
 
 \todo{Give them some concrete things to work on}
 \subsection{For Tool Builders}
