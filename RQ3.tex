@@ -12,7 +12,7 @@ Table~\ref{survey_toolset} lists the top 10 most common tools used by participan
 
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
-\caption{Survey Participant Toolset (Top 10 tools)}
+\caption{Survey Participant Merge Toolsets (Top 10)}
 \label{survey_toolset}
 \centering
 \begin{tabularx}{0.45\textwidth}{@{}r|Cl@{}}
@@ -92,66 +92,57 @@ Practitioners told us that they would like to see tools that share a common lang
 
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
-\caption{How much software practitioners trust their merging, history exploration, and/or conflict resolution tools}
+\caption{Practitioners' Trust in their Merging, History Exploration, and Conflict Resolution Tools\textsuperscript{i}}
 \label{survey_tool_trust}
 \centering
 \begin{tabularx}{0.45\textwidth}{@{}r|*{10}{C}c@{}}
 \toprule
 Trust Level & Response Count & Response \%\\
 \midrule
-Completely & 20 & 17\\
-A lot & 50 & 41\\
-A moderate amount & 41 & 34\\
-A little & 10 & 8\\
-Not at all & 0 & 0\\
+Completely & 20 & 16.52\\
+A lot & 50 & 41.32\\
+A moderate amount & 41 & 33.88\\
+A little & 10 & 8.26\\
+Not at all & 0 & 0.00\\
 \bottomrule
+	\multicolumn{3}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents answered on a 5-point Likert scale to indicate trust in their toolset (1 being \textit{Not at all} and 5 being \textit{Completely}).}}
 \end{tabularx}
 \end{table}
 
-
 \subsubsection{\underline{Tool Mistrust/Transparency}}
-Tool mistrust seemed to come from being unsure about what the tool was really doing. Many merging tools obscure the steps that are actually being taken, making developers hesitant to trust that the appropriate steps have been initiated by the tool. 
+Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to requiring manual resolution when these algorithms fail.
+Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
+The opaque nature of history exploration tools was also found to be a source of practitioners' overall mistrust of their toolsets.
+P4 commented that:
 \begin{displayquote}
 \textit{``I've never trusted the merge tools, in a way. Or the diff tools. It would always just make me skittish. So my overall perception is that I'm scared of them. Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code.''}
 \end{displayquote}
-This quote comes from P4, a software developer with 10 years of experience.
-This prompted us to ask developers how much they trust their merging, history exploration, and/or conflict resolution tools. Of 121 respondents to this question, 91.74\% said that they trusted their tools at least \textit{A moderate amount}, and 57.86\% said they trust their tools \textit{A lot} or \textit{Completely} (Table \ref{survey_tool_trust}). This raises the questions: 
-\begin{itemize}
-\item How much tool trust is enough? 
-\item What is the trust threshold for not using a tool anymore?
-\end{itemize}
-If we consider this problem conservatively, nearly 1 in 10 software practitioners are using tools that they cannot trust (see Table~\ref{survey_tool_trust}). Since no previous work exists relating to minimum acceptable levels of trust in a toolset, it is possible that up to 42.1\% of developers (those with \textit{A moderate amount} of trust or less) operate within this gap in tool trust.
 
-As seen in Sections \ref{RQ1} and \ref{RQ2}, developers mentioned both size and complexity in the interviews, which raised questions about how developers view each of these metrics. More specifically, we wanted to know how well developers think tools support increased size and complexity.  
-This motivated a survey question to compare increased size to increased complexity by asking participants to rate how well their tools handle the following kinds of conflicts:
+Based upon this theme of mistrust, we asked survey participants to rate the degree to which they trust their merging, history exploration, and conflict resolution tools.
+We received 121 responses to this question, with a mean score of 3.66 placing the most common responses between \textit{a moderate amount} and \textit{a lot} of trust (Table~\ref{survey_tool_trust}).
+Assuming that responses of \textit{a moderate amount}, \textit{a little}, or \textit{not at all} indicate some degree of mistrust, we find that 42.15\% of practitioners experience some gap in toolset trust.
 
-\begin{itemize}
-	\item Simple, small merge conflict resolutions
-	\item Simple, large merge conflict resolutions 
-	\item Complex, small merge conflict resolutions
-	\item Complex, large merge conflict resolutions
-\end{itemize}
+However, the severity of toolset mistrust is not as significant as the interview results had lead us to assume.
+Only 8.26\% of practitioners indicated that they trust their toolset \textit{a little} or \textit{not at all} (10 out of 121 responses).
+The results of the survey are counterintuitive to our interview results, but appears to indicate that practitioners abandon mistrusted tools before all trust is lost in them.
 
-Our results show that current tools handle increasing the size of the conflict better than increasing the complexity of the conflict. This trend was seen across all experience levels, as visualized in Figure \ref{size_vs_complexity}.
+\subsubsection{\underline{Perceptions of Developer Tool Effectiveness}}
+The perceived size and complexity of merge conflicts affect the way in which practitioners plan, allocate, and enact resolutions.
+To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
+
+Since individual participants have different toolsets, and consider different factors when determining the perceived size and complexity of a merge conflict, we instructed participants to rate their own toolset against these archetypes using their own notion of what constitutes a simple vs. complex and small vs. large merge conflict.
+Figure~\ref{size_vs_complexity} provides a visual illustration of the results of this survey question.
+
+Observing the progression of results between each of the quadrants, we find that the centrality of results shifts from \textit{Extremely Effective} for \textit{small, simple merge conflicts} to \textit{Very Effective} for \textit{large, simple merge conflicts}.
+This suggests that increasing the perceived size of a merge conflict has a slight affect on the perceived effectiveness of merge toolsets.
+However, the shift from \textit{small, simple merge conflicts} to \textit{small, complex merge conflicts} shows a larger change in perceived effectiveness; from \textit{Extremely Effective} to \textit{Moderately effective}.
+
+The results of this question indicate that modern merge tools are capable of handling an increase in perceived size of a merge conflict to a greater extend than an increase in the perceived complexity of a merge conflict.
+We find this result to be hold true across each of the six software development experience groups.
 
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
-\caption{Effectiveness of developer tools in supporting varying levels of size and complexity (by developer experience). Values are number of responses per answer, and bubble size indicates the number of responses for comparison purposes.}
+\caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on developer experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.}
 \label{size_vs_complexity}
 \end{figure*}
-
-\subsubsection{\underline{Tool functional deficiencies}}
-When told that our study was seeking to find difficulties in resolving merge conflicts, some participants prepared examples of functional deficiencies in conflict resolution tools. P3 shared a specific case from a backporting~\cite{gutzmann2009backporting} experience. In a large system, it is extremely hard to understand when code was deleted. The \texttt{--reverse} option for the \textit{Git Blame} tool offers this functionality, but as P3 points out:  
-
-\begin{displayquote}
-\textit{``It still requires thorough background knowledge of the code base. Also I work on large changes in time in hot paths. This could mean many additions and deletions that would lead to further confusion.''}
-\end{displayquote}
-
- This illustrates the case of a tool that performs well in most cases but does not scale well to larger and more complex codebases.
- 
- P1 mentions a specific issue that he encounters to illustrate that tools work with a shallow understanding of a merge conflict's process. He describes a conflict where one branch cherrypicks changes from the other, then the second branch reverts the same changes that were cherrypicked. When the two branches merge back together, tools have trouble supporting the resolution of the more complex conflict:
- \begin{displayquote}
- \textit{``So cherrypick on one branch, revert on the other, equals disaster. Most tools... just do three-way branch because they limit their vision to those three parts. They don't try to understand the actual scenario.''}
- \end{displayquote}
- Using this in light of our top difficulties from Table \ref{survey_res_diffs} suggests that tools would benefit from assisting developers in more complex situations by providing them with more specific information about what caused the conflict (in this case, the combination of cherrypicking and reverting).
