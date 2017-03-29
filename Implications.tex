@@ -7,7 +7,6 @@ Implications in 3 sections as previously written...
 
 This paper provides a look at the way that software practitioners perceive the merge conflict resolution process and discusses the implications, from their perspectives. We break down the separate implications for researchers, tool builders, and managers as follows:
 
-\todo{These... these suck. Redo in light of Anita discussion. (Commit messages/}
 \subsection{For Researchers}
 Our results inform future research in the area of merge conflict difficulties from the human perspective.
 Our findings from \ref{artifact-based-factors} and \ref{knowledge-based-factors} show that researchers should focus on practitioners' knowledge gaps just as much as interpretation of code-centric metrics like code complexity and SLOC. \textit{Complexity of conflicting lines of code} (F1) and \textit{Your knowledge/expertise in the area of conflicting code} (F2) represent our top 2 factors in the initial difficulty assessment of a merge conflict and also illustrate the divide between common metrics and the knowledge needs of the humans performing the resolutions.
@@ -24,7 +23,7 @@ Program comprehension is a major thing for merge conflicts, the focus on mainten
 
 \todo{Give them some concrete things to work on}
 \subsection{For Tool Builders}
-Tools should solve the targeted problem, but our results also suggest that they should enable developers by addressing developer needs for more context and analysis during a conflict resolution. Mainstream tools should help find expertise in areas of conflicting code, as Costa et al. did with TIPMerge tool~\cite{CostaSarma}. Additionally, they should provide a report of the impact of the changes involved in the conflict and provide relevant details about the circumstances surrounding the conflict.
+Tools should solve the targeted problem, but our results also suggest that they should solve the problem enable developers by addressing developer needs for more context and analysis during a conflict resolution. Mainstream tools should help find expertise in areas of conflicting code, as Costa et al. did with TIPMerge tool~\cite{CostaSarma}. Additionally, they should provide a report of the impact of the changes involved in the conflict and provide relevant details about the circumstances surrounding the conflict.
 
 Tool builders should address history exploration at scale, specifically for those in integrator roles. Support for more advanced and more specific use cases is critical to supporting those who deal with larger and more frequent merge-related tasks.
 \todo{list RQ3 impls} 
