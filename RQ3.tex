@@ -34,7 +34,7 @@ Sublime Text & 7 & Text Editor\\
 \end{table}
 
 \subsubsection{\underline{Better Usability}}
-The right toolset is essential for efficiently developing solution and resolving conflicts.
+The right toolset is essential for efficiently developing solutions and resolving conflicts.
 Usability is a major factor that determines whether a toolset will support practitioner's workflows instead of hindering them.
 Based on the results of the survey, we found that practitioners rate usability as the most desired improvement for their current merge tools (I1).
 
@@ -50,24 +50,24 @@ This frustration is understandable for developers whose workflows frequently get
 This motivated a survey question asking, \textit{``How often do you find that having multiple tools has been a problem in your development workflow?''} We received 121 responses with a mean score of 2.04 (\textit{Rarely} on a 5-point Likert scale from \textit{Never} to \textit{Always}). 
 
 In comparing the effect of toolsets on problems in development workflow, we recognize that issues with particular tools could bias practitioner perceptions.
-Therefore, we examined the tool lists of participants that chose \textit{Never} against the tool lists of participants that chose \textit{Rarely} and found that these groups shared 9 out of 10 of the most common tools.
-Since both groups are responding about problems in the same set of tools, we conclude that both groups had different perceptions about the difficulties in using multiple tools as opposed to any particular combination of tools.
+Therefore, we examined the tool lists of participants that chose \textit{Never} or \textit{Rarely} against the tool lists of participants that chose \textit{Sometimes}, \textit{Often}, or \textit{Always} and found that these groups shared 9 out of 10 of the most common tools.
+Since both groups are responding about problems in the same set of tools, we conclude that both groups had different perceptions about the difficulties in using multiple tools as opposed to their particular combination of tools.
 
 \subsubsection{\underline{Better Filtering of Less-Relevant Information}}
 Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
-For software practitioners using \texttt{git}, and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
+For software practitioners using \texttt{git} and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
 During the interviews, P1 described writing several scripts in order to locate particular historical commits that relate to a current merge conflict.
 P9 also described a tool, \texttt{git-diff}, developed as part of their efforts to add additional difference analysis functionality across branches:
 \begin{displayquote}
 \textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, so the SHAs are always going to be changing... this actually allows us to do a comparison based on SHA but then fall back to author and commit title and metadata information... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
 \end{displayquote}
-
+\todo{Shane: This transition is a bit rough}
 In our survey results, we see that practitioners rank \textit{better ways of filtering out less relevant information} (I2) as the second highest improvement needed in modern merge toolsets.
-Combined with our interviews, we find that the expansion of metadata capabilities in GitHub, GitLab\footnote{https://gitlab.com/}, and other cloud-based repository hosting services are also driving the development of scripts and tools to utilize this data in practitioners' workflows.
+Combined with our interviews, we find that the expansion of metadata capabilities in GitHub, GitLab\footnote{https://gitlab.com/}, and other cloud-based repository hosting services drives the development of scripts and tools to utilize this data in practitioners' workflows.
 Further work is needed to bring these capabilities from single-purpose scripts into common toolsets used by all practitioners.
 
 \subsubsection{\underline{Better Exploration of Project History}}
-Codoban et al.~\cite{mihai_lenses} introduced the concept of \textit{Archeology Lens} to describe examining old development history to retrieve lost knowledge, and postulated that additional tool support was needed in this context.
+Codoban et al.~\cite{mihai_lenses} introduced the concept of the \textit{Archeology Lens} to describe examining old development history to retrieve lost knowledge and postulated that additional tool support was needed in this context.
 We also find that practitioners consider history exploration to be a major area of improvement for development toolsets.
 Among survey participants, \textit{better ways of exploring project history} (I3) ranked as the third most important improvement needed.
 During our interviews, P1 said: 
@@ -88,7 +88,7 @@ One of the survey participants' comment highlights this need for further toolset
 
 In our interviews, several practitioners reported experiencing issues with inconsistent terminology, inconsistent visual metaphors (colors, notifications, etc.), and the organizational layout of different development tools.
 The cost of context switching in software development is well-known to researchers~\cite{czerwinski2004taskswitching}\cite{li2007cost_of_context_switch}\cite{blackwell2002attentioninvestment}\cite{convertino2003dualview}, but the individual experiences of practitioners attempting to resolve merge conflicts isn't as well understood.
-Practitioners told us that they would like to see tools that share a common language in both terminology and presentation.
+Practitioners conveyed that they would like to see tools that share a common language in both terminology and presentation, though survey participants indicated only a minor need for more consistency in terminology. 
 
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -110,7 +110,7 @@ Not at all & 0 & 0.00\\
 \end{table}
 
 \subsubsection{\underline{Tool Mistrust/Transparency}}
-Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to requiring manual resolution when these algorithms fail.
+Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to manual resolution when these algorithms fail.
 Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
 The opaque nature of history exploration tools was also found to be a source of practitioners' overall mistrust of their toolsets.
 P4 commented that:
@@ -125,11 +125,13 @@ Assuming that responses of \textit{a moderate amount}, \textit{a little}, or \te
 However, the severity of toolset mistrust is not as significant as the interview results had lead us to assume.
 Only 8.26\% of practitioners indicated that they trust their toolset \textit{a little} or \textit{not at all} (10 out of 121 responses).
 The results of the survey are counterintuitive to our interview results, but appears to indicate that practitioners abandon mistrusted tools before all trust is lost in them.
+\todo{Shane: Last sentence could be clearer}
 
 \subsubsection{\underline{Perceptions of Developer Tool Effectiveness}}
 The perceived size and complexity of merge conflicts affect the way in which practitioners plan, allocate, and enact resolutions.
 To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
 
+\todo{Shane: Is ''centrality'' a computeable metric? Might be better to chose another word, if it is.}
 Since individual participants have different toolsets, and consider different factors when determining the perceived size and complexity of a merge conflict, we instructed participants to rate their own toolset against these archetypes using their own notion of what constitutes a simple vs. complex and small vs. large merge conflict.
 Figure~\ref{size_vs_complexity} provides a visual illustration of the results of this survey question.
 
