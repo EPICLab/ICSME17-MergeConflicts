@@ -15,20 +15,22 @@ Future research should also focus on knowledge- and comprehension-based difficul
 We also highlight nine unmet needs and nine factors of difficulties which have no statistical differences across experience, project size, open/closed source, or role.
 This population-wide consensus indicates that practitioners unanimously want these unmet needs resolved, and these factors lessened.
 
-\todo{
-Program comprehension is a major thing for merge conflicts, the focus on maintenance and bug-fixes have primarily been the focus of the ICPC conference. Perhaps more focus needs to be placed on code comprehension in regards to merge conflicts. 
-}
- 
-%The intention of this paper is to provide an investigative platform for future work into how developers perceive difficulties related to merge conflict resolution. Notably, we have already seen work in the area of history exploration \cite{mihai_lenses}.
-
-\todo{Give them some concrete things to work on}
 \subsection{For Tool Builders}
-Tools should solve the targeted problem, but our results also suggest that they should enable developers by addressing developer needs for more context and analysis during a conflict resolution. Mainstream tools should help find expertise in areas of conflicting code, as Costa et al. did with TIPMerge tool~\cite{CostaSarma}. Additionally, they should provide a report of the impact of the changes involved in the conflict and provide relevant details about the circumstances surrounding the conflict.
+Tools are meant to solve problems, but our results show that addressing the human needs of  practitioners in the areas of context-awareness and information retrieval during merge conflict resolutions is also important.
+Mainstream tools must help find expertise in areas of conflicting code.
+This result agrees with and adds to work done by Costa et al.~\cite{CostaSarma}.
+Additionally, tool builders need to provide more ways for practitioners to gather information about the change impact of merge conflicts, including rationales for those changes when possible.
 
-Tool builders should address history exploration at scale, specifically for those in integrator roles. Support for more advanced and more specific use cases is critical to supporting those who deal with larger and more frequent merge-related tasks.
-\todo{list RQ3 impls} 
+Version control systems provide a easy way of storing and retrieving recent history, but examining older version history at scale is still an open concern among practitioners.
+Tool builders should work to address this unmet need by leveraging research into search systems for developer-assistance~\cite{nabi2016putting} and machine learning-based code assistances~\cite{bradley2011history_exploration} to provide practitioners with more expressive tools for history exploration.
 
-\todo{Managers need to facilitate better paired resolutions/code reviews, code understanding is important, so pairing experienced devs with new devs might be helpful/expertise differences}
-\todo{Ripple effect paper http://ieeexplore.ieee.org/document/5710950/}
+Tools specific to integrators, who merge more often and more frequently than regular practitioners, are lacking in depth of features specific to this group.
+Support for more advanced and more specific use cases is critical to supporting those who deal with these large, complex merges. 
+
 \subsection{For Managers}
-Practitioners who solve merge conflicts find the merge conflict resolution process to be challenging due to a lack of information, lack of expertise, and a lack of code comprehensibility (N1-N3). This suggests that managers should encourage code reviews and paired conflict resolutions. Allowing better communication between different stakeholders allows domain experts to express concerns about impacts of changes, allows authors to understand the intentions of others' code changes, and allows developers to put the collective knowledge of the group to the task of finding the best resolution for the conflict.
+Practitioners find the merge conflict resolution process to be challenging due to a lack of information, lack of expertise, and a lack of code comprehensibility (N1-N3). 
+To reduce these challenges, managers should both encourage and allot time for code reviews and paired conflict resolution sessions. 
+Allowing better communication between different stakeholders allows domain experts to express concerns about impacts of changes, allows authors to understand the intentions of others' code changes, and allows developers to put the collective knowledge of the group to the task of finding the best resolution for the conflict.
+
+Further work is needed for managers to effectively determine the most appropriate pairings of experienced practitioners and newcomers in order to resolve merge conflicts and prevent future issues.
+Expertise recommendation tools such as TIPMerge~\cite{CostaSarma}, Ensemble~\cite{xiang2008ensemble}, or techniques such as the H-Index~\cite{bornmann2005does} should be further examined for applicability in industrial development settings.
