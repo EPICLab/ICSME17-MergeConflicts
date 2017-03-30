@@ -98,7 +98,8 @@ closed_devs <- closed_devs[!is.na(closed_devs)]
 wilcox.test(opened_devs, closed_devs)
 
 answer_people <- survey[which(!is.na(survey$Q50_16)),]
-occurences <- survey$Q39
+occurences <- answer_people[which(!is.na(survey$Q39)),]
+occurences <- occurences$Q39
 occurences <- occurences[!is.na(occurences)]
 
 # prop.test(table(survey$Experience, survey$Q36_1), correct=FALSE)
