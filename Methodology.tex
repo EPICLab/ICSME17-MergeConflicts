@@ -1,6 +1,25 @@
 \section{Methodology}\label{methodology}
 
-\begin{table}[!t]
+We employed exploratory interviews with software practitioners and surveys of practitioners to validate our findings.
+Adhering to the philosophical stance of \textit{pragmatism}~\cite{easterbrook2008selecting}, we use mixed methods to first explore the topic of practitioners' difficulties when encountering merge conflicts, and then validate our findings through a survey of practitioners.
+
+Inspired by established guidelines~\cite{latoza2006maintaining, shull2008guide, tao2012software}, we codified the interviews into a taxonomy of barriers, constraints, and concerns.
+We build a survey populating the answers to each question with the results of the interviews.
+We use a shared vocabulary from the interviews to form questions that are emblematic of merge conflicts, but also relatable to software practitioners.
+
+\subsection{Terminology}\label{terminology_methods}
+In this paper, we define merge conflict as a scenario in which two copies of the same codebase diverge and cannot be automatically merged, thus requiring human intervention to resolve. 
+While we recognize that other types of conflicts exist in software projects (i.e. social conflicts), we focus this paper on conflicts in code.
+
+\subsection{Interviews}\label{interview_methods}
+
+We conducted semi-structured interviews with software practitioners to discover the factors and concerns they care about when working with merge conflicts.
+
+Interview participants were selected from top contributors to open-source projects and from industry contacts using snowball sampling~\cite{goodman1961snowball}.
+We interviewed 10 software practitioners from 7 different organizations, including consumer \& business software companies, academic software development teams at two U.S. universities, a semiconductor manufacturer, a healthcare software company, and a sports \& wellness technology company.
+Our participants had five years of software development experience on average.
+
+\begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Interview Participant Demographic}
 \label{interview_demographics}
@@ -24,25 +43,6 @@
 \end{tabularx}
 \parnotes
 \end{table}
-
-We employed exploratory interviews with software practitioners and surveys of practitioners to validate our findings.
-Adhering to the philosophical stance of \textit{pragmatism}~\cite{easterbrook2008selecting}, we use mixed methods to first explore the topic of practitioners' difficulties when encountering merge conflicts, and then validate our findings through a survey of practitioners.
-
-Inspired by established guidelines~\cite{latoza2006maintaining, shull2008guide, tao2012software}, we codified the interviews into a taxonomy of barriers, constraints, and concerns.
-We build a survey populating the answers to each question with the results of the interviews.
-We use a shared vocabulary from the interviews to form questions that are emblematic of merge conflicts, but also relatable to software practitioners.
-
-\subsection{Terminology}\label{terminology_methods}
-In this paper, we define merge conflict as a scenario in which two copies of the same codebase diverge and cannot be automatically merged, thus requiring human intervention to resolve. 
-While we recognize that other types of conflicts exist in software projects (i.e. social conflicts), we focus this paper on conflicts in code.
-
-\subsection{Interviews}\label{interview_methods}
-
-We conducted semi-structured interviews with software practitioners to discover the factors and concerns they care about when working with merge conflicts.
-
-Interview participants were selected from top contributors to open-source projects and from industry contacts using snowball sampling~\cite{goodman1961snowball}.
-We interviewed 10 software practitioners from 7 different organizations, including consumer \& business software companies, academic software development teams at two U.S. universities, a semiconductor manufacturer, a healthcare software company, and a sports \& wellness technology company.
-Our participants had five years of software development experience on average.
 
 We assigned each participant a subject number (Table~\ref{interview_demographics}).
 Each interview lasted between 30 and 60 minutes, and the participants were offered US\$50 in either cash, gift card, or donation to a charity of their choice.
@@ -81,7 +81,7 @@ We performed two iterations of the open card sorting process, and found three th
 
 \subsection{Survey}\label{survey_methods}
 
-\begin{table}[!]
+\begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Survey Participant Roles\textsuperscript{i}}
 \label{survey_roles}

@@ -109,6 +109,13 @@ Not at all & 0 & 0.00\\
 \end{tabularx}
 \end{table}
 
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
+\caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on development experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.}
+\label{size_vs_complexity}
+\end{figure*}
+
 \subsubsection{\underline{Tool Mistrust/Transparency}}
 Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to manual resolution when these algorithms fail.
 Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
@@ -140,10 +147,3 @@ However, the shift from \textit{small, simple merge conflicts} to \textit{small,
 
 The results of this question indicate that modern merge tools are capable of handling an increase in perceived size of a merge conflict to a greater extend than an increase in the perceived complexity of a merge conflict.
 We find this result to be hold true across each of the six software development experience groups.
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
-\caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on development experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.}
-\label{size_vs_complexity}
-\end{figure*}

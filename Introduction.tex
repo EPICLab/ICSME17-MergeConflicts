@@ -1,53 +1,47 @@
+\footnotetext{\IEEEauthorrefmark{1} First and second author contributed equally to this work.}
+
 \section{Introduction}\label{introduction}
 
 \todo{Remove page numbers prior to submission. See note at the top of main.tex file.}
 \todo{Remove paragraph orphans prior to submission.}
 \todo{Add survey questions to companion website prior to submission.}
-\todo{Clean-up bibliography section to remove unnecessary elements.}
-\todo{Remove unused citations from Bibliography.bib file.}
 \todo{Per Anita's comments, the following prompts needs to be used to rewrite the Introduction section:\\1. What is the problem?\\2. Why is it a problem?\\3. What has been done so far?\\4. What have you done?}
 
 Team collaboration is essential for the success of multi-developer projects~\cite{hattori2010syde}.
-Version Control Systems (VCS), such as Git, are typically used to to enable both collaboration and large-scale distributed development.
-The distributed nature of these systems requires synchronization between repositories.
-For Git and other distributed VCS, synchronization occurs through merge commits that add changes on top of the currently tracked versions of files.
+For Git and other distributed version control systems, synchronization occurs through merge commits that add changes on top of the currently tracked versions of files.
 
-Most commits are cleanly merged into a repository.
-However, Kasi et al.~\cite{cassandra} found that merge conflicts occur in approximately 19\% of all merges.
+Although most commits are cleanly merged into a repository, merge conflicts are bound to happen in a distributed development environment.
+Kasi et al.~\cite{cassandra} found that merge conflicts occur in approximately 19\% of all merges.
 Resolving merge conflicts can be a costly process that delays projects while practitioners decide how to approach and resolve the conflict \cite{cassandra}, and poorly-performed merge conflict resolutions frequently cause integration errors \cite{bird-branches-conflict}.
-Software practitioners responding to merge conflicts have to consider the origins of the conflict, the dependencies associated with the conflicting code, and the possible solutions for resolving the discrepancies between conflicting versions of files.
-The difficulties associated with these aspects are non-trivial and require attention and awareness from practitioners in order to successfully mitigate associated concerns.
 
-Several studies have examined models for proactive merge detection and prevention~\cite{Brun2011}\cite{palantir}\cite{Guimaraes}, proposed tools and systems for efficiently avoiding or resolving merge conflicts~\cite{nishimura}\cite{mens2002state}, and discussed advantages of syntax- and semantic-aware merges \cite{danny_refactorings}\cite{hunt2002extensible}. However, at some point in a software projects' development history, it is given that a merge conflict will occur. 
+Several studies have examined models for proactive merge detection and prevention~\cite{Brun2011, palantir, Guimaraes}, proposed tools and systems for efficiently avoiding or resolving merge conflicts~\cite{nishimura}\cite{mens2002state}, and discussed advantages of syntax- and semantic-aware merges \cite{danny_refactorings}\cite{hunt2002extensible}. However, at some point in a software projects' development history, it is given that a merge conflict will occur. 
 
 Despite the focus on reducing the occurrence of merge conflicts, no prior studies have talked to practitioners to understand their perceptions about merge conflicts.
 Talking directly to practitioners is crucial to understanding their problems in context~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
-Gousios et al.~\cite{integrator_perspective} talked directly to integrators through interviews and surveys in order to understand the perspectives of integrators (an open-source project's core members, who are responsible for integrating contributions into the project).
-We conduct similar studies on software practitioners in order to understand their perspectives and experiences with merge conflicts in software development.
+To fill this gap in knowledge, we conduct empirical studies on software practitioners in order to understand their perspectives and experiences with merge conflicts in software development.
 
-This paper examines merge conflicts from the practitioner standpoint, seeking to understand the perceived difficulties and the processes of resolving them.
-We then identify target areas for improvement in merge conflict resolution tools.
-To investigate these factors, we interview 10 software practitioners about their experiences and perceptions of merge conflicts in the software development process.
-To triangulate our findings, we deployed a survey.
-The survey samples 162 participants, of which 95\% have held the role of Software Engineer/Developer, and 74.2\% have 6 or more years of software development experience.
-The interviews provide the basis for the survey, and personal accounts of merge conflicts, and the survey provides a broader understanding of the extend to which those perceptions permeate the larger software development community.
-Analyzing the data from both, we answer three research questions:
+To investigate the factors that affect difficulty, we interview 10 software practitioners about their experiences and perceptions of merge conflicts in the software development process.
+To triangulate our findings, we deployed a survey to a larger population of software practitioners.
+The survey samples 162 participants, 74.2\% have 6 or more years of software development experience, and most frequently report merge conflicts occurring a few times a week.
+The interviews provide the basis for the survey, as well giving us personal accounts of merge conflicts.
+The survey provides a broader understanding of how perceptions permeate the larger software development community.
 
-\todo{Interleave motivations for each RQ rather than a full block of RQs}
-\vspace{3px}
-\noindent\textbf{RQ1:} \textit{How do software practitioners approach merge conflicts?}\\
-\noindent\textbf{RQ2:} \textit{What unmet needs impact the difficulty of a merge conflict resolution?}\\
-\noindent\textbf{RQ3:} \textit{Do developer tools meet practitioner needs for merge conflicts?}
-\vspace{3px}
+To understand the effects and implications of software practitioner perceptions, we answer the following research questions:
+
+\begin{itemize}
+\item \textbf{RQ1:} How do software practitioners approach merge conflicts?
+\item \textbf{RQ2:} What unmet needs impact the difficulty of a merge conflict resolution?
+\item \textbf{RQ3:} Do developer tools meet practitioner needs for merge conflicts?
+\end{itemize}
 
 Based on the results of our study, we found several factors that contribute to the overall perception of difficulty when working with merge conflicts.
 
 We found that practitioners, when initially assessing a merge conflict, focus on the code complexity of conflicting lines and their knowledge in the area of the conflict as the top factors that impact their estimated difficulty.
-Non-functional changes like whitespace and renaming have little effect on this assessment. 
+These concerns were found to cause practitioners to alter their resolution strategy.
 
-We found that, during the resolution process, practitioners identified code understandability, their knowledge in the area of code conflict, and the available information about the conflicting code as key factors that impact the difficulty of resolving merge conflicts.
+We found that, during the resolution process, practitioners identified code understandability, their knowledge in the area of code conflict, and the available information about the conflicting code as key unmet needs that impact the resolution of merge conflicts.
 
-We also found usability and information retrieval functionality as being the most desired improvements for developer tools to support the evaluation and resolution of merge conflicts.
+We also found usability and information retrieval functionality as being the most desired improvements for developer tools to support different scales of size and complexity in merge conflicts encountered by practitioners.
 
 This paper makes the following contributions:
 \begin{itemize}
