@@ -13,6 +13,7 @@
 \usepackage{caption}
 \usepackage[roman]{parnotes}
 \usepackage[many]{tcolorbox}
+\usepackage[symbol]{footmisc}
 \hyphenation{op-tical net-works semi-conduc-tor}
 %
 % This will go in the next version
@@ -37,14 +38,16 @@
 \newcommand\todo[1]{}
 \newcounter{takeawaycounter}
 \setcounter{takeawaycounter}{1}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \begin{document}
 \title{Software Practitioners' Perspectives on Merge Conflicts and Resolutions}
 
 \author{
-\IEEEauthorblockN{Shane McKee,
-Nicholas Nelson,
-Anita Sarma, and Danny Dig}
+\IEEEauthorblockN{Shane McKee\IEEEauthorrefmark{1},
+Nicholas Nelson\IEEEauthorrefmark{1},
+Anita Sarma,
+and Danny Dig}
 \IEEEauthorblockA{School of Electrical Engineering and Computer Science\\
 Oregon State University,
 Corvallis, OR\\ \{mckeesh, nelsonni, anita.sarma, digd\}@oregonstate.edu}}
