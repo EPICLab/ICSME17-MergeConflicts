@@ -35,7 +35,7 @@ Table~\ref{survey_toolset} lists the top 10 most common tools used by participan
 
 In examining the list of top merge toolsets, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, and Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs.
 
-\subsubsection{\underline{Better Usability}}
+\Subsubsection{Better Usability}
 The right toolset is essential for efficiently developing solutions and resolving conflicts.
 Usability is a major factor that determines whether a toolset will support practitioner's workflows instead of hindering them.
 Based on the results of the survey, we found that practitioners rate usability as the most desired improvement for their current merge tools (I1).
@@ -50,7 +50,7 @@ For instance, during the interviews, P1 demonstrated resolving a typical merge c
 
 This frustration is understandable for practitioners whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with costs in performance and mental fatigue, and, in 1992, Gerald Weinberg highlighted the problem of toolset fragmentation within engineering teams~\cite{Weinberg1992}. 
 
-\subsubsection{\underline{Better Filtering of Less-Relevant Information}}
+\Subsubsection{Better Filtering of Less-Relevant Information}
 Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
 For software practitioners using \texttt{git} and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
 During the interviews, P1 described writing several scripts in order to locate particular historical commits that relate to a current merge conflict.
@@ -62,7 +62,7 @@ P9 also described a tool, \texttt{git-diff}, developed as part of their efforts 
 In our survey results, we see that practitioners rank \textit{better ways of filtering out less relevant information} (I2) as the second highest improvement needed in modern merge toolsets.
 This suggests that further work is needed to bring these capabilities from single-purpose scripts into common toolsets used by all practitioners.
 
-\subsubsection{\underline{Better Exploration of Project History}}
+\Subsubsection{Better Exploration of Project History}
 Codoban et al.~\cite{mihai_lenses} introduced the concept of the \textit{Archeology Lens} to describe examining old development history to retrieve lost knowledge and postulated that additional tool support was needed in this context.
 We also find that practitioners consider history exploration to be a major area of improvement for development toolsets.
 Among survey participants, \textit{better ways of exploring project history} (I3) ranked as the third most important improvement needed.
@@ -74,7 +74,7 @@ During our interviews, P1 said:
 
 The gap in support for analyzing development history among practitioner toolsets has previously been recognized by researchers~\cite{sun2015informationhistory, guo2016cold-start, yan2014miningcontracts}, however practical application of these efforts appear to have not yet reached practitioners.
 
-\subsubsection{\underline{Better Graphical Presentation of Information}}
+\Subsubsection{Better Graphical Presentation of Information}
 The usefulness of information is helped or hindered by the way in which it is presented to users.
 In our survey results, we found that \textit{better graphical presentation of information} (I4) was ranked the fourth highest improvement needed in practitioner toolsets (mean: 3.14).
 One of the survey participants' comment highlights this need for further toolset improvements:
@@ -112,7 +112,7 @@ Not at all & 0 & 0.00\\
 \label{size_vs_complexity}
 \end{figure*}
 
-\subsubsection{\underline{Tool Mistrust/Transparency}}
+\Subsubsection{Tool Mistrust/Transparency}
 Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to manual resolution when these algorithms fail.
 Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
 The opaque nature of history exploration tools was also found to be a source of practitioners' overall mistrust of their toolsets.
@@ -129,7 +129,7 @@ However, the severity of toolset mistrust is not as significant as the interview
 Only 8.26\% of practitioners indicated that they trust their toolset \textit{a little} or \textit{not at all} (10 out of 121 responses).
 The results of the survey are counterintuitive to our interview results, but appears to indicate that practitioners abandon mistrusted tools before all trust is lost in them.
 
-\subsubsection{\underline{Perceptions of Developer Tool Effectiveness}}
+\Subsubsection{Perceptions of Developer Tool Effectiveness}
 The perceived size and complexity of merge conflicts affect the way in which practitioners plan, allocate, and enact resolutions.
 To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
 
