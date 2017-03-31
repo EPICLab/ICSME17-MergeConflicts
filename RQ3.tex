@@ -86,6 +86,13 @@ In our interviews, several practitioners reported experiencing issues with incon
 The cost of context switching in software development is well-known to researchers~\cite{czerwinski2004taskswitching, li2007cost_of_context_switch, blackwell2002attentioninvestment, convertino2003dualview}, but the individual experiences of practitioners attempting to resolve merge conflicts isn't as well understood.
 Practitioners conveyed that they would like to see tools that share a common language in both terminology and presentation, though survey participants indicated only a minor need for improvement in consistency of terminology. 
 
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
+\caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on development experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.}
+\label{size_vs_complexity}
+\end{figure*}
+
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Practitioners' Trust in their Merging, History Exploration, and Conflict Resolution Tools\textsuperscript{i}}
@@ -104,13 +111,6 @@ Not at all & 0 & 0.00\\
 	\multicolumn{3}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents answered on a 5-point Likert scale to indicate trust in their toolset (1 being \textit{Not at all} and 5 being \textit{Completely}).}}
 \end{tabularx}
 \end{table}
-
-\begin{figure*}[!htbp]
-\centering
-\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
-\caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on development experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.}
-\label{size_vs_complexity}
-\end{figure*}
 
 \Subsubsection{Tool Mistrust/Transparency}
 Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to manual resolution when these algorithms fail.
@@ -134,13 +134,15 @@ The perceived size and complexity of merge conflicts affect the way in which pra
 To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
 
 \todo{Shane: Is ''centrality'' a computeable metric? Might be better to chose another word, if it is.}
-Since individual participants have different toolsets, and consider different factors when determining the perceived size and complexity of a merge conflict, we instructed participants to rate their own toolset against these archetypes using their own notion of what constitutes a simple vs. complex and small vs. large merge conflict.
-Figure~\ref{size_vs_complexity} provides a visual illustration of the results of this survey question.
-\todo{Walkthrough how to interpret the figure, discuss without using centrality. Discuss moving across simple -> complex, and small -> large, and then discuss in light of experience.}
+Since individual participants have different toolsets, and consider different factors when determining the perceived size and complexity of a merge conflict, we instructed participants to rate their own toolset against these archetypes using their notion of what constitutes a simple vs. complex and small vs. large merge conflict.
 
-Observing the progression of results between each of the quadrants, we find that the centrality of results shifts from \textit{Extremely Effective} for \textit{small, simple merge conflicts} to \textit{Very Effective} for \textit{large, simple merge conflicts}.
-This suggests that increasing the perceived size of a merge conflict has a slight affect on the perceived effectiveness of merge toolsets.
-However, the shift from \textit{small, simple merge conflicts} to \textit{small, complex merge conflicts} shows a larger change in perceived effectiveness; from \textit{Extremely Effective} to \textit{Moderately effective}.
+Fig.~\ref{size_vs_complexity} provides a visual illustration of the results of this survey question.
+Individual plots map participants' software development experience (horizontal axis) with their effectiveness responses for their merge toolsets (vertical axis) given the particular combination of size and complexity of merge conflicts (horizontal moves from \textit{simple} to \textit{complex}, and vertical moves from \textit{small} to \textit{large}).
+The size and number contained within each bubble represent the total number of responses for that particular combination of factors.
+For example, a practitioner with 6-10 years of experience that indicates that her merge toolset is \textit{Extremely Effective} for \textit{small, simple merge conflicts} would be represented in the largest bubble (containing 19) in the top-left plot.
+That same practitioner would be represented in the largest bubble (containing 13) in the bottom-right plot if she indicated that her merge toolset was \textit{Moderately effective} for \textit{large, complex merge conflicts}.
 
-The results of this question indicate that modern merge tools are capable of handling an increase in perceived size of a merge conflict to a greater extend than an increase in the perceived complexity of a merge conflict.
-We find this result to be hold true across each of the six software development experience groups.
+Observing the overall trends when moving between plots, we find that practitioners perceive complexity to have a greater impact on the effectiveness of their merge toolsets than the size of merge conflicts.
+The resulting trends are the same across all six groups of software development experience; decreasing effectiveness when moving from small to large, and even stronger decreases in effectiveness moving from simple to complex.
+These results suggest that merge tools are currently better equipped to handle increases in the size of merge conflicts, but not as well equipped for increasing in complexity.
+The increasing amount of code being developed in distributed environments means that scaling support in both dimensions is necessary to accommodate practitioners' needs.
