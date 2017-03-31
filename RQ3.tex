@@ -1,3 +1,17 @@
+\subsection{\textbf{RQ3:} Do developer tools meet practitioner needs for merge conflicts?}\label{RQ3}
+Practitioners expect their merge tools to be easy to use, provide relevant information, and present that information in an understandable manner.
+In order to understand which improvements practitioners value most, we asked interview participants open-ended questions about their merge conflict resolution process.
+
+Our interviews informed the survey questions in which participants ranked 6 practitioner needs for tool improvements.
+We received 119 responses using a 5-point Likert scale to indicate the usefulness each type of tool improvement (1 being \textit{Not Useful}, 3 being \textit{Moderately Useful}, and 5 being \textit{Essential}).
+
+In addition, we also asked participants which tools they use during conflict resolution.
+We received 105 different tools from 115 responses, though some were generic responses such as \textit{``my text editor''}.
+We group these generic responses together where semantically similar meanings exist. 
+Table~\ref{survey_toolset} lists the top 10 most common tools used by participants to resolve merge conflicts.
+
+In examining the list of top merge toolsets, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, and Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs.
+
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Survey Participant Merge Toolsets (Top 10)}
@@ -20,20 +34,6 @@ Sublime Text & 7 & Text Editor\\
 \bottomrule
 \end{tabularx}
 \end{table}
-
-\subsection{\textbf{RQ3:} Do developer tools meet practitioner needs for merge conflicts?}\label{RQ3}
-Practitioners expect their merge tools to be easy to use, provide relevant information, and present that information in an understandable manner.
-In order to understand which improvements practitioners value most, we asked interview participants open-ended questions about their merge conflict resolution process.
-
-Our interviews informed the survey questions in which participants ranked 6 practitioner needs for tool improvements.
-We received 119 responses using a 5-point Likert scale to indicate the usefulness each type of tool improvement (1 being \textit{Not Useful}, 3 being \textit{Moderately Useful}, and 5 being \textit{Essential}).
-
-In addition, we also asked participants which tools they use during conflict resolution.
-We received 105 different tools from 115 responses, though some were generic responses such as \textit{``my text editor''}.
-We group these generic responses together where semantically similar meanings exist. 
-Table~\ref{survey_toolset} lists the top 10 most common tools used by participants to resolve merge conflicts.
-
-In examining the list of top merge toolsets, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, and Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs.
 
 \Subsubsection{Better Usability}
 The right toolset is essential for efficiently developing solutions and resolving conflicts.
@@ -133,7 +133,6 @@ The results of the survey are counterintuitive to our interview results, but app
 The perceived size and complexity of merge conflicts affect the way in which practitioners plan, allocate, and enact resolutions.
 To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
 
-\todo{Shane: Is ''centrality'' a computeable metric? Might be better to chose another word, if it is.}
 Since individual participants have different toolsets, and consider different factors when determining the perceived size and complexity of a merge conflict, we instructed participants to rate their own toolset against these archetypes using their notion of what constitutes a simple vs. complex and small vs. large merge conflict.
 
 Fig.~\ref{size_vs_complexity} provides a visual illustration of the results of this survey question.
