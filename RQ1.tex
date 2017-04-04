@@ -3,14 +3,13 @@ To understand the perspective of practitioners when encountering a merge conflic
 
 We identified nine factors (from card sorting) that practitioners consider when approaching a conflict and to determine its difficulty (see Table~\ref{survey_merge_conflicts}). 
 
-%We then use the results of the interviews to influence the construction of the survey.
-We used these nine factors to ask survey participants to rate how each of these factors affected their perceptions of difficulty when approaching a merge conflict
+We ask survey participants to rate how each of these nine factors affected their perceptions of difficulty when approaching a merge conflict.
 %The survey then asked participants to rate how much each of these 9 factors affected their perceptions of difficulty when approaching a merge conflict. 
 The question used a 5-point Likert scale to indicate the degree to which a factor affected conflict difficulty (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
 
-We received 162 responses and present the aggregated results in Table~\ref{survey_merge_conflicts}.
-Here, we discuss further in detail the top 4 factors based on mean scores of the answers (these have a score greater than 3).
-These factors can be grouped into \textit{Technical Factors} and \textit{Expertise factor}.
+We received 162 responses and present the aggregated results in Table~\ref{survey_merge_conflicts}; ranked according to the mean score for each factor.
+Here, we discuss in detail the top 4 factors with a mean score greater than 3.00.
+These factors can be grouped into \textit{Technical} and \textit{Expertise} themes, and our results are presented according to these groups.
 
 \begin{table*}[!htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -37,19 +36,19 @@ These factors can be grouped into \textit{Technical Factors} and \textit{Experti
 \end{table*}
 
 \Subsubsection{Technical Factors}\label{artifact-based-factors}
-Two of the top four factors refer to perceptions about the complexity of merge conflicts (F1, F3), with the third factor being number of conflicting lines, which can be construed as a specific metric of complexity of the conflict (F4). 
+Two of the top four factors refer to perceptions about the complexity of merge conflicts (F1, F3), with the third factor being \textit{number of conflicting lines}, which can be construed as a specific metric of complexity of the conflict (F4). 
 While practitioners mentioned complexity of the line of code and the file, none mentioned using metrics, such as cyclomatic complexity~\cite{fenton2000quantitative}\cite{mccabe1976complexity} or Function Point Analysis~\cite{garmus2001fpa}\cite{symons1988function}. 
-Instead, practitioners made educated guesses on the complexity of the code based on their own experience in writing the code or having worked with it. 
-Some of the simple to compute metrics, such as number of conflicting lines of code (F4), number of files involved (F8), atomicity of changesets (F6), and the time they thought it would take to resolve the conflict (F5) were mentioned. 
-The only factor where static analysis tools can help was in identifying the dependencies of the conflicting code (F7).
-This indicates that understanding the complexity of the conflicting code is important, but practitioners do not use the metrics that have been proposed by research. While some of the simple proxies for complexity are used, mostly they rely on their own ``judgement" of the complexity of the conflict.
+Instead, practitioners made educated guesses on the complexity of the code based on their own experience of either writing the code, or having worked with it. 
+Some of the simple to compute metrics, such as \textit{number of conflicting lines of code} (F4), \textit{number of files involved} (F8), \textit{atomicity of changesets} (F6), and the time they thought it would take to resolve the conflict (F5) were mentioned. 
+The only factor where static analysis tools can help was in identifying the \textit{dependencies of the conflicting code} (F7).
+This indicates that understanding the complexity of the conflicting code is important, but practitioners do not use the metrics that have been proposed by research. While some of the simple proxies for complexity are used, practitioners primarily rely on their own ``judgement" of the complexity of the conflict.
 %Researchers have thus far computed complexity of changes in code using proxies such as lines of code changed and numbers of files changed~\cite{khoshgoftaar1990predicting}.
 %Other code-centric metrics such as cyclomatic complexity~\cite{fenton2000quantitative}\cite{mccabe1976complexity} and atomicity changes~\cite{khelladi2016ad} can also be used, but require some amount of computation.
 %We found that practitioner's perceptions of complexity are just as important in determining how they approach the resolution of a merge conflict.
 
 
 
-The perception of the conflict complexity can affect whether a practitioner resolves the conflict immediately (when it is small), or whether they should wait to examine the conflict when further resources can be allocated.
+This perception of the conflict complexity can affect whether a practitioner resolves the conflict immediately (when it is small), or whether they should wait to examine the conflict when further resources can be allocated.
 In the interview, P8 commented:
 \begin{displayquote}
 \textit{``Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict, and can be done now.''}
@@ -70,7 +69,7 @@ Practitioners may not have the time to compute project-wide complexity metrics, 
 \Subsubsection{Expertise}\label{knowledge-based-factors}
 Our findings show that expertise in the area of conflicting code is one of the top factors in determining the difficulty of a merge conflict (F2). This reiterates the fact that practitioners rely on their own knowledge about the conflicting code base when approaching a conflict. 
 
-Our results indicate that when practitioners feel they don't have the expertise in the conflicting code base, they consider the conflict difficult to merge and seek out more information or help from others. 
+Our results indicate that when practitioners feel they don't have the expertise in the conflicting code base, they consider the conflict difficult to merge and seek out more information or assistance from others. 
 P5 illustrated this need for expertise when describing his workflow: 
 \begin{displayquote}
 	\textit{``A lot of what I work on is\textellipsis in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm\textellipsis in the [unfamiliar part of project], then I'll\textellipsis get someone else to\textellipsis resolve the merge conflict for me\textellipsis It's someone else's, and I don't want to screw it up.''}
