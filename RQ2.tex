@@ -64,25 +64,6 @@ Therefore, even when the developer understands the particular conflicting code, 
 \textit{``it's harder to merge code when you're merging in some legacy code which was written by some [former contributors] thirty years ago. But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
 \end{displayquote}
 
-\Subsubsection{Tool Support}
-It was interesting to note that often times practitioners would use the automated merge features, but manually check the work. The lack of trustworthiness of tools (N6), shows that researchers and tool builders need to focus on how errors from tools affect the overall trustworthiness and what limits are acceptable. On closer inspection we found that even though this ``unmet need" was not treated as a very big issue (mean of 3.12), we found that many practitioners discontinued the use of the tool if they did not trust it. For example, when discussing tools, P4 said:
-\begin{displayquote}
-\textit{``I've never trusted the merge tools. Or the diff tools. It would always make me skittish... Even if it's just one or two lines, sometimes I'll even manually go and do the merge myself rather than use a tool... I don't use Eclipse's diff tools because I'm never sure if they are correct.''}
-\end{displayquote}
-
-Another surprising fact was that while the informative nature of commit messages (N8) was mentioned, it was not ranked very highly. The same is true for project culture (N9). This reflects that team practices have matured enough, such that these factors are not considered to be a critical hurdle in resolving conflicts in our sample set. 
-\todo{the above needs polishing. Could we say that our interviewess say this, but, seems like not as big a problem when we combine OSS and Commercial} 
-Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution.
-%However, we found that \textit{informativeness of commit messages} (N8) was near the bottom of the rankings compared to other needs.
-%With a mean of 3.07 on a 5-point Likert scale, N8 has \textit{a moderate amount} of effect on the difficulty of resolving a merge conflict according to survey participants.
-%But considering the position of 8th in a list of 10 needs, commit message quality appears to receive a disproportionate amount of focus by the research community.
-
-
-
-%For example, the rationale for specific design decisions, being aware of planned feature changes, .
-%Prior work on workspace awareness and codebase visualizations~\cite{palantir}\cite{lanza_manhattan} have similarly found that knowledge of code and awareness of context are important factors in preventing the occurrence of merge conflicts, and reducing the difficulty in resolving them when they occur.
-%Both interview and survey participants indicated that these needs are important, and to some degree unmet, which suggests that further research is needed to improve both the presentation of information by tools, and lower the burden of comprehending any new information given by them.
-
 \Subsubsection{Social Aspects}
 Knowledge is a key component of practitioner's needs when resolving merge conflicts, but along with that general knowledge is a need for expertise in the specific areas of code involved in a conflict.
 Practitioners recognize this need as having a sizable effect on their ability to resolve a merge conflict, and selected \textit{expertise in the area of conflicting code} (N2) as the second most important need.
@@ -94,7 +75,10 @@ When these gaps arise, practitioners compensate by consulting experts in the are
 
 This result aligns with the goals of the TIPMerge tool~\cite{CostaSarma}, which seeks to locate experts that are best suited to resolve conflicts in a particular area of code.
 However, these tools have not made it into the hands of real-world practitioners, as evidenced by the lack of such tools in the list of top 10 merge tools (see Table~\ref{survey_toolset}).
-Since practitioners indicate that this is the second most impactful need, more focus is needed on developing team processes, policies, or tools to leverage the expertise within teams.
+
+Another surprising fact was that while the informative nature of commit messages (N8) was mentioned, it was not ranked very highly. The same is true for project culture (N9). 
+This reflects that team practices have matured enough, such that these factors are not considered to be a critical hurdle in resolving conflicts in our sample set. 
+Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}, we expected commit messages to be a helpful tool in merge conflict resolution.
 
 \Subsubsection{Open-Source vs. Closed-Source Needs}\label{oss_vs_closed_tool_support} 
 It is interesting to note that for needs N1-N8 there was no statistical difference between practitioners focused on open-source and those focused on closed-source development when it comes to their conflict resolution needs.
