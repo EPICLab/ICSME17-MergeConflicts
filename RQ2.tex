@@ -1,3 +1,27 @@
+\begin{table*}[!htbp]
+\renewcommand{\arraystretch}{1.3}
+\caption{Practitioners' Needs for Merge Conflict Resolutions from Survey}
+\label{survey_res_diffs}
+\centering
+\begin{tabularx}{0.87\textwidth}{>{\rowmac}c | >{\rowmac}l | *5{>{\rowmac}c} | *2{>{\rowmac}c}<{\clearrow}}
+
+\toprule
+	Need & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median \\
+\midrule
+	\setrow{\bfseries}N1 & How easy is it to understand the code involved in the merge conflict & 0 & 14 & 25 & 65 & 37 & 3.89 & 4 \\
+	\setrow{\bfseries}N2 & Your expertise in the area of code with the merge conflict & 1 & 17 & 38 & 49 & 36 & 3.72 & 4 \\
+	\setrow{\bfseries}N3 & The amount of information you have about the conflicting code & 2 & 21 & 38 & 48 & 32 & 3.62 & 4 \\
+	\setrow{\bfseries}N4 & How well tools present information in an understandable way & 4 & 24 & 47 & 32 & 34 & 3.48 & 3 \\
+	N5 & Changing assumptions within the code & 8 & 27 & 45 & 36 & 25 & 3.30 & 3 \\
+	N6 & Complexity of the project structure & 6 & 38 & 39 & 41 & 17 & 3.18 & 3 \\
+	N7 & Trustworthiness of tools & 17 & 29 & 39 & 32 & 34 & 3.12 & 3 \\
+	N8 & Informativeness of commit messages & 18 & 32 & 30 & 44 & 17 & 3.07 & 3 \\
+	N9 & Project culture & 13 & 37 & 43 & 27 & 21 & 3.04 & 3 \\
+	N10 & Tool support for examining development history & 16 & 40 & 31 & 32 & 22 & 3.03 & 3 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
 \subsection{\textbf{RQ2:} What unmet needs impact the difficulty of a conflict resolution?}\label{RQ2}
 
 There can often be gaps in how practitioners perceive the difficulty of merge conflicts and the actual hurdles that they face when resolving these conflicts. 
@@ -20,27 +44,6 @@ We present and discuss in detail the top four unmet needs. As with the factors i
 %All of the unmet needs in Table~\ref{survey_res_diffs} can be considered important to practitioners when resolving merge conflicts, since each received a mean score of at least 3.03 on the 5-point Likert scale.
 %However, practitioners primarily working on closed-source development differed in perceptions of \textit{tool support for examining development history} (N10).
 %We further discuss this demographic difference in Section~\ref{oss_vs_closed_tool_support}.
-
-\begin{table*}[!htbp]
-\renewcommand{\arraystretch}{1.3}
-\caption{Improvements for Practitioner Toolsets}
-\label{survey_tool_needs}
-\centering
-%\begin{tabularx}{0.9\textwidth}{@{}r|*{6}{C}c@{}}
-\begin{tabularx}{0.852\textwidth}{>{\rowmac}c | >{\rowmac}l | *5{>{\rowmac}c} | *2{>{\rowmac}c}<{\clearrow}}
-
-\toprule
-	Improvement & Description & 1 & 2 & 3 & 4 & 5 & Mean & Median\\
-\midrule
-	\setrow{\bfseries}I1 & Better usability & 6 & 17 & 32 & 48 & 16 & 3.43 & 4\\
-	\setrow{\bfseries}I2 & Better ways of filtering out less relevant information & 8 & 15 & 32 & 48 & 16 & 3.41 & 4\\
-	\setrow{\bfseries}I3 & Better ways of exploring project history & 7 & 21 & 36 & 39 & 16 & 3.30 & 3\\
-	\setrow{\bfseries}I4 & Better graphical presentation of information & 13 & 26 & 26 & 37 & 16 & 3.14 & 3\\
-	I5 & Better transparency in tool functionality/operations & 16 & 36 & 24 & 40 & 3 & 2.82 & 3\\
-	I6 & Better terminology that is more consistent with my other tools & 23 & 41 & 32 & 15 & 8 & 2.53 & 2\\
-	\bottomrule
-\end{tabularx}
-\end{table*}
 
 \Subsubsection{Technical Aspects}
 The three needs among the top four relate to technical needs.
