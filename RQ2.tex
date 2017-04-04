@@ -1,18 +1,20 @@
 \subsection{\textbf{RQ2:} What unmet needs impact the difficulty of a conflict resolution?}\label{RQ2}
 
-There can be gaps in how practitioners perceive the difficulty of merge conflicts and the actual hurdles that they face when resolving these conflicts. These gaps can then in turn affect how well practitioners can resolve the conflict.
+There can often be gaps in how practitioners perceive the difficulty of merge conflicts and the actual hurdles that they face when resolving these conflicts. 
+These gaps can then in turn affect how the well practitioners can resolve the conflict.
+
 We, therefore, asked our interview participants open-ended questions about their experiences in resolving the most recent past conflicts, especially their recollection of what made the resolution difficult.
 %These gaps are often a result of a lack of knowledge about the conflicting code or their awareness of ongoing, relevant changes. 
 %The perception of merge conflict difficulty and the actual hurdles of resolving them are distinct, and at times separated by a gap in knowledge or awareness.
 %These gaps prevented practitioners from accurately gauging the difficulty of a merge conflict before beginning to resolve it.
-%What makes a merge conflict difficult?? - dont tools do this, I dont know this
-
+%What makes a merge conflict difficult?? - don't tools do this, I don't know this
 Their responses indicated that there are several unmet needs. We identified ten needs (see Table~\ref{survey_res_diffs}), which ranged from needs about the ability to understand the code, their expertise, and existing tool support.  
 
 Using results from the interview, we asked survey participants to rate how much each of the ten needs affected their ability to resolve merge conflicts.
 We received 141 responses using a 5-point Likert scale indicating the degree of effect on resolution difficulty (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
+Results of the survey are presented in Table~\ref{survey_res_diffs}. 
 
-Results of the survey are presented in Table~\ref{survey_res_diffs}. All the unmet needs have a mean score of at least 3.03 on the 5-point Likert scale, implying they all of them mattered at least a moderate amount.
+All the unmet needs have a mean score of at least 3.03 on the 5-point Likert scale, implying that all of them mattered at least a moderate amount.
 We present and discuss in detail the top four unmet needs. As with the factors in the previous section, all these needs also relate to \textit{technical aspects} (e.g., understanding the conflicting code) and their \textit{expertise} in resolving conflicts. 
 
 %All of the unmet needs in Table~\ref{survey_res_diffs} can be considered important to practitioners when resolving merge conflicts, since each received a mean score of at least 3.03 on the 5-point Likert scale.
@@ -60,7 +62,10 @@ Therefore, even when the developer understands the particular conflicting code, 
 \end{displayquote}
 
 \Subsubsection{Tool Support}
-It was interesting to note that often times practitioners would use the automated merge features, but manually check the work. The lack of trustworthiness of tools (N6), shows that researchers and tool builders need to focus on how errors from tools affect the overall trustworthiness and what limits are acceptable. On closer inspection we found that even though this ``unmet need" was not treated as a very big issue (mean of 3.12), we found that many practitioners discontinued the use of the tool if they did not trust it. For example...\todo{AS: need a quote about tool worthiness being low and its effect}
+It was interesting to note that often times practitioners would use the automated merge features, but manually check the work. The lack of trustworthiness of tools (N6), shows that researchers and tool builders need to focus on how errors from tools affect the overall trustworthiness and what limits are acceptable. On closer inspection we found that even though this ``unmet need" was not treated as a very big issue (mean of 3.12), we found that many practitioners discontinued the use of the tool if they did not trust it. For example, when discussing tools, P4 said:
+\begin{displayquote}
+\textit{``I've never trusted the merge tools. Or the diff tools. It would always make me skittish... Even if it's just one or two lines, sometimes I'll even manually go and do the merge myself rather than use a tool... I don't use Eclipse's diff tools because I'm never sure if they are correct.''}
+\end{displayquote}
 
 Another surprising fact was that while the informative nature of commit messages (N8) was mentioned, it was not ranked very highly. The same is true for project culture (N9). This reflects that team practices have matured enough, such that these factors are not considered to be a critical hurdle in resolving conflicts in our sample set. 
 \todo{the above needs polishing. Could we say that our interviewess say this, but, seems like not as big a problem when we combine OSS and Commercial} 
