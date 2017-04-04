@@ -109,14 +109,14 @@ One of the reasons for this might be the simple set of text editors, and toolset
 
 \todo{Need a story/ writeup/ quote for this}
 \Subsubsection{Better Filtering of Less-Relevant Information}
-Practitioners require the ability to filter out information to avoid being overwhelmed by the amount of metadata that a tool presents.
-To implement this improvement (I2), tools must auto-focus on the code that the merge conflict affects. 
-As P1 explains:
+Tools that routinely handle large or complex datasets require filtering in order to efficiently locate desired pieces of information.
+Practitioners require this filtering in their tools in order to avoid being overwhelmed by the amount of metadata associated with code, which is even more relevant when working with multiple versions of code in a merge conflict.
+Better ways of filtering out less relevant information (I2) was selected as the second most important need for practitioner toolsets, and explained by P1:
 \begin{displayquote}
 \textit{``You want to extract the relevant commits. The ones that actually clash that are causing the issue, and you want to zoom in on them and understand just enough and don't waste time understanding the feature because it's just a waste of time. That's the strategy.''}
 \end{displayquote}
 
-While improvements in history exploration (I3) will make project metadata more accessible, improvements in filtering for relevant metadata will allow practitioners to focus on the parts of the code impacted by the merge conflict. 
+While improvements in history exploration (I3) will make project metadata more accessible, improvements in filtering for relevant metadata will allow practitioners to focus on the relevant parts of the code impacted by the merge conflict.
 
 %Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
 %For software practitioners using \texttt{git} and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
