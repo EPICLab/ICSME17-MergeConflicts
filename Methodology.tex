@@ -1,7 +1,7 @@
 \section{Methodology}\label{methodology}
 
 %We employed exploratory interviews with software practitioners and surveys of practitioners to validate our findings.
-We use mixed methods to first explore the topic of practitioners' difficulties when encountering merge conflicts through a set of exploratory interviews, and then validate our findings through a survey of practitioners, as per guidelines by Easterbrook et al. ~\cite{easterbrook2008selecting}, 
+We use mixed methods to first explore the topic of practitioners' difficulties when encountering merge conflicts through a set of exploratory interviews, and then validate our findings through a survey of practitioners, as per guidelines by \mbox{Easterbrook et al.}~\cite{easterbrook2008selecting}.
 
 We codified the interview transcripts into a taxonomy of barriers, constraints, and concerns following established guidelines~\cite{latoza2006maintaining, shull2008guide, tao2012software}. We then created a survey to get a broader perspective on how software practitioners approach merge conflicts. We use the vocabulary generated from the interviews to create the survey questions.
 %We build a survey populating the answers to each question with the results of the interviews.
@@ -38,13 +38,13 @@ While we recognize that other types of conflicts exist in software projects (i.e
 
 \subsection{Interviews}\label{interview_methods}
 
-We conducted semi-structured interviews with software practitioners to understand about the factors and concerns that they have when facing merge conflicts.
+We conducted semi-structured interviews with software practitioners to understand the factors and concerns that they have when facing merge conflicts.
 
 Interview participants were selected from top contributors to open-source projects, and from industry contacts using snowball sampling~\cite{goodman1961snowball}.
 We interviewed 10 software practitioners from 7 different organizations spanning six different industries: 
 %Our 10 participants were from six different industries: 
 	\textit{Semiconductor Manufacturing} (3 participants), \textit{Healthcare Software} (2), \textit{Academia} (2), \textit{Business Software} (1), \textit{IT Services} (1), and \textit{Sports \& Wellness Technology} (1). 
-The median software development experience was 5 years. Participants worked on a variety of software project sizes: 5 worked primarily on large projects, 3 on medium projects, and 2 on small projects. Table~\ref{interview_demographics} provides additional demographics data.
+The median software development experience was 5 years. Participants worked on a variety of software project sizes: 5 worked primarily on large projects, 3 on medium projects, and 2 on small projects. Table~\ref{interview_demographics} provides additional demographics data, including approximate project sizes and whether the participant primarily focuses on open- or closed-source software development.
 
 %, including consumer \& business software companies, academic software development teams at two U.S. universities, a semiconductor manufacturer, a healthcare software company, and a sports \& wellness technology company.
 %Our participants had five years of software development experience on average.
@@ -56,7 +56,7 @@ At the beginning of the interview we gave participants a short explanation of th
 Participants were then asked about the roles that they play in their project, their experience working in team settings,  questions about merge conflicts, the process of conflict resolution, and the difficulties that they faced in conflict resolution.
 
 The interview questions about merge conflicts were formulated to understand how practitioners perceived and how they approached merge conflicts.
-The following is an example of some of the questions we asked in the interview. The full set of questions can be found in our companion site\cite{companion_site}.
+The following is an example of some of the questions we asked in the interview. The full set of questions can be found in our companion site~\cite{companion_site}.
 \begin{itemize}
 	\item Can you describe a merge conflict, or a set of conflicts, that you would consider to be the typical case?
 	\item Do you have any particularly memorable merge conflict resolutions that you can recall?
@@ -140,8 +140,12 @@ Questions were developed to confirm, extend, and broaden the results from the in
 Survey participants were recruited from contributor lists on popular open-source repositories on GitHub\footnote{https://github.com/}, advertised on social networking sites (Facebook\footnote{https://www.facebook.com/} and Reddit\footnote{https://www.reddit.com/}), and by directly contacting software practitioners via email. Due to the nature of social media, mailing lists and email forwarding, we cannot compute a response rate. However, our participants spanned different organization structures and geographical locations, giving us generalizability of results.
 We received 162 survey responses, but individual parts of the survey have varying response rates and are reported where appropriate in Section~\ref{results}.
 
-The population of 162 survey respondents were mainly male (91.9\% overall).  Participants roles spanned six different software roles, ranging from system architects to system administrators (see Table~\ref{survey_roles}). In many cases, participants considered themselves to be fulfilling multiple roles. However, a majority of respondents considered themselves to be \textit{Software Engineer/Developer} (95.1\% overall).
-Survey participants had a median software development experience of 6-10 years (36.4\% overall), and worked on project sizes ranging from 2-51+ developers (the median was 2-5 developers, constituting 48.8\%).
+%spanned six different software roles, ranging from system architects to system administrators (see Table~\ref{survey_roles}). 
+
+Survey participants were primarily male (91.9\% overall). 
+Participants were given six different software roles to select, and in many cases, participants considered themselves to be fulfilling multiple roles. 
+Table~\ref{survey_roles} provides a pairwise breakdown of participants' role selections, with a majority of respondents considering themselves to be \textit{Software Engineer/Developer} (95.1\% overall).
+Survey participants indicated a median software development experience of 6-10 years (36.4\% overall), and worked on project sizes ranging from 2 to more than 51 developers (the median was 2-5 developers, constituting 48.8\% of all responses).
 
 The survey was divided into four categories, with each category containing 5-7 questions (see \cite{companion_site} for questions).
 First, we elicited background information about demographics, roles, and experience.
@@ -151,9 +155,9 @@ Finally we asked questions about the tools and tool features that practitioners 
 Most questions used a 5-point Likert scale with no pre-selected answers and included an optional open-ended text form to gather additional insights into the questions. 
 
 \Subsubsection{Analysis} We evaluated the distribution of survey answers for each Likert scale question by analyzing across demographic categories.
-Where answers differed across a demographic categories, we note the difference and provide further discussion of these results in Section~\ref{results}.
+Where answers differed across a demographic category, we note the difference and provide further discussion of these results in Section~\ref{results}.
 
-The Likert scale questions were written to measure the extent to which participants agreed with a particular answer choice (i.e. \textit{Not at all} to \textit{A great deal}). This means that lower mean and median values indicate less agreement.
+The Likert scale questions were written to measure the extent to which participants agreed with a particular answer choice (i.e. \textit{Not at all} to \textit{A great deal}). This means that lower mean and median values indicate less agreement with the statement in a particular question.
 % As a result, a value of 1 and a value of 5 do not represent opposing opinions that we would see in a Likert scale that gives options from \textit{Strongly disagree} to \textit{Strongly agree}.
 We use this design to validate both the degree of agreement to the interview results, as well as the existence of individual factors.
 %This allowed us to verify interview results with larger-scale survey results.
