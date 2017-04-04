@@ -1,16 +1,20 @@
-\subsection{\textbf{RQ3:} Do developer tools meet practitioner needs for merge conflicts?}\label{RQ3}
-Practitioners expect their merge tools to be easy to use, provide relevant information, and present that information in an understandable manner.
-In order to understand which improvements practitioners value most, we asked interview participants open-ended questions about their merge conflict resolution process.
+\subsection{\textbf{RQ3:} How well do tools meet practitioner needs in resolving merge conflicts?}\label{RQ3}
+Development tools need to be easy to use and provide contextualized pertinent information in a manner that is understandable.
+To investigate how well current tools satisfy needs of practitioners when they resolve conflicts and which improvements would be most valuable to them, we asked our interview participants open-ended questions about how they resolve merge conflicts. 
 
-Our interviews informed the survey questions in which participants ranked 6 practitioner needs for tool improvements.
+Our results indicate that practitioners use a wide range of tools, with many directly using the Git command line interface. Our interview participants mentioned six different dimensions along which they would like improvements to tool support (see Table~\ref{survey_tool_needs}. 
+
+We framed the survey questions to validate these improvement needs; participants ranked the above six needs.
 We received 119 responses using a 5-point Likert scale to indicate the usefulness each type of tool improvement (1 being \textit{Not Useful}, 3 being \textit{Moderately Useful}, and 5 being \textit{Essential}).
 
 In addition, we also asked participants which tools they use during conflict resolution.
-We received 105 different tools from 115 responses, though some were generic responses such as \textit{``my text editor''}.
-We group these generic responses together where semantically similar meanings exist. 
+We found 105 different tools from the 115 responses. Some mentioned generic responses such as \textit{``my text editor''}, which we create as a separate category.
+%We group these generic responses together where semantically similar meanings exist. 
 Table~\ref{survey_toolset} lists the top 10 most common tools used by participants to resolve merge conflicts.
 
-In examining the list of top merge toolsets, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, and Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs.
+In examining the list of these tools, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, and Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs. In this list, there is only one IDE (Eclipse (10 responses)), and three versioning specific toolsets (KDiff3 (9), Meld (8), SourceTree(8)). This indicates that practitioners are unable to leverage the functionalities provided by many research prototypes (e.g., Palantir~\cite{palantir}, Cyrstal~\cite{Brun2011}) that are specifically designed to facilitate proactive conflict detection, because they are built as plug-ins to modern IDEs. 
+
+We next discuss the top four improvements from the survey responses. These are the responses that have a mean value higher than 3.0.
 
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -36,43 +40,64 @@ Sublime Text & 7 & Text Editor\\
 \end{table}
 
 \Subsubsection{Better Usability}
-The right toolset is essential for efficiently developing solutions and resolving conflicts.
-Usability is a major factor that determines whether a toolset will support practitioner's workflows instead of hindering them.
-Based on the results of the survey, we found that practitioners rate usability as the most desired improvement for their current merge tools (I1).
-
-Usability within a particular tool is important, but these usability concerns also stretch across multiple tools that serve similar use cases and must operate in sync with each other.
-Survey participants indicated that they use 2.5 tools on average, and as many as 7 tools, to resolve merge conflicts.
-With multiple tools being used during merging and conflict resolution, toolset fragmentation is a real concern for practitioners.
-For instance, during the interviews, P1 demonstrated resolving a typical merge conflict using four different tools and said: 
+%The right toolset is essential for efficiently developing solutions and resolving conflicts.
+Usability is an important factor that determines whether a toolset supports or hinders the practitioner's workflows.
+Our survey results indicate that better usability (I1) is the most desired improvement of the tool sets used for conflict resolution. 
+%Based on the results of the survey, we found that practitioners rate usability as the most desired improvement for their current merge tools (I1).
+While usability of a particular tool is important, the usability concerns become even more pertinent when they span across multiple tools that serve similar purpose and must operate in sync with each other.
+Survey results indicate that participants use an average of 2.5 tools, and as many as 7 tools, to resolve merge conflicts.
+%With multiple tools being used during merging and conflict resolution, toolset fragmentation is a real concern for practitioners.
+For instance, in our interview P1 demonstrated how he typically resolved a merge conflict by using four different tools and said: 
 \begin{displayquote}
 \textit{``I have to jump around between tools and copy and paste version numbers from one to... See, this is why [toolset] integration matters.''}
 \end{displayquote}
 
-This frustration is understandable for practitioners whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with costs in performance and mental fatigue, and, in 1992, Gerald Weinberg highlighted the problem of toolset fragmentation within engineering teams~\cite{Weinberg1992}. 
+Switching across multiple tools while resolving a conflict is disruptive and comes at a cost. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have shown that task switching reduces performance and causes mental fatigue. 
+Gerald Weinberg highlighted that context switching arising from toolset fragmentation is a big problem in engineering teams~\cite{Weinberg1992}. 
 
-\Subsubsection{Better Filtering of Less-Relevant Information}
-Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
-For software practitioners using \texttt{git} and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
-During the interviews, P1 described writing several scripts in order to locate particular historical commits that relate to a current merge conflict.
-P9 also described a tool, \texttt{git-diff}, developed as part of their efforts to add additional difference analysis functionality across branches:
-\begin{displayquote}
-\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, so the SHAs are always going to be changing... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
-\end{displayquote}
-\todo{Shane: This transition is a bit rough}
-In our survey results, we see that practitioners rank \textit{better ways of filtering out less relevant information} (I2) as the second highest improvement needed in modern merge toolsets.
-This suggests that further work is needed to bring these capabilities from single-purpose scripts into common toolsets used by all practitioners.
+%This frustration is understandable for practitioners whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with costs in performance and mental fatigue, and, in 1992, Gerald Weinberg highlighted the problem of toolset fragmentation within engineering teams~\cite{Weinberg1992}. 
 
 \Subsubsection{Better Exploration of Project History}
-Codoban et al.~\cite{mihai_lenses} introduced the concept of the \textit{Archeology Lens} to describe examining old development history to retrieve lost knowledge and postulated that additional tool support was needed in this context.
-We also find that practitioners consider history exploration to be a major area of improvement for development toolsets.
-Among survey participants, \textit{better ways of exploring project history} (I3) ranked as the third most important improvement needed.
-During our interviews, P1 said: 
-
+Developers have been known to use the historical data to understand code evolution and development process~\cite{mihai_lenses}.
+However, while these systems (version control and bug trackers) contain a huge amount of meta-information about the evolution of the code and development process, it is not easy to find the right information. Currently, there is insufficient support for performing detailed analysis of how a code piece evolved over time. Better ways of exploring the project history (I3) was one of the top requested improvements in our survey. As P1 mentioned in the interview:
 \begin{displayquote}
 \textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
 \end{displayquote}
 
-The gap in support for analyzing development history among practitioner toolsets has previously been recognized by researchers~\cite{sun2015informationhistory, guo2016cold-start, yan2014miningcontracts}, however practical application of these efforts appear to have not yet reached practitioners.
+
+Currently, when performing any useful analysis it is easier to write stand alone scripts to extract the information that is needed to resolve conflicts. During the interview, P1 mentioned that he has written several scripts to locate particular historical commits that relate to a current merge conflict. Similarly, P9 described a tool, \texttt{git-diff}, that was developed by their team to add additional difference analysis functionality across branches:
+\begin{displayquote}
+\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, so the SHAs are always going to be changing... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
+\end{displayquote}
+
+While writing these scripts allow extraction of relevant data contextualized to the need, it also leads to a proliferation of multiple scripts that are written by individual developers and need to be maintained or integrated. This further adds to the problem where practitioners have to switch across multiple tools (and also run multiple scripts).
+
+We are not the first in recognizing the in the support provided for analyzing development history among practitioners (~\cite{sun2015informationhistory, guo2016cold-start, yan2014miningcontracts}). However, it appears that practical applications current history exploration tools are still beyond the reach of practitioners. One of the reasons for this might be the simple set of text editors (and tool sets) that our study participants seem to prefer.
+
+\todo{Need a story/ writeup/ quote for this}
+\Subsubsection{Better Filtering of Less-Relevant Information}
+%Version control systems (VCS) and bug tracking systems provide insufficient support for detailed analysis of software evolution and information retrieval~\cite{fischer2003release_history}.
+%For software practitioners using \texttt{git} and other VCS, it is often easier to write scripts that accommodate their particular information needs by augmenting the capabilities of the VCS.
+%During the interviews, P1 described writing several scripts in order to locate particular historical commits that relate to a current merge conflict.
+%P9 also described a tool, \texttt{git-diff}, developed as part of their efforts to add additional difference analysis functionality across branches:
+%\begin{displayquote}
+%\textit{``git-diff will just do the diff based on the SHAs... we're adding metadata and cherry picking, so the SHAs are always going to be changing... It also hooks into GitHub labels and uses the labels on the project to do some more advanced heuristics.''}
+%\end{displayquote}
+%\todo{Shane: This transition is a bit rough}
+%In our survey results, we see that practitioners rank \textit{better ways of filtering out less relevant information} (I2) as the second highest improvement needed in modern merge toolsets.
+%This suggests that further work is needed to bring these capabilities from single-purpose scripts into common toolsets used by all practitioners.
+%
+%\Subsubsection{Better Exploration of Project History}
+%Codoban et al.~\cite{mihai_lenses} introduced the concept of the \textit{Archeology Lens} to describe examining old development history to retrieve lost knowledge and postulated that additional tool support was needed in this context.
+%We also find that practitioners consider history exploration to be a major area of improvement for development toolsets.
+%Among survey participants, \textit{better ways of exploring project history} (I3) ranked as the third most important improvement needed.
+%During our interviews, P1 said: 
+%
+%\begin{displayquote}
+%\textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
+%\end{displayquote}
+%
+%The gap in support for analyzing development history among practitioner toolsets has previously been recognized by researchers~\cite{sun2015informationhistory, guo2016cold-start, yan2014miningcontracts}, however practical application of these efforts appear to have not yet reached practitioners.
 
 \Subsubsection{Better Graphical Presentation of Information}
 The usefulness of information is helped or hindered by the way in which it is presented to users.
