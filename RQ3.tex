@@ -21,7 +21,7 @@
 
 \subsection{\textbf{RQ3:} How well do tools meet practitioner needs in resolving merge conflicts?}\label{RQ3}
 Development tools need to be easy to use and provide contextualized pertinent information in a manner that is understandable.
-To investigate how well current tools satisfy the needs of practitioners, we asked our interview participants open-ended questions about how they resolve merge conflicts.
+To investigate how well current tools satisfy the needs of practitioners, we asked interview participants open-ended questions about how they resolve merge conflicts.
 We also ask about improvements that would be most valuable to them. 
 
 Our results indicate that practitioners use a wide range of tools, with many directly using the Git command line interface. Our interview participants mentioned six different dimensions along which they would like improvements to tool support (see Table~\ref{survey_tool_needs}). 
@@ -35,10 +35,10 @@ We found 105 different tools from the 115 responses. Some mentioned generic resp
 Table~\ref{survey_toolset} lists the top 10 most common tools used by participants to resolve merge conflicts.
 
 In examining the list of these tools, we note that practitioners most often use basic tools (e.g. Git, Vim/vi, or a Text Editor) to handle merge conflicts instead of employing specialized tools or plugins to modern IDEs. 
-In this list, there is only one IDE (Eclipse), and three diff/merge-specific toolsets (Git Diff, KDiff3, and Meld). 
+In this list, there is only one IDE (Eclipse), and three diff/merge toolsets (Git Diff, KDiff3, and Meld). 
 This indicates that practitioners are unable to leverage the functionalities provided by many research prototypes (e.g., Palantir~\cite{palantir}, Crystal~\cite{Brun2011}) that are specifically designed to facilitate proactive conflict detection, since they are built as plug-ins to modern IDEs. 
 
-We next discuss the top four improvements from the survey responses. These are the responses that have a mean value higher than 3.00.
+We next discuss the top four improvements from the survey responses. These are the responses that have a mean value higher than $3.00$.
 
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -107,7 +107,6 @@ We are not the first to recognize the gap in tool support provided for analyzing
 It appears that practical applications of history exploration are still beyond the reach of practitioners. 
 One of the reasons for this might be the simple set of text editors, and toolsets, that our study participants seem to prefer.
 
-\todo{Need a story/ writeup/ quote for this}
 \Subsubsection{Better Filtering of Less-Relevant Information}
 Tools that routinely handle large or complex datasets require filtering in order to efficiently locate desired pieces of information.
 Practitioners require this filtering in their tools in order to avoid being overwhelmed by the amount of metadata associated with code, which is even more relevant when working with multiple versions of code in a merge conflict.
@@ -146,7 +145,7 @@ The usefulness of information is helped or hindered by the way in which it is pr
 In our survey results, we found that \textit{better graphical presentation of information} (I4) was ranked the fourth highest improvement needed in practitioner toolsets (mean: 3.14).
 One of the survey participants' comment highlights this need for further toolset improvements:
 \begin{displayquote}
-\textit{``Tools don't make it easy to work with two arbitrary revisions side by side.''}
+\textit{``Tools don't make it easy to work with two arbitrary revisions side by side. Some have that feature, some don't.''}
 \end{displayquote}
 
 In our interviews, several practitioners reported experiencing issues with inconsistent terminology, inconsistent visual metaphors (colors, notifications, etc.), and the organizational layout of different development tools.
@@ -196,7 +195,7 @@ However, the severity of toolset mistrust is not as significant as the interview
 Only 8.26\% of practitioners indicated that they trust their toolset \textit{a little} or \textit{not at all} (10 out of 121 responses).
 The results of the survey are counterintuitive to our interview results, but appears to indicate that practitioners abandon mistrusted tools before all trust is lost in them.
 
-\Subsubsection{Perceptions of Developer Tool Effectiveness}
+\Subsubsection{Perceptions of Tool Effectiveness}
 The perceived size and complexity of merge conflicts affect the way in which practitioners plan, allocate, and enact resolutions.
 To understand the degree to which these two factors impact practitioners' perceptions about the effectiveness of their toolsets, we asked survey participants to rate their toolset across four different merge conflict archetypes: (1) \textit{simple, small merge conflicts}, (2) \textit{simple, large merge conflicts}, (3) \textit{complex, small merge conflicts}, and (4) \textit{complex, large merge conflicts}.
 
@@ -210,5 +209,5 @@ That same practitioner would be represented in the largest bubble (containing 13
 
 Observing the overall trends when moving between plots, we find that practitioners perceive complexity to have a greater impact on the effectiveness of their merge toolsets than the size of merge conflicts.
 The resulting trends are the same across all six groups of software development experience; decreasing effectiveness when moving from small to large, and even stronger decreases in effectiveness moving from simple to complex.
-These results suggest that merge tools are currently better equipped to handle increases in the size of merge conflicts, but not as well equipped for increasing in complexity.
+These results suggest that merge tools are currently equipped to handle increases in the size of merge conflicts, but not as well equipped for increases in complexity.
 The increasing amount of code being developed in distributed environments means that scaling support in both dimensions is necessary to accommodate practitioners' needs.

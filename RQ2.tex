@@ -38,8 +38,9 @@ Using results from the interview, we asked survey participants to rate how much 
 We received 141 responses using a 5-point Likert scale indicating the degree of effect on resolution difficulty (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
 Results of the survey are presented in Table~\ref{survey_res_diffs}. 
 
-All the unmet needs have a mean score of at least 3.03 on the 5-point Likert scale, implying that all of them mattered at least a moderate amount.
-We present and discuss in detail the top four unmet needs. As with the factors in the previous section, all these needs also relate to \textit{technical aspects} (e.g., understanding the conflicting code) and their \textit{expertise} in resolving conflicts. 
+All the unmet needs have a mean score of at least $3.03$ on the 5-point Likert scale, implying that all of them mattered at least a moderate amount.
+We present and discuss in detail the top four unmet needs, plus additional observations regarding the other six unmet needs. 
+As with the factors in the previous section, all these needs also relate to \textit{technical aspects} (e.g., understanding the conflicting code) and their \textit{expertise} in resolving conflicts.
 
 %All of the unmet needs in Table~\ref{survey_res_diffs} can be considered important to practitioners when resolving merge conflicts, since each received a mean score of at least 3.03 on the 5-point Likert scale.
 %However, practitioners primarily working on closed-source development differed in perceptions of \textit{tool support for examining development history} (N10).
@@ -47,7 +48,7 @@ We present and discuss in detail the top four unmet needs. As with the factors i
 
 \Subsubsection{Technical Aspects}
 The three needs among the top four relate to technical needs.
-The understandability of conflicting code is ranked as the most important need (N1), with both contextual information about the conflict (N3) and the way in which tools present relevant information (N4) ranking as close seconds.
+The \textit{understandability of conflicting code} (N1) is ranked as the most important need, with both \textit{contextual information about the conflict} (N3) and \textit{the way in which tools present relevant information} (N4) ranking in the top four.
 
 Data from version control systems are used by developers to identify the evolution of the code~\cite{Mihai_lenses}, however, they are not easily available and need a context switch from the code editor to the version control system~\cite{Guzzi2015}. Moreover, these changes are often processed in isolation, especially when there are many changes (conflicts) to process. The decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
 \begin{displayquote}
@@ -64,7 +65,7 @@ Therefore, even when the developer understands the particular conflicting code, 
 \textit{``it's harder to merge code when you're merging in some legacy code which was written by some [former contributors] thirty years ago. But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
 \end{displayquote}
 
-\Subsubsection{Social Aspects}
+\Subsubsection{Expertise}
 Knowledge is a key component of practitioner's needs when resolving merge conflicts, but along with that general knowledge is a need for expertise in the specific areas of code involved in a conflict.
 Practitioners recognize this need as having a sizable effect on their ability to resolve a merge conflict, and selected \textit{expertise in the area of conflicting code} (N2) as the second most important need.
 
