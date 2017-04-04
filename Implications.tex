@@ -1,9 +1,9 @@
 \section{Implications}\label{implications}
-This paper examines the ways that software practitioners perceive the merge conflict resolution process.
-We discuss the implications, from their perspective, and break down the implications for researchers, tool builders, and managers.
+This paper examines how software practitioners perceive the merge conflict resolution process.
+We discuss the implications of our results and break down the implications for researchers and tool builders.
 
 \subsection{For Researchers}
-Our results inform future research in the area of merge conflicts from a human perspective.
+Our results inform future research in the area of merge conflicts by taking into consideration the needs of practitioners.
 Our findings from Sections~\ref{artifact-based-factors} and \ref{knowledge-based-factors} indicate that practitioners' knowledge gaps during merge conflict resolution are of similar importance as code-centric metrics of code complexity and SLOC.
 
 \textit{Complexity of conflicting lines of code} (F1) and \textit{Your knowledge/expertise in the area of conflicting code} (F2) represent our top two factors in the assessment of difficulty when approaching a merge conflict.
@@ -25,12 +25,4 @@ Version control systems provide a easy way of storing and retrieving recent hist
 Tool builders should work to address this unmet need by leveraging research into search systems for developer-assistance~\cite{nabi2016putting} and machine learning-based code assistances~\cite{bradley2011history_exploration} to provide practitioners with more expressive tools for history exploration.
 
 Tools specific to integrators, who merge more often and more frequently than regular practitioners, are lacking in depth of features specific to this group.
-Support for more advanced and more specific use cases is critical to supporting those who deal with these large, complex merges. 
-
-\subsection{For Managers}
-Practitioners find the merge conflict resolution process to be challenging due to a lack of information, lack of expertise, and a lack of code comprehensibility (N1-N3). 
-To reduce these challenges, managers should both encourage and allot time for code reviews and paired conflict resolution sessions. 
-Allowing better communication between different stakeholders allows domain experts to express concerns about impacts of changes, allows authors to understand the intentions of others' code changes, and allows practitioners to put the collective knowledge of the group to the task of finding the best resolution for the conflict.
-
-Further work is needed to assist managers with determining the most appropriate pairings of experienced practitioners and newcomers to resolve and prevent merge conflicts.
-Expertise recommendation tools such as TIPMerge~\cite{CostaSarma}, Ensemble~\cite{xiang2008ensemble}, or techniques such as the $h$-index~\cite{bornmann2005does} should be further examined for applicability in industrial development settings.
+Support for more advanced and more specific use cases is critical to supporting those who deal with these large, complex merges.
