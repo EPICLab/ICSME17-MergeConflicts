@@ -3,17 +3,22 @@ This paper examines how software practitioners perceive the merge conflict resol
 We discuss the implications of our results and break down the implications for researchers and tool builders.
 
 \subsection{For Researchers}
-Our results inform future research in the area of merge conflicts by taking into consideration the needs of practitioners.
-Our findings from Sections~\ref{artifact-based-factors} and \ref{knowledge-based-factors} indicate that practitioners' knowledge gaps during merge conflict resolution are of similar importance as code-centric metrics of code complexity and SLOC.
+Our results inform future research in several areas by providing insight into the perspective of software practitioners.
 
-\textit{Complexity of conflicting lines of code} (F1) and \textit{Your knowledge/expertise in the area of conflicting code} (F2) represent our top two factors in the assessment of difficulty when approaching a merge conflict.
-These factors illustrate the divide between common metrics and the information needs of practitioners performing the resolution.
- 
-Our findings confirm that informativeness of commit messages (N8) has a moderate impact on practitioners' perceptions, but with seven other factors ranked higher, it receives more research focus than might otherwise be warranted.
-Future research should also focus on knowledge- and comprehension-based difficulties of  merge conflict resolutions.
+The top factors that impact the assessment of merge conflict difficulty are focused on program comprehension (F1, F3, F4).
+Program comprehension has been an important research focus, with several conferences dedicated to exploring this topic.
+Previous research has explored visualizing and understanding both small and large codebases.
+Our results indicate that practitioners have a need to understand fragments of code and that some of this code might be split across multiples files, commits, or conflicting branches.
+The ability to quickly evaluate the complexity of these code fragments is needed, even at the scale of text editors as evidenced by our results that indicate practitioners use basic toolsets instead of modern IDEs when working with merge conflicts.
 
-We also highlight nine unmet needs and nine factors of difficulties which have no statistical differences across experience, project size, open/closed source, or role.
-This population-wide consensus indicates that practitioners unanimously want these unmet needs resolved, and these factors lessened.
+Practitioners indicate that their needs during merge conflict resolution has to do primarily with the retrieval, organization, and presentation of relevant information (N1, N3, N4).
+With the variety of meta-information available across different toolsets, and the inconsistent use of terminology, there is a need for standardization and best practices when working with merge conflicts.
+Standardization efforts would likely help to alleviate some of the mistrust for merging tools that practitioners have expressed.
+However, we also need to determine the thresholds for merging tool errors that cause users to mistrust them and discontinue their use.
+
+Expertise is seen as both a factor that affects the assessment of merge conflict difficulty (F2), and as a need for practitioners to effectively resolve a conflict (N2).
+\todo{cite papers that work on finding experts in particular parts of code, discuss further work needed}
+\todo{discussion collaboration needs, cite some work in this area}
 
 \subsection{For Tool Builders}
 Tools are meant to solve problems, but our results show that addressing the human needs of  practitioners in the areas of context-awareness and information retrieval during merge conflict resolutions is also important.
