@@ -13,46 +13,47 @@ The resolution process can be tedious and can cause delays as developers figure 
 Poorly-performed merge conflict resolutions have been known to cause integration errors~\cite{bird-branches-conflict}, workflow disruptions, and jeopardize project efficiency and timelines~\cite{estler2014awareness}. 
 
 Developers are aware of the merge-resolution ``pains" and follow different informal processes to avoid having to resolve conflicts (e.g., sending out emails to the rest of the team, performing partial commits, or racing to finish changes) \cite{deSouza2003breaking}\cite{cataldo2008distributed_dev}.
-Unfortunately, this workflow causes changes to diverge more and makes merge conflict resolution harder~\cite{Brun2011}. 
-
+Unfortunately, this workflow causes changes to diverge more and makes merge conflict resolution even harder~\cite{Brun2011}. 
 
 Past work has examined different mechanisms for proactive conflict detection~\cite{Brun2011}\cite{palantir}\cite{Guimaraes}, proposed tools for resolving merge conflicts~\cite{nishimura}\cite{mens2002state}, and discussed advantages of syntax- and semantic-aware merges \cite{danny_refactorings}\cite{hunt2002extensible}. 
-However, merge conflicts are a regular occurrence in collaborative development, and at some point during parallel development, practitioners will face and have to resolve merge conflicts.
+However, there are several key questions that remain unanswered: How do practitioners actually approach and perform merge conflict resolution? How do practitioners perceive the difficulty of a merge conflict resolution? Do the current tools support practitioners' conflict resolution needs?
+Without such knowledge, tool builders might be building on wrong assumptions and researchers might miss opportunities for improving the state of the art.
 
-Our goal in this work is to understand how software practitioners perceive the difficulty of merge resolutions, how they approach a merge conflict, and how well current tools support their conflict resolution needs. Without such knowledge, tool builders might be building on wrong assumptions and researchers might miss opportunities for improving the state of the art.
-%Despite the focus on reducing the occurrence of merge conflicts, prior has thus far not talked to practitioners to understand their perceptions about merge conflicts and how current tools support them.
-Talking directly to practitioners is crucial to understanding problems in the context of the work~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
-%To fill this gap in knowledge, we performed an empirical study of software practitioners to understand their perspectives and experiences with merge conflicts in software development.
+To answer the above key questions, we talked directly to practitioners, as this is crucial to understanding problems in context~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
+We interviewed 10 software practitioners from 7 organizations, with a median of 5 years of software development experience, about their experiences and perceptions of merge conflicts in the software development process.
+Our participants had a mix of both small-scale projects ($<$10 contributors) and large-scale projects ($>$1000 contributors) that they work on.
+These interviews helped us understand how practitioners approach merge conflicts and their unmet needs.
 
-To understand the effects and implications of software practitioner perceptions, we answer the following research questions:
-
-\begin{itemize}
-\item \textbf{RQ1:} \textit{How do software practitioners approach merge conflicts?}
-\item \textbf{RQ2:} \textit{What unmet needs impact the difficulty of a merge conflict resolution?}
-\item \textbf{RQ3:} \textit{How well do tools meet practitioner needs for merge conflicts?}
-\end{itemize}
-
-We interviewed 10 software practitioners about their experiences and perceptions of merge conflicts in the software development process. These interviews helped us understand how practitioners approach merge conflicts and their unmet needs.
 To triangulate our findings and provide a broader understanding of practitioners' perceptions of merge conflicts and their difficulty, we deployed a survey to a larger population of software practitioners.
 The survey sampled 162 participants, spanning both open source and commercial projects. 74.2\% of our participants had 6 or more years of software development experience, and reported that they face merge conflicts a few times a week.
 %most frequently report encountering merge conflicts a few times a week. Participants spanned both open source and commercial projects.
 %The interviews provide the basis for the survey, as well giving us personal accounts of merge conflicts.
 %The survey provides a broader understanding of how perceptions permeate the larger software development community.
 
-Based on the results of our interviews and survey, we found several factors that contribute to practitioners' perceptions of merge conflict difficulty.
+To understand the effects and implications of software practitioner perceptions, we answer the following research questions:
+\begin{itemize}
+\item \textbf{RQ1:} \textit{How do software practitioners approach merge conflicts?}
+\item \textbf{RQ2:} \textit{What unmet needs impact the difficulty of a merge conflict resolution?}
+\item \textbf{RQ3:} \textit{How well do tools meet practitioner needs for merge conflicts?}
+\end{itemize}
 
 We found that practitioners, when initially assessing a merge conflict, focus on the \textit{code complexity of the conflicting lines} and \textit{their own knowledge in the area of the conflict} as the top two factors when estimating the difficulty of a conflict. These concerns cause practitioners to alter their resolution strategy, and in some cases delay resolution.
 
-After coming to an understand about the merge conflict, practitioners must resolve the conflict in order to return to normal development.
-We found that, the key challenges that practitioners face when resolving conflicts is \textit{understanding the conflicting code}, \textit{their knowledge in the area of code conflict}, and having enough meta information about the conflicting code (who made the change, why, etc).
+After understanding the merge conflict, practitioners must resolve the conflict in order to return to normal development.
+We found that the key challenges that practitioners face when resolving conflicts is \textit{understanding the conflicting code}, \textit{their knowledge in the area of code conflict}, and having enough meta information about the conflicting code (who made the change, why, etc).
 
-We also found that developer tools struggle to support merge conflicts as they increase in perceived size and complexity.
+We found that developer tools struggle to support merge conflicts as they increase in perceived size and complexity.
 This could be partially alleviated by focusing on the tool improvements most desired by practitioners: \textit{better usability}, \textit{better information filtering}, and \textit{better history exploration}.
+
+In the context of these findings, we present implications for researchers and tool builders.
+For example, researchers have previously developed merge conflict avoidance and resolution tools that need to be simplified and brought into alignment with the basic merging tools used by software practitioners.
+Tool builders should create merging tools that provide more context-sensitive information about conflicting code, and do so when scaling to more complex merge conflicts.
 
 This paper makes the following contributions:
 \begin{itemize}
 \item We conduct exploratory semi-structured interviews with 10 software practitioners, then confirm these findings with a survey of 162 practitioners from around the world.
 \item We provide empirically justified rankings of merge conflict difficulties based on practitioners' perceptions.
 \item We expose disparities between practitioners' merge conflict support needs and development toolsets.
+\item We present actionable implications that researchers and tool builders can build on.
 %\item We present an analysis of the different difficulties in merge conflict resolutions for sub-populations of software practitioners.
 \end{itemize}
