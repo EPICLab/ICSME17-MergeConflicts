@@ -2,15 +2,14 @@
 
 \todo{How Do Software Engineers Understand Code Changes? - An Exploratory Study in Industry}
 Gousios et al. \cite{integrator_perspective} conduct a study in which they ask integrators to describe difficulties in maintaining their projects and code contributions. 
-They showed that integrators also have problems with their tools, have trouble with non-atomic changesets, and even rank \textit{git knowledge} reasonably high on the list of biggest challenges (top 30\% of factors). 
-Specifically, one participant in their study states that \textit{``most [contributors] don’t know how to resolve a merge conflict''}. 
-While both papers explore perceived difficulties, our work seeks to understand the perceived challenges surrounding merge conflicts; whereas, Gousios et al. found challenges associated with being an integrator, which focus more on social aspects of the pull-based development model.
+They showed that integrators have problems with their tools, have trouble with non-atomic changesets, and rank \textit{git knowledge} in the top 30\% of their list of biggest challenges. 
+Gousios et al. additionally conducted a study into the challenges of the pull-based model from the perspective of contributors~\cite{gousios2016work}. 
+They found that most challenges relate to code contribution, the tools and model used to contribute, and the social aspects of contributing (specifically highlighting merge conflicts).
+These works focus on the collaborative processes that goes into contributing to open-source projects and operating as integrators within them, whereas we examine the issues inherent to merge conflicts and the tools built to support their resolution.
 
-Gousios et al. then followed up with a study of the challenges of the pull-based model from the contributor perspective~\cite{gousios2016work}. 
-They found that most of contributor challenges relate to the code contribution, the tools and model used to contribute, and the social aspects of contributing, merge conflicts being one of the most prominent difficulties. 
-They advise contributors to keep changes small and isolated (which we call ``atomic'' in F6) and state that developers have an interest in the impact of pull request integration, which relates to our practitioners' needs for better information filtering in Section \ref{better_filtering}.
+De Rosso et al. \cite{DeRosso2016} used StackOverflow to create a list of ``misfits'' to indicate certain problems with the Git workflow. 
+They also create a tool, Gitless, to alleviate some of the pain involved in using Git.
+However, their results indicate that solutions such as Gitless do not support the workflow of expert users.
+Their results compliment our findings that show that current merge toolsets do not support large, complex merge conflicts, which experts users are more likely to be tasked with resolving.
 
-
-De Rosso et al. \cite{DeRosso2016} used StackOverflow to create a list of ``misfits'' to indicate some problems with the Git workflow. Later, they create a tool, Gitless, to alleviate some of the pain involved in using Git. However, their results indicate that expert users still preferred using Git over Gitless, which supports our results that show a lack of advanced support for expert users.
-
-Codoban et al. seeks to evaluate developer understanding and usage of code history \cite{Mihai_lenses}. Our results show that tool support during history exploration factors into the difficulty of a merge conflict a moderate amount (N10). This result independently verifies their findings that practitioners experience tool limitations in usability (I1) and history visualization (I4).
+Codoban et al.~\cite{Mihai_lenses} seek to evaluate developer understanding and usage of code history. Our results show that tool support during history exploration factors into the difficulty of a merge conflict a moderate amount (N10). This result independently verifies their findings that practitioners experience tool limitations in usability (I1) and history visualization (I4).
