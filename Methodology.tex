@@ -12,6 +12,17 @@ We codified the interview transcripts into a taxonomy of barriers, constraints, 
 For this work, we define merge conflict as a scenario in which two copies of the same codebase diverge and cannot be automatically merged, thus requiring human intervention to resolve. 
 While we recognize that other types of conflicts exist in software projects (i.e. social conflicts or semantic conflicts, such as build or test failure), we focused our interviews and survey on code-related merge conflicts.
 
+\subsection{Interviews}\label{interview_methods}
+
+We conducted semi-structured interviews with software practitioners to understand the factors and concerns that they have when facing merge conflicts.
+
+We selected interview participants from top contributors to open-source projects, and from industry contacts using snowball sampling~\cite{goodman1961snowball} to reach a larger sample size.
+We interviewed ten software practitioners from seven different organizations spanning six different industries: 
+%Our 10 participants were from six different industries: 
+	\textit{Semiconductor Manufacturing} (3 participants), \textit{Healthcare Software} (2), \textit{Academia} (2), \textit{Business Software} (1), \textit{IT Services} (1), and \textit{Sports \& Wellness Technology} (1). 
+Participants worked on a variety of software project sizes: five worked primarily on large projects, three on medium projects, and two on small projects. 
+Table~\ref{interview_demographics} provides additional demographics data, including approximate project sizes and whether the participant primarily focuses on open- or closed-source software development.
+
 \begin{table}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Interview Participant Demographic}
@@ -35,18 +46,8 @@ While we recognize that other types of conflicts exist in software projects (i.e
 \bottomrule
 \end{tabularx}
 \parnotes
+\vspace*{-0.5\baselineskip}
 \end{table}
-
-\subsection{Interviews}\label{interview_methods}
-
-We conducted semi-structured interviews with software practitioners to understand the factors and concerns that they have when facing merge conflicts.
-
-We selected interview participants from top contributors to open-source projects, and from industry contacts using snowball sampling~\cite{goodman1961snowball} to reach a larger sample size.
-We interviewed ten software practitioners from seven different organizations spanning six different industries: 
-%Our 10 participants were from six different industries: 
-	\textit{Semiconductor Manufacturing} (3 participants), \textit{Healthcare Software} (2), \textit{Academia} (2), \textit{Business Software} (1), \textit{IT Services} (1), and \textit{Sports \& Wellness Technology} (1). 
-Participants worked on a variety of software project sizes: five worked primarily on large projects, three on medium projects, and two on small projects. 
-Table~\ref{interview_demographics} provides additional demographics data, including approximate project sizes and whether the participant primarily focuses on open- or closed-source software development.
 
 %, including consumer \& business software companies, academic software development teams at two U.S. universities, a semiconductor manufacturer, a healthcare software company, and a sports \& wellness technology company.
 %Our participants had five years of software development experience on average.
@@ -109,6 +110,7 @@ We performed two iterations of the open card sorting process, and based upon our
 \bottomrule
 	\multicolumn{8}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents were allowed to select multiple roles. Each entry represents the number of respondents that selected both of the roles indicated for the column and row. 62 out of 162 respondents (38\%) selected three or more roles.}}
 \end{tabularx}
+\vspace*{-\baselineskip}
 \end{table}
 
 \begin{table*}[!htbp]
@@ -132,6 +134,7 @@ We performed two iterations of the open card sorting process, and based upon our
 	F9 & Non-functional changes (whitespace, renaming, etc.) & 47 & 63 & 31 & 15 & 4 & \textbf{2.16} & 2 \\
 \bottomrule
 \end{tabularx}
+\vspace*{-0.5\baselineskip}
 \end{table*}
 
 \subsection{Survey}\label{survey_methods}
