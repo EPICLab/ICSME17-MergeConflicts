@@ -16,13 +16,13 @@ Developers are aware of the merge-resolution ``pains" and follow different infor
 Unfortunately, this workflow causes changes to diverge more and makes merge conflict resolution even harder~\cite{Brun2011}. 
 
 Past work has examined different mechanisms for proactive conflict detection~\cite{Brun2011}\cite{palantir}\cite{Guimaraes}, proposed tools for resolving merge conflicts~\cite{nishimura}\cite{mens2002state}, and discussed advantages of syntax- and semantic-aware merges \cite{danny_refactorings}\cite{hunt2002extensible}. 
-However, there are several key questions that remain unanswered: How do practitioners actually approach and perform merge conflict resolution? How do practitioners perceive the difficulty of a merge conflict resolution? Do the current tools support practitioners' conflict resolution needs?
+However, there are several key questions that remain unanswered: How do practitioners actually approach merge conflicts? How do practitioners perceive the difficulty of a merge conflict resolution? Do the current tools support practitioners' conflict resolution needs?
 Without such knowledge, tool builders might be building on wrong assumptions and researchers might miss opportunities for improving the state of the art.
 
 To answer the above key questions, we talked directly to practitioners, as this is crucial to understanding problems in context~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
-We interviewed 10 software practitioners from 7 organizations, with a median of 5 years of software development experience, about their experiences and perceptions of merge conflicts in the software development process.
-Our participants had a mix of both small-scale projects ($<$10 contributors) and large-scale projects ($>$1000 contributors) that they work on.
-These interviews helped us understand how practitioners approach merge conflicts and their unmet needs.
+We interviewed 10 software practitioners from 7 organizations about their experiences and perceptions of merge conflicts in the software development process.
+Our participants had a median of 5 years of software development experience, and work on a mix of both small-scale projects ($<$10 contributors) and large-scale projects ($>$1000 contributors).
+These interviews helped us understand how practitioners approach merge conflicts, and their unmet needs.
 
 To triangulate our findings and provide a broader understanding of practitioners' perceptions of merge conflicts and their difficulty, we deployed a survey to a larger population of software practitioners.
 The survey sampled 162 participants, spanning both open source and commercial projects. 74.2\% of our participants had 6 or more years of software development experience, and reported that they face merge conflicts a few times a week.
@@ -43,8 +43,8 @@ We found that practitioners, when initially assessing a merge conflict, focus on
 After understanding the merge conflict, practitioners must resolve the conflict in order to return to normal development.
 We found that the key challenges that practitioners face when resolving conflicts is \textit{understanding the conflicting code}, \textit{their knowledge in the area of code conflict}, and having enough meta information about the conflicting code (who made the change, why, etc).
 
-We found that developer tools struggle to support merge conflicts as they increase in perceived size and complexity.
-This could be partially alleviated by focusing on the tool improvements most desired by practitioners: \textit{better usability}, \textit{better information filtering}, and \textit{better history exploration}.
+We found that developer tools struggle to support merge conflicts as they increase in perceived complexity; more so than increases in perceived size.
+This could partially be alleviated by focusing on the tool improvements most desired by practitioners: \textit{better usability}, \textit{better information filtering}, and \textit{better history exploration}.
 
 In the context of these findings, we present implications for researchers and tool builders.
 For example, researchers have previously developed merge conflict avoidance and resolution tools that need to be simplified and brought into alignment with the basic merging tools used by software practitioners.

@@ -22,14 +22,14 @@
 \end{table*}
 
 There can often be gaps in how practitioners perceive the difficulty of merge conflicts and the actual hurdles that they face when resolving these conflicts. 
-These gaps can then in turn affect how the well practitioners can resolve the conflict.
+These gaps can then in turn affect how well practitioners can resolve the conflict.
 
 We, therefore, asked our interview participants open-ended questions about their experiences in resolving the most recent past conflicts, especially their recollection of what made the resolution difficult.
 %These gaps are often a result of a lack of knowledge about the conflicting code or their awareness of ongoing, relevant changes. 
 %The perception of merge conflict difficulty and the actual hurdles of resolving them are distinct, and at times separated by a gap in knowledge or awareness.
 %These gaps prevented practitioners from accurately gauging the difficulty of a merge conflict before beginning to resolve it.
 %What makes a merge conflict difficult?? - don't tools do this, I don't know this
-Their responses indicated that there are several unmet needs. We identified ten needs (see Table~\ref{survey_res_diffs}), which ranged from needs about the ability to understand the code, their expertise, and existing tool support.  
+Their responses indicated that there are several unmet needs. We identified ten needs (see Table~\ref{survey_res_diffs}), which range from needs about the ability to understand the code, their expertise, and existing tool support.  
 
 Using results from the interview, we asked survey participants to rate how much each of the ten needs affected their ability to resolve merge conflicts.
 We received 141 responses using a 5-point Likert scale indicating the degree of effect on resolution difficulty (1 being \textit{Not at all}, 3 being \textit{A moderate amount}, and 5 being \textit{A great deal}).
@@ -47,7 +47,7 @@ As with the factors in the previous section, all these needs also relate to \tex
 Three needs among the top four relate to technical aspects of merge conflict resolution.
 The \textit{understandability of conflicting code} (N1) is ranked as the most important need, with both \textit{contextual information about the conflict} (N3) and \textit{the way in which tools present relevant information} (N4) ranking in the top four.
 
-Data from version control systems are used by developers to identify the evolution of the code~\cite{Mihai_lenses}, however, they are not easily available and need a context switch from the code editor to the version control system~\cite{Guzzi2015}. Moreover, these changes are often processed in isolation, especially when there are many changes (conflicts) to process. The decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
+Data from version control systems is used by developers to identify the evolution of the code~\cite{Mihai_lenses}, however, it is not easily available and needs a context switch from the code editor to the version control system~\cite{Guzzi2015}. Moreover, these changes are often processed in isolation, especially when there are many changes (conflicts) to process. The decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
 \begin{displayquote}
 \textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change.''}
 \end{displayquote}
@@ -56,7 +56,7 @@ Another challenge when viewing changes in isolation, is the fact that practition
 %Practitioners often look at changes in isolation to deal with the technical complexities, but may overlook understanding the conflicting code in context of the larger codebase.
 %Decomposing the conflict into small changes makes it easier to understand; however, this can cause tunnel vision and lead to defects arising from the merge resolution.
 
-Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing process to which the original changes were subject to.
+Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing to which the original changes were subject to.
 Therefore, even when the developer understands the particular conflicting code, they may still need additional meta information about the rationale of changes and idea of future feature implementation. This is especially true in situations where the code base is old, and such information not readily available. During our interview, P7 commented:
 \begin{displayquote}
 \textit{``It's harder to merge code when you're merging in some legacy code which was written by some [former contributors] thirty years ago. But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
