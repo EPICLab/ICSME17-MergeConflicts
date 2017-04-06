@@ -38,7 +38,7 @@ These factors can be grouped into themes of \textit{technical aspects} and \text
 Two of the top four factors refer to perceptions about the complexity of merge conflicts (F1, F3), with the third factor being \textit{number of conflicting lines} (F4), which can be construed as a specific metric of complexity of the conflict. 
 While practitioners mentioned complexity of the lines of code and the file, none mentioned using metrics, such as cyclomatic complexity~\cite{fenton2000quantitative}\cite{mccabe1976complexity} or Function Point Analysis~\cite{garmus2001fpa}\cite{symons1988function}. 
 Instead, practitioners made educated guesses on the complexity of the code based on their own experience of either writing the code, or having worked with it. 
-Some of the simple to compute metrics, such as \textit{number of conflicting lines of code} (F4), \textit{number of files involved} (F8), \textit{atomicity of changesets} (F6), and the time they thought it would take to resolve the conflict (F5) were mentioned. 
+Some of the simple to compute metrics, such as \textit{number of conflicting lines of code} (F4), \textit{number of files involved} (F8), \textit{atomicity of changesets} (F6), and \textit{the time} they thought it would take \textit{to resolve the conflict} (F5) were mentioned. 
 The only factor where static analysis tools can help was in identifying the \textit{dependencies of the conflicting code} (F7).
 This indicates that understanding the complexity of the conflicting code is important, but practitioners do not use the metrics that have been proposed by research. While some of the simple proxies for complexity are used, practitioners primarily rely on their own ``judgement" of the complexity of the conflict.
 %Researchers have thus far computed complexity of changes in code using proxies such as lines of code changed and numbers of files changed~\cite{khoshgoftaar1990predicting}.
@@ -57,7 +57,7 @@ If a merge conflict is perceived to be large or complex, a practitioner may deci
 This ``nuclear option'' requires practitioners to disrupt the development flow, set aside their current development work, and potentially remove ``good'' code that was not part of the conflict in order to return to a non-conflicting state.
 In the interview, P1 describes this process as:
 \begin{displayquote}
-\textit{``If you have many conflicts involved, many commits involved in the conflict, you should probably throw one of the branches away. Seriously. You cannot combine tens of commits conflicting...it's not sane!''}
+\textit{``If you have many conflicts involved, many commits in the conflict...throw one of the branches away. You cannot combine tens of commits conflicting...it's not sane!''}
 \end{displayquote}
 
 Further, when integrators are preparing code for production environments they prioritize merge conflicts for code review based upon the perceived difficulty of resolving the affected code.
@@ -71,7 +71,7 @@ Our findings show that expertise in the area of conflicting code is one of the t
 Our results indicate that when practitioners feel they don't have the expertise in the conflicting code base, they consider the conflict difficult to merge and seek out more information or assistance from others. 
 P5 illustrated this need for expertise when describing his workflow: 
 \begin{displayquote}
-	\textit{``A lot of what I work on is in my own little area, so when there is a merge conflict in that area, I will know what to do\textellipsis But if I'm in the [unfamiliar part of project], then I'll get someone else to resolve the merge conflict for me. It's someone else's code, and I don't want to screw it up.''}
+	\textit{``A lot of what I work on is in my own little area...I know what to do\textellipsis But if I'm in the [unfamiliar part of code], then I'll get someone else to resolve the merge conflict for me. It's someone else's code, and I don't want to screw it up.''}
 \end{displayquote}
 
 

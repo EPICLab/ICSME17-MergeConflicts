@@ -47,19 +47,19 @@ As with the factors in the previous section, all these needs also relate to \tex
 Three needs among the top four relate to technical aspects of merge conflict resolution.
 The \textit{understandability of conflicting code} (N1) is ranked as the most important need, with both \textit{contextual information about the conflict} (N3) and \textit{the way in which tools present relevant information} (N4) ranking in the top four.
 
-Data from version control systems is used by developers to identify the evolution of the code~\cite{Mihai_lenses}, however, it is not easily available and needs a context switch from the code editor to the version control system~\cite{Guzzi2015}. Moreover, these changes are often processed in isolation, especially when there are many changes (conflicts) to process. The decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
+Data from version control systems is used by developers to identify the evolution of the code~\cite{Mihai_lenses}, however, it is not easily available and requires a context switch from the code editor to the version control system~\cite{Guzzi2015}. Moreover, these changes are often processed in isolation, especially when there are many changes (conflicts) to process. Such decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
 \begin{displayquote}
 \textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change.''}
 \end{displayquote}
 
-Another challenge when viewing changes in isolation, is the fact that practitioners may miss the impact of the changes made as part of the resolution to the rest of the code base. Identifying the impact of changes on the rest of the code base has been repeatedly found to be a problem in collaborative development, as found by deSouza and Redmiles~\cite{deSouza2008} and more recently by Guzzi et al.~\cite{Guzzi2015}. The top unmet needs in our study too revolved around the challenges that practitioners face in how much information they had about the conflicting code (N3) and the difficulty in finding the needed information from current tools and practices (N3, N4, N8, N10). This indicates that despite advances in supporting parallel development practices, the right information needed to resolve conflicts is still not easily available to practitioners. 
+Another challenge when viewing changes in isolation, is the fact that practitioners may miss the impact of the changes made as part of the resolution to the rest of the code base. Identifying the impact of changes on the rest of the code base has been repeatedly found to be a problem in collaborative development, as found by deSouza and Redmiles~\cite{deSouza2008} and more recently by Guzzi et al.~\cite{Guzzi2015}. The top unmet needs in our study too revolved around the challenges that practitioners face in how much information they had about the conflicting code (N3), and the difficulty in finding the needed information from current tools and practices (N3, N4, N8, N10). This indicates that despite advances in supporting parallel development practices, the right information needed to resolve conflicts is still not easily available to practitioners. 
 %Practitioners often look at changes in isolation to deal with the technical complexities, but may overlook understanding the conflicting code in context of the larger codebase.
 %Decomposing the conflict into small changes makes it easier to understand; however, this can cause tunnel vision and lead to defects arising from the merge resolution.
 
 Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing to which the original changes were subject to.
 Therefore, even when the developer understands the particular conflicting code, they may still need additional meta information about the rationale of changes and idea of future feature implementation. This is especially true in situations where the code base is old, and such information not readily available. During our interview, P7 commented:
 \begin{displayquote}
-\textit{``It's harder to merge code when you're merging in some legacy code which was written by some [former contributors] thirty years ago. But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
+\textit{``It's harder to merge code when you're merging in some legacy code... But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
 \end{displayquote}
 
 \Subsubsection{Expertise}
@@ -74,21 +74,23 @@ When these gaps arise, practitioners compensate by consulting experts in the are
 This result aligns with the goals of the TIPMerge tool~\cite{CostaSarma}, which seeks to locate experts that are best suited to resolve conflicts in a particular area of code.
 However, these tools have not made it into the hands of real-world practitioners, as evidenced by the lack of such tools in the list of top 10 merge tools (see Table~\ref{survey_toolset}).
 
-Another surprising fact was that while the informative nature of commit messages (N8) was mentioned, it was not ranked very highly. The same is true for project culture (N9). 
-This reflects that team practices have matured enough, such that these factors are not considered to be a critical hurdle in resolving conflicts in our sample set. 
-Based on prior work stating the value of commit messages~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}, we expected commit messages to be a helpful resource in merge conflict resolution.
+Another surprising fact was that while the informative nature of commit messages (N8) and project culture (N9) were mentioned, they were not as highly ranked. % The same is true for project culture (N9). 
+We had expected them to be higher based on prior work~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}. We found no significant differences between commercial or open source projects or on experience levels.
+Our results indicate that team practices, including writing commit messages may have matured enough, such that these factors are no longer considered critical in our sample set. 
+
 
 \Subsubsection{Open-Source vs. Closed-Source Needs}\label{oss_vs_closed_tool_support} 
 It is interesting to note that for needs N1-N8 there was no statistical difference between practitioners focused on open-source and those focused on closed-source development when it comes to their conflict resolution needs.
 We found that practitioners who focus on open-source software development consider \textit{tool support for examining development history} (N10) to be the 3rd highest unmet need (mean: 3.60).
 Whereas, practitioners who focus on closed-source software development consider it to be the least impactful unmet need (mean: 2.86).
-A Wilcoxon Signed-Ranks test indicated that open-source practitioners' ranking of N10 were statistically higher than closed-source practitioners' rankings of N10 (W = 1192.5, $p$-value = 0.02006).
+A Wilcoxon Signed-Ranks test indicated that open-source practitioners' ranking of N10 were statistically higher than closed-source practitioners' rankings of N10 (W = 1192.5, $p$-value = 0.02).
 
-This trend was also evident in our interviews, with P8 stating:
+This was also true in our interviews, with P8 stating:
 
 \begin{displayquote}
-\textit{``I'm often dealing with code other people wrote... Nobody can review every pull request that goes in. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
+\textit{``I'm often dealing with code other people wrote. Nobody can review every pull request. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
 \end{displayquote}
 
-This result suggests that either history exploration in open-source projects is a more difficult task, or that tools are better at supporting history exploration in closed-source development environments.
+This result suggests that either history exploration in open-source projects is a more difficult task likely because of the lack of upfront planning and large number of volunteering contributors.
+%, or that tools are better at supporting history exploration in closed-source development environments.
 
