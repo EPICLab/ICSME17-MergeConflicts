@@ -8,7 +8,7 @@ Collaborative development is essential for the success of large projects~\cite{h
 In Git and other version control systems, developers work on their changes in seclusion, and periodically synchronize them by merging with the main line of development. 
 Although a large number of commits cleanly merge, parallel changes can overlap, leading to merge conflicts. Kasi et al.~\cite{cassandra} and Brun et al.~\cite{Brun2011}, in their studies of several open source projects, found that merge conflicts occur in approximately 19\% of all merges.
 
-Resolving merge conflicts is nontrivial, especially when changes diverge significantly, making their synchronization difficult. 
+Resolving merge conflicts is nontrivial, especially when changes diverge significantly, making their synchronization difficult.
 The resolution process can be tedious and can cause delays as developers figure out how to approach and resolve conflicts~\cite{cassandra}. 
 Poorly-performed merge conflict resolutions have been known to cause integration errors~\cite{bird-branches-conflict}, workflow disruptions, and jeopardize project efficiency and timelines~\cite{estler2014awareness}. 
 
@@ -19,7 +19,7 @@ Past work has examined different mechanisms for proactive conflict detection~\ci
 However, there are several key questions that remain unanswered: How do practitioners actually approach merge conflicts? How do practitioners perceive the difficulty of a merge conflict resolution? Do the current tools support practitioners' conflict resolution needs?
 Without such knowledge, tool builders might be building on wrong assumptions and researchers might miss opportunities for improving the state of the art.
 
-To answer the above key questions, we talked directly to practitioners, as this is crucial to understanding problems in context~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
+To answer the above key questions, we talked directly to practitioners, which is crucial to understanding problems in context~\cite{fritz2010using, sillito2006questions, de2008answering, ko2007information}.
 We interviewed 10 software practitioners from 7 organizations about their experiences and perceptions of merge conflicts in the software development process.
 Our participants had a median of 5 years of software development experience, and work on a mix of both small-scale projects ($<$10 contributors) and large-scale projects ($>$1000 contributors).
 These interviews helped us understand how practitioners approach merge conflicts, and their unmet needs.
@@ -49,13 +49,3 @@ This could partially be alleviated by focusing on the tool improvements most des
 In the context of these findings, we present implications for researchers and tool builders.
 For example, researchers have previously developed merge conflict avoidance and resolution tools that need to be simplified and brought into alignment with the basic merging tools used by software practitioners.
 Tool builders should create merging tools that provide more context-sensitive information about conflicting code, and do so when scaling to more complex merge conflicts.
-
-\todo{AS: should we get rid of the following, it just adds words, and we have already mentioned it all}
-This paper makes the following contributions:
-\begin{itemize}
-\item We conduct exploratory semi-structured interviews with 10 software practitioners, then confirm these findings with a survey of 162 practitioners from around the world.
-\item We provide empirically justified rankings of merge conflict difficulties based on practitioners' perceptions.
-\item We expose disparities between practitioners' merge conflict support needs and development toolsets.
-\item We present actionable implications that researchers and tool builders can build on.
-%\item We present an analysis of the different difficulties in merge conflict resolutions for sub-populations of software practitioners.
-\end{itemize}
