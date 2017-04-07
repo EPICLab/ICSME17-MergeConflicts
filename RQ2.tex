@@ -35,12 +35,6 @@ Another challenge when viewing changes in isolation, is the fact that practition
 %Practitioners often look at changes in isolation to deal with the technical complexities, but may overlook understanding the conflicting code in context of the larger codebase.
 %Decomposing the conflict into small changes makes it easier to understand; however, this can cause tunnel vision and lead to defects arising from the merge resolution.
 
-Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing to which the original changes were subject to.
-Therefore, even when the developer understands the particular conflicting code, they may still need additional meta information about the rationale of changes and idea of future feature implementation. This is especially true in situations where the code base is old, and such information not readily available. During our interview, P7 commented:
-\begin{displayquote}
-\textit{``It's harder to merge code when you're merging in some legacy code... But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
-\end{displayquote}
-
 \begin{table*}[!htbp]
 \renewcommand{\arraystretch}{1.3}
 \caption{Improvements for Practitioner Toolsets from Survey}
@@ -62,6 +56,12 @@ Therefore, even when the developer understands the particular conflicting code, 
 \end{tabularx}
 \vspace*{-0.5\baselineskip}
 \end{table*}
+
+Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing to which the original changes were subject to.
+Therefore, even when the developer understands the particular conflicting code, they may still need additional meta information about the rationale of changes and idea of future feature implementation. This is especially true in situations where the code base is old, and such information not readily available. During our interview, P7 commented:
+\begin{displayquote}
+\textit{``It's harder to merge code when you're merging in some legacy code... But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
+\end{displayquote}
 
 \Subsubsection{Expertise}
 Knowledge is a key component of practitioner's needs when resolving merge conflicts, but along with that general knowledge is a need for expertise in the specific areas of code involved in a conflict.
