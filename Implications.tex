@@ -1,25 +1,27 @@
-\section{Implications}\label{implications}
-This paper examines how software practitioners perceive the merge conflict resolution process.
-We discuss the implications of our results and break down the implications for researchers and tool builders.
+\section{Discussion}\label{implications}
+Here we discuss the implications of our results from the perspective of researchers and tool builders.
 
 \subsection{For Researchers}
 Our results inform future research by providing insights into software practitioners' perspectives during merge conflicts.
 
 The top factors that impact the assessment of merge conflict difficulty are primarily focused on program comprehension (F1, F3, F4).
-Program comprehension has been an important research focus, with several conferences dedicated to exploring this topic.
-Previous research has explored visualizing and understanding both small and large codebases.
-Our results indicate that practitioners have a need to understand fragments of code, with some of this code split across multiples files, commits, or conflicting codebases.
-The ability to quickly evaluate the complexity of these code fragments is needed, including at the scale of text editors as evidenced by the use of basic toolsets instead of modern IDEs when working with merge conflicts (see Section~\ref{RQ3}).
+Program comprehension has been an important research focus, with an entire conferences dedicated to it.
+Previous research has explored tool support and visualizations to help comprehend programs, both small and large.
+Our results indicate that practitioners still have unmet needs along the following dimensions: (1) comprehend code snippets in isolation, (2) understand the code context underlying multiple code snippets that are split across multiple files, and commits, and (3) ability to quickly comprehend the complexity of these code snippets, 
+
+%have a need to understand fragments of code, with some of this code split across multiples files, commits, or conflicting codebases.
+%The ability to quickly evaluate the complexity of these code fragments is needed, including at the scale of text editors as evidenced by the use of basic toolsets instead of modern IDEs when working with merge conflicts (see Section~\ref{RQ3}).
 
 Practitioners indicate that their needs during merge conflict resolutions center around the retrieval, organization, and presentation of relevant information (N1, N3, N4).
 With the variety of meta-information available across different toolsets, and the inconsistent use of terminology, there is a need for standardization and best practices to be developed.
-Standardization efforts would likely help to alleviate some of the mistrust for merging tools that practitioners have expressed.
-However, researchers should also determine the threshold of merge tool errors that indicates whether a user will mistrust and discontinue use of those tools.
+Standardization efforts would likely help to alleviate some of the mistrust of merging tools that practitioners have expressed.
+However, researchers should investigate the margin of errors that are tolerated by practitioners and under what context before practitioners discontinue use of tools (for conflict resolution).
+ %threshold of merge tool errors that indicates whether a user will mistrust and discontinue use of those tools.
 
-Expertise is seen as both a significant factor that affects the assessment of merge conflict difficulty (F2), and as an important need for practitioners to effectively resolve the conflict (N2).
-Previous work has focused on recommending developers who are best suited to perform a merge, based on the breadth of previous edits localized to the conflict~\cite{dasilva2015niche} or developers' past experience across branches and throughout a project's history~\cite{CostaSarma}.
-However, these efforts have resulted in tools that require standalone installation and execution.
-Our results indicate that practitioners are concerned about toolset fragmentation, and therefore adding an additional tool might be counterproductive to the workflow of most practitioners.
+Expertise is seen as both a significant factor that affects the assessment of merge conflict difficulty (F2), and an important need for practitioners to effectively resolve the conflict (N2).
+Previous work has focused on recommending developers best suited to perform a collaborative merge, based on the previous edits to conflicting files~\cite{dasilva2015niche} or developers' experience across branches and project history~\cite{CostaSarma}. However, these efforts have resulted in tools that require standalone installation and execution. Our results indicate that practitioners are concerned about toolset fragmentation, and therefore adding an additional tool might be counterproductive to the workflow of most practitioners. 
+
+Finally, we find that practitioners need to quickly estimate whether they can fix the conflict, and whether to resolve it now or delay the resolution. This indicates that developers need mechanisms to identify the skill sets required to complete the conflict resolution task, by viewing the code fragments. Research should investigate mechanisms to identify required skill by using information retrieval or machine learning techniques on the code fragment and past edits to it\todo{refer Rafael VL/HCC 2016 paper}. 
 
 \subsection{For Tool Builders}
 Version control systems provide an easy method for storing and retrieving recent development history, but examining older development history at scale and in a usable manner has not completely met practitioners' expectations.
@@ -28,3 +30,5 @@ Tool builders should work to address this unmet need by leveraging research in s
 Practitioners indicate that current merge toolsets do not scale to handle large, complex merge conflicts (see Section~\ref{tool_effectiveness}).
 To address this concern, tool builders should look at consolidating feature sets that currently span multiple tools in order to provide better usability (I1).
 Tool builders should also add more expressive search and filtering features for both project history and meta-information related to merge conflicts (I2, I3) to ease the frustration of practitioners that must understand the context and evolution of code involved in the conflict.
+
+Finally, we found practitioners having to ``guesstimate" the difficulty of the conflict resolution to decide whether to work on it now or delay it, or whether to integrate the changes or simply start over. Prediction tools that identify the complexity of conflicts and difficulty of resolution can help alleviate this need.
