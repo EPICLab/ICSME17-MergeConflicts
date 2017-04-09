@@ -62,7 +62,7 @@ Gerald Weinberg highlighted that context switching arising from toolset fragment
 %This frustration is understandable for practitioners whose workflows frequently get interrupted by tool switches. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have found that task switching comes with costs in performance and mental fatigue, and, in 1992, Gerald Weinberg highlighted the problem of toolset fragmentation within engineering teams~\cite{Weinberg1992}. 
 
 \Subsubsection{Better Exploration of Project History}
-Developers have been known to use historical data to understand code evolution and development processes~\cite{Mihai_lenses}.
+Practitioners have been known to use historical data to understand code evolution and development processes~\cite{Mihai_lenses}.
 Version control and bug tracking systems contain a huge amount of meta-information about the evolution of code and development processes.
 However, it is not easy to find the right bit of information in these large systems. 
 Currently, there is insufficient support for performing detailed analysis of how a code snippet evolved over time and why. 
@@ -80,7 +80,7 @@ Similarly, P9 described a tool, \texttt{git-diff}, that was developed by their t
 \textit{``git-diff will just do the diff based on the SHAs... we're adding metadata... It also hooks into GitHub labels to do some more advanced heuristics.''}
 \end{displayquote}
 
-While writing these scripts allows extraction of relevant data contextualized to the need, it also leads to a proliferation of multiple scripts that are written by individual developers and need to be maintained or integrated.
+While writing these scripts allows extraction of relevant data contextualized to the need, it also leads to a proliferation of multiple scripts that are written by individual practitioners and need to be maintained or integrated.
 This further adds to the problem of context-switching when practitioners must switch between multiple tools, and execute multiple scripts.
 
 We are not the first to recognize the gap in tool support provided for analyzing development history among practitioners~\cite{sun2015informationhistory, guo2016cold-start, yan2014miningcontracts}. 
@@ -156,7 +156,7 @@ Not at all & 0 & 0.00\\
 \end{tabularx}
 \end{table}
 
-\Subsubsection{Tool Mistrust/Transparency}
+\Subsubsection{Tool Mistrust/Transparency}\label{tool_trust}
 Most merge tools attempt to resolve conflicts using a variety of algorithms, but revert to manual resolution when these algorithms fail.
 Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
 The opaque nature of history exploration tools was also found to be a source of practitioners' overall mistrust of their toolsets.
