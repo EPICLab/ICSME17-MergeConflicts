@@ -27,7 +27,11 @@ Our results indicate that practitioners are concerned about toolset fragmentatio
 Finally, we find that practitioners need to quickly estimate whether they can fix the conflict, and whether to resolve it now or delay the resolution. 
 This indicates that practitioners need mechanisms to identify the skillsets required to complete the conflict resolution task, by viewing the code fragments.
 Research should investigate mechanisms to identify required skillsets by using information retrieval or machine learning techniques on the code fragment and past edits.
-
+\subsection{For Practitioners}
+Practitioners indicate that understanding code, having appropriate information, and dealing with complex codesets are key themes of difficulty when working with merge conflicts (Sections~\ref{RQ1}, \ref{RQ2}).
+Existing tool support can help with some of these issues, but practitioners also need to educate themselves on development processes that prevent and alleviate the severity of merge conflicts. For example, the number of conflicting files and the size of changes are considered a factor, therefore, practitioners should strive to make smaller commits, and commit often.
+Other development processes such as continuous integration, agile development models, and branch merging policies are known to facilitate large, distributed development teams. 
+However, not all practitioners are actively using such techniques~\cite{phillips2011branching}, and further work is needed to determine the most appropriate development process for a given project.
 \subsection{For Tool Builders}
 Version control systems provide an easy method for storing and retrieving recent development history, but examining older development history at scale and in a usable manner has not completely met practitioners' expectations.
 Tool builders should work to address this unmet need by leveraging research in search systems for developer-assistance~\cite{nabi2016putting} and machine learning-based code assistance~\cite{bradley2011history_exploration} to provide intuitive and expressive tools for history exploration.
@@ -38,9 +42,3 @@ Tool builders should also add more expressive search and filtering features for 
 
 Finally, we found practitioners having to ``guess-timate" the difficulty of the conflict resolution to decide whether to work on it now or delay it, or whether to integrate the changes or simply start over. 
 Prediction tools that identify the complexity of conflicts and difficulty of resolution can help alleviate this.
-
-\subsection{For Practitioners}
-Practitioners indicate that understanding code, having appropriate information, and dealing with complex codesets are key themes of difficulty when working with merge conflicts (see Sections~\ref{RQ1} and \ref{RQ2}).
-Additional tool support can help with some of these issues, but practitioners also need to educate themselves on development processes that prevent and alleviate the severity of merge conflicts.
-Development processes such as continuous integration, agile development models, and branch merging policies are all touted as having benefits for merging code in large, distributed development teams. 
-However, not all practitioners are actively using such techniques~\cite{phillips2011branching} and further work is needed to determine the most appropriate development process for a given project.
