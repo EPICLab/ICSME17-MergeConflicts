@@ -52,9 +52,9 @@ While usability of a particular tool is important, the usability concerns become
 Survey results indicate that participants use an average of 2.5 tools, and as many as 7 tools, to resolve merge conflicts.
 %With multiple tools being used during merging and conflict resolution, toolset fragmentation is a real concern for practitioners.
 For instance, in our interview P1 demonstrated how he typically resolved a merge conflict by using four different tools and said: 
-\begin{displayquote}
+\begin{quotation}
 \textit{``I have to jump around between tools and copy and paste version numbers...this is why integration matters.''}
-\end{displayquote}
+\end{quotation}
 
 Switching across multiple tools while resolving a conflict is disruptive and comes at a cost. Psychology studies~\cite{Meiran2000}\cite{gopher2000switching} have shown that task switching reduces performance and causes mental fatigue. 
 Gerald Weinberg highlighted that context switching arising from toolset fragmentation is a big problem in engineering teams~\cite{Weinberg1992}. 
@@ -68,17 +68,17 @@ However, it is not easy to find the right bit of information in these large syst
 Currently, there is insufficient support for performing detailed analysis of how a code snippet evolved over time and why. 
 Better ways of exploring the project history (I3) was one of the top requested improvements in our survey. 
 As P1 mentioned in the interview:
-\begin{displayquote}
+\begin{quotation}
 \textit{``Give me a way to explore the history. To drill down, to go back up, you know? To resurface and understand what happened.''}
-\end{displayquote}
+\end{quotation}
 
 
 Currently, when performing any complex analysis it is easier to write stand alone scripts to extract the information. 
 During the interview, P1 mentioned that he has written several scripts to locate particular historical commits that relate to a current merge conflict. 
 Similarly, P9 described a tool, \texttt{git-diff}, that was developed by their team to add additional difference analysis functionality across branches:
-\begin{displayquote}
+\begin{quotation}
 \textit{``git-diff will just do the diff based on the SHAs... we're adding metadata... It also hooks into GitHub labels to do some more advanced heuristics.''}
-\end{displayquote}
+\end{quotation}
 
 While writing these scripts allows extraction of relevant data contextualized to the need, it also leads to a proliferation of multiple scripts that are written by individual practitioners and need to be maintained or integrated.
 This further adds to the problem of context-switching when practitioners must switch between multiple tools, and execute multiple scripts.
@@ -93,9 +93,9 @@ For example, when there are several commits in a pull request and multiple level
 It is difficult to extract the key issue in the pull request, which can get lost in the sea of low level details. Similarly, if there are multiple commits in a pull request or branch, it is hard to extract the right information.
 Therefore, filtering in tools can help avoid practitioners from being overwhelmed by the amount of metadata associated with the changes.
 \textit{Better ways of filtering out less relevant information} (I2) was selected as the second most important need; P1 explained:
-\begin{displayquote}
+\begin{quotation}
 \textit{``You want to extract the relevant commits. The ones that actually clash...you want to zoom in on them and understand just enough and don't waste time.''}
-\end{displayquote}
+\end{quotation}
 
 While improvements in history exploration (I3) will make project metadata more accessible, improvements in filtering for relevant metadata will allow practitioners to focus on the relevant parts of the code impacted by the merge conflict.
 
@@ -161,9 +161,9 @@ Most merge tools attempt to resolve conflicts using a variety of algorithms, but
 Several interview participants indicated that they mistrust merge tools when they obscure the steps and rationale for particular results when resolving merge conflicts.
 The opaque nature of history exploration tools was also found to be a source of practitioners' overall mistrust of their toolsets.
 P4 commented:
-\begin{displayquote}
+\begin{quotation}
 \textit{``I've never trusted the merge tools or diff tools... Sometimes I'll even manually go and do the merge myself rather than use a tool. Just because I've had several times where it's a bad merge, and I broke some code.''}
-\end{displayquote}
+\end{quotation}
 
 Based upon this theme of mistrust, we asked survey participants to rate the degree to which they trust their merging, history exploration, and conflict resolution tools.
 We received 121 responses to this question, with a mean score of 3.66 placing the most common responses between \textit{a moderate amount} and \textit{a lot} of trust (Table~\ref{survey_tool_trust}).

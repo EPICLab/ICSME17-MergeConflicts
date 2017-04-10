@@ -16,6 +16,18 @@
 \usepackage[many]{tcolorbox}
 \usepackage[symbol,para]{footmisc}
 
+\makeatletter
+\renewenvironment{quotation}
+               {\list{}{\listparindent=0pt%whatever you need
+                        \itemindent    \listparindent
+                        \leftmargin=8pt%  whatever you need
+                        \rightmargin=10pt%whatever you need
+                        \topsep=4pt%%%%%  whatever you need
+                        \parsep        \z@ \@plus\p@}%
+                \item\relax}
+               {\endlist}
+\makeatother
+
 \renewcommand\thesubsubsectiondis{}
 \newcommand{\Subsubsection}[1]{\subsubsection{\underline{#1}}}
 \hyphenation{op-tical net-works semi-conduc-tor}
