@@ -28,9 +28,10 @@ This indicates that practitioners need mechanisms to identify the skillsets requ
 Research should investigate mechanisms to identify required skillsets by using information retrieval or machine learning techniques on the code fragment and past edits.
 \subsection{For Practitioners}
 Practitioners indicate that understanding code, having appropriate information, and dealing with complex codesets are key themes of difficulty when working with merge conflicts (Sections~\ref{RQ1}, \ref{RQ2}).
-Existing tool support can help with some of these issues, but practitioners also need to educate themselves on development processes that prevent and alleviate the severity of merge conflicts. For example, the number of conflicting files and the size of changes are considered a factor, therefore, practitioners should strive to make smaller commits, and commit often.
-Other development processes such as continuous integration, agile development models, and branch merging policies are known to facilitate large, distributed development teams. 
-However, not all practitioners are actively using such techniques~\cite{phillips2011branching}, and further work is needed to determine the most appropriate development process for a given project.
+Existing tool support can help with some of these issues, but practitioners also need to educate themselves on development processes that prevent and alleviate the severity of merge conflicts. For example, the number of conflicting files and the size of changes are considered important factors. 
+Therefore, practitioners should strive to make smaller commits, and commit often.
+Other agile development processes such as continuous integration, iterative development, and branch merging policies are known to facilitate development in large, distributed teams. 
+However, not all practitioners are actively using such techniques~\cite{phillips2011branching}, and further work is needed to determine how to enable and ease adoption of these processes and practices.
 \subsection{For Tool Builders}
 Version control systems provide an easy method for storing and retrieving recent development history, but examining older development history at scale and in a usable manner has not completely met practitioners' expectations.
 Tool builders should work to address this unmet need by leveraging research in search systems for developer-assistance~\cite{nabi2016putting} and machine learning-based code assistance~\cite{bradley2011history_exploration} to provide intuitive and expressive tools for history exploration.
