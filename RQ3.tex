@@ -7,7 +7,7 @@ Our results indicate that practitioners use a wide range of tools, with many dir
 
 We framed the survey questions to validate the improvement needs expressed in our interviews, and ranked those six needs according to mean score.
 Table~\ref{survey_tool_needs} presents the needs from the survey responses ordered by their mean scores.
-We received 119 responses using a 5-point Likert scale to indicate the usefulness of each type of tool improvement (1 being \textit{Not Useful}, 3 being \textit{Moderately Useful}, and 5 being \textit{Essential}).
+We received 119 responses using a 5-point Likert-type scale to indicate the usefulness of each type of tool improvement (1 being \textit{Not Useful}, 3 being \textit{Moderately Useful}, and 5 being \textit{Essential}).
 
 In addition, we also asked participants which tools they use during conflict resolution.
 We identified 105 different tools from the 115 responses. Some mentioned generic responses such as \textit{`` text editor''}, for which we create a separate category.
@@ -132,7 +132,7 @@ There is a need for tools that share commonality in both terminology and present
 
 \begin{figure*}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{ConflictComplexityVsSize.pdf}
+\includegraphics[width=0.92\textwidth]{ConflictComplexityVsSize.pdf}
 \caption{Effectiveness of practitioners' toolsets in supporting perceived size and complexity of merge conflicts, split on development experience. Bubble values indicate number of survey responses for effectiveness of a particular merge conflict size and complexity, and bubble size indicates the number of responses for comparison purposes.\vspace*{-0.5\baselineskip}}
 \label{size_vs_complexity}
 \end{figure*}
@@ -152,7 +152,7 @@ A moderate amount & 41 & 33.88\\
 A little & 10 & 8.26\\
 Not at all & 0 & 0.00\\
 \bottomrule
-	\multicolumn{3}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents answered on a 5-point Likert scale to indicate trust in their toolset (1 being \textit{Not at all} and 5 being \textit{Completely}).}}
+	\multicolumn{3}{c}{\noindent\parbox[t]{7.8cm}{\vspace{-3px}\textsuperscript{i}\hspace{0.2em}Survey respondents answered on a 5-point Likert-type scale indicating trust in their toolset (1 being \textit{Not at all} and 5 being \textit{Completely}).}}
 \end{tabularx}
 \end{table}
 
@@ -189,7 +189,8 @@ For example, a practitioner with 6-10 years of experience who indicates that her
 She would also be represented in the largest bubble (containing 13) in the bottom-right plot (A4) if she indicated that her merge toolset was \textit{Moderately effective} for \textit{large, complex merge conflicts}.
 
 Observing the overall trends when moving between plots, we find that practitioners perceive complexity of the conflict to have a greater impact on the effectiveness of their merge toolsets than the size of merge conflicts.
-The resulting trends are the same across all six groups of software development experience; decreasing effectiveness when moving from small to large, and even stronger decreases in effectiveness moving from simple to complex.
+Numerical analysis confirms this when finding that the mean response for archetype (A1) is 4.278 (where 5 is \textit{Extremely Effective} and 1 is \textit{Not effective at all}), (A2) is 3.782, (A3) is 3.347, and (A4) is 2.783.
+The shift from \textit{small} to \textit{large} merge conflict size (A1 to A2) results in a difference in mean responses of 0.496, whereas the shift from \textit{simple} to \textit{complex} merge conflict complexity results in a difference in mean responses of 0.930.
 
 These results suggest that merge tools are currently equipped to handle increases in the size of merge conflicts, but not as well equipped for increases in complexity.
 The increasing amount of code being developed in distributed environments means that scaling support in both dimensions is necessary to accommodate practitioners' needs.
