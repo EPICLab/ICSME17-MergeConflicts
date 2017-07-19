@@ -2,7 +2,7 @@
 To understand the perspective of practitioners when encountering a merge conflict, we asked interview participants to reflect on situations when they initially face a merge conflict: what kind of information do they seek, how do they approach the resolution of the conflict, and what tools they use. 
 
 We identified nine factors (from card sorting) that practitioners consider when approaching a conflict and attempting to determine its difficulty (see Table~\ref{survey_merge_conflicts}). 
-We ask survey participants to rate how each of these nine factors affected their perceptions of difficulty when approaching a merge conflict.
+We asked survey participants to rate how each of these nine factors affected their perceptions of difficulty when approaching a merge conflict.
 %The survey then asked participants to rate how much each of these 9 factors affected their perceptions of difficulty when approaching a merge conflict. 
 
 
@@ -49,16 +49,16 @@ This indicates that understanding the complexity of the conflicting code is impo
 
 
 This perception of the conflict complexity can affect whether a practitioner resolves the conflict immediately (when small), or whether they should wait to examine the conflict when further resources are available; P8 commented:
-\begin{quotation}
+\begin{quoting}
 \textit{``Small is always easy. A 1-line merge conflict is always easier to resolve than a 400-line merge conflict, and can be done now.''}
-\end{quotation}
+\end{quoting}
 
 If a merge conflict is perceived to be large or complex, a practitioner may decide to forgo attempting to resolve it through code manipulation and choose to revert the changes instead~\cite{Guzzi2015}.
 This ``nuclear option'' requires practitioners to disrupt the development flow, set aside their current development work, and potentially remove ``good'' code that was not part of the conflict in order to return to a non-conflicting state.
 In the interview, P1 describes this process as:
-\begin{quotation}
+\begin{quoting}
 \textit{``If you have many conflicts involved, many commits in the conflict...throw one of the branches away. You cannot combine tens of commits conflicting...it's not sane!''}
-\end{quotation}
+\end{quoting}
 
 Further, when integrators are preparing code for production environments they prioritize merge conflicts for code review based upon the perceived difficulty of resolving the affected code.
 We find that these decisions rely on human judgement factors as much as they rely on data-driven metrics.
@@ -70,9 +70,9 @@ Our findings show that expertise in the area of conflicting code is one of the t
 
 Our results indicate that when practitioners feel they don't have the expertise in the conflicting code base, they consider the conflict difficult to merge and seek out more information or assistance from others. 
 P5 illustrated this need for expertise when describing his workflow: 
-\begin{quotation}
+\begin{quoting}
 	\textit{``A lot of what I work on is in my own little area...I know what to do\textellipsis But in [unfamiliar part of code], then I'll get someone else to resolve the merge conflict for me. It's someone else's code, and I don't want to screw it up.''}
-\end{quotation}
+\end{quoting}
 
 
 

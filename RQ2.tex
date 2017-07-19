@@ -31,9 +31,9 @@ Moreover, these changes are often processed in isolation, especially when there 
 Such decomposition of overall conflicting changes into smaller ``chunks" is needed to be able to manage the complexity of the resolution process; however, this occludes viewing the changes and their impact in a holistic manner. 
 Often practitioners deal with the decomposed (smaller) changes, hoping that they will all together work out. 
 For example, P1 compared the resolution hurdles between two conflicts, where one was simple, and the other spanned multiple files and complex blocks of code.
-\begin{quotation}
+\begin{quoting}
 \textit{``You focus on understanding the small change, not the big one. It's easier to understand... get the small change to go with the flow of the bigger change.''}
-\end{quotation}
+\end{quoting}
 
 Another challenge when viewing changes in isolation, is the fact that practitioners may miss the impact of the changes made as part of the resolution to the rest of the code base. 
 Identifying the impact of changes on the rest of the code base has been repeatedly found to be a problem in collaborative development, as found by deSouza and Redmiles~\cite{deSouza2008} and more recently by Guzzi et al.~\cite{Guzzi2015}. 
@@ -66,9 +66,9 @@ This indicates that despite advances in supporting parallel development practice
 
 Conflict resolution can sometime lead to defects in the code base. This can arise because of several reasons. For example the rationale of the two conflicting changes might be unclear and the merge might cause unintentional problems down the line. Or the resolved changes might not follow rigorous code review and testing to which the original changes were subject to.
 Therefore, even when the practitioner understands the particular conflicting code, they may still need additional meta information about the rationale of changes and idea of future feature implementation. This is especially true in situations where the code base is old, and such information not readily available. During our interview, P7 commented:
-\begin{quotation}
+\begin{quoting}
 \textit{``It's harder to merge code when you're merging in some legacy code... But if you're a young team, and everybody who wrote the code is still a part of the team, it's easier.''}
-\end{quotation}
+\end{quoting}
 
 \Subsubsection{Expertise}
 Knowledge is a key component of practitioner's needs when resolving merge conflicts, but along with that general knowledge is a need for expertise in the specific areas of code involved in a conflict.
@@ -80,10 +80,11 @@ In fact, Forward et al.~\cite{forward2002documentation} conducted a survey of 48
 When these gaps arise, practitioners compensate by consulting experts in the area of conflicting code instead.
 
 This result aligns with the goals of the TIPMerge tool~\cite{CostaSarma}, which seeks to locate experts that are best suited to resolve conflicts in a particular area of code.
-However, these tools have not made it into the hands of real-world practitioners, as evidenced by the lack of such tools in the list of top 10 merge tools (see Table~\ref{survey_toolset}).
+However, TIPMerge, as well as other recommendation tools are not being used by real-world practitioners, as evidenced by the lack of such tools in the list of top 10 merge tools (see Table~\ref{survey_toolset}).
+The reason for this lack of research tools adoption requires further investigation.
 
 Another surprising fact was that while the informative nature of commit messages (N8) and project culture (N9) were mentioned, they were not as highly ranked. % The same is true for project culture (N9). 
-We had expected them to be higher based on prior work~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}. We found no significant differences between commercial or open source projects or on experience levels.
+We had expected them to be higher based on prior work~\cite{yamauchi2014clustering, hindle2009automatic, cortes2014automatically, hattori2008nature}. We found no statistical differences between commercial or open source projects, including when accounting for experience levels.
 Our results indicate that team practices, including writing commit messages may have matured enough, such that these factors are no longer considered critical in our sample set. 
 
 
@@ -95,10 +96,9 @@ Whereas, practitioners who focus on closed-source software development consider 
 
 This was also true in our interviews, with P8 stating:
 
-\begin{quotation}
+\begin{quoting}
 \textit{``I'm often dealing with code other people wrote. Nobody can review every pull request. So now I have to go back and do some archaeology to find out what's going on. Code is much easier to write than read.''}
-\end{quotation}
+\end{quoting}
 
-This result suggests that either history exploration in open-source projects is a more difficult task likely because of the lack of upfront planning and large number of volunteering contributors.
+This result suggests that either history exploration in open-source projects is a more difficult task due to the lack of upfront planning and large number of volunteering contributors.
 %, or that tools are better at supporting history exploration in closed-source development environments.
-
