@@ -10,8 +10,8 @@ Resolving merge conflicts is nontrivial, especially when changes diverge signifi
 The resolution process can be tedious and can cause delays as practitioners figure out how to approach and resolve conflicts~\cite{cassandra}. 
 Poorly-performed merge conflict resolutions have been known to cause integration errors~\cite{bird-branches-conflict}, workflow disruptions, and jeopardize project efficiency and timelines~\cite{estler2014awareness}. 
 
-Practitioners are aware of the merge-resolution ``pains" and follow different informal processes to avoid having to resolve conflicts (e.g., sending out emails to the rest of the team, performing partial commits, or racing to finish changes) \cite{deSouza2003breaking}\cite{cataldo2008distributed_dev}.
-Unfortunately, this workflow causes changes to diverge more and makes merge conflict resolution even harder~\cite{Brun2011}. 
+Practitioners are aware of the merge-resolution ``pains" and follow different informal processes to avoid having to resolve conflicts; e.g. sending out emails to the rest of the team, performing partial commits, or racing to finish changes \cite{deSouza2003breaking}\cite{cataldo2008distributed_dev}.
+Unfortunately, these practices cause changes to diverge more and makes merge conflict resolution even harder~\cite{Brun2011}. 
 
 Past work has examined different mechanisms for proactive conflict detection~\cite{Brun2011}\cite{palantir}\cite{Guimaraes}, proposed tools for resolving merge conflicts~\cite{nishimura}\cite{mens2002state}, and discussed advantages of syntax- and semantic-aware merges \cite{danny_refactorings}\cite{hunt2002extensible}. 
 However, there are several key questions that remain unanswered: How do practitioners actually approach merge conflicts? How do practitioners perceive the difficulty of a merge conflict resolution? Do the current tools support practitioners' conflict resolution needs?
@@ -41,7 +41,7 @@ We found that practitioners, when initially assessing a merge conflict, focus on
 After understanding the merge conflict, practitioners must resolve the conflict in order to return to normal development.
 We found that the key challenges that practitioners face when resolving conflicts is \textit{understanding the conflicting code}, \textit{their knowledge in the area of code conflict}, and having enough meta information about the conflicting code (who made the change, why, etc).
 
-We found that development tools struggle to support merge conflicts as they increase in perceived complexity; more so than increases in perceived size.
+We found that development tools struggle to address practitioners' perceptions that increases in merge conflict complexity have a greater impact on the conflict difficulty  than increases in size.
 This could partially be alleviated by focusing on the tool improvements most desired by practitioners: \textit{better usability}, \textit{better information filtering}, and \textit{better history exploration}.
 
 %In the context of these findings, we present implications for researchers, tool builders, and practitioners.
@@ -52,6 +52,6 @@ This paper makes the following contributions:
 \begin{itemize}
 \item We conduct exploratory semi-structured interviews with 10 software practitioners, then confirm these findings with a survey of 162 practitioners from around the world.
 \item We provide empirically-derived rankings of merge conflict difficulties based on practitioners' perceptions.
-\item We expose disparities between practitioners' merge conflict support needs and development toolsets.
+\item We expose disparities between practitioners' merge conflict needs and development toolsets.
 %\item We present actionable implications that researchers, tool builders, and practitioners can build upon.
 \end{itemize}
